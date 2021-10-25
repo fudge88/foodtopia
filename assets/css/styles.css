@@ -29,3 +29,21 @@ h3 {
   justify-content: center;
   align-items: center;
 }
+
+.recipe-img {
+  margin: 3rem;
+  height: 350px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.add-to-favorites {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 200px;
+  font-size: 1.5rem;
+  font-weight: 600px;
+}
