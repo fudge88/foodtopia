@@ -18,3 +18,14 @@ h2,
 h3 {
   font-family: "Pacifico", cursive;
 }
+
+/* css for recipes.html */
+
+.recipe-name {
+  border: solid black;
+  margin-top: 5rem;
+  font-size: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
