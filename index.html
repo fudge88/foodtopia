@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- bulmer.io CDN bootstarp alternative -->
+    <!-- bulma.io CDN bootstarp alternative -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
@@ -19,12 +19,68 @@
       rel="stylesheet"
     />
 
+    <!-- font awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
     <!-- css link -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Foodtopia | Dietary Needs</title>
   </head>
   <body>
-    <h1>The F word</h1>
+    <!-- navbar -->
+    <header>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <!-- brand logo -->
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <img
+              src="https://bulma.io/images/bulma-logo.png"
+              width="112"
+              height="28"
+            />
+          </a>
+
+          <!-- toggle button - hamburger menu -->
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarMenuItems"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <!-- menu items -->
+        <div id="navbarMenuItems" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item"> Diets </a>
+            <a class="navbar-item"> Recipes </a>
+            <a class="navbar-item"> My Favourites </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <a><strong>Foodtopia Group</strong></a>
+          <a href="#"><i class="fab fa-facebook-square"></i></a>
+          <a href="#"><i class="fab fa-instagram-square"></i></a>
+          <a href="#"><i class="fab fa-instagram-square"></i></a>.
+        </p>
+      </div>
+    </footer>
 
     <!-- JQuery CDN -->
     <script
