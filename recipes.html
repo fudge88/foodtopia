@@ -72,13 +72,25 @@
     <!-- Name of recipe-->
     <h1 class="recipe-name">Recipe name</h1>
     <!-- picture of food-->
-    <img src="" alt="" />
+    <img
+      class="recipe-img"
+      srcset="
+        https://media.istockphoto.com/photos/colorful-vegetables-and-fruits-vegan-food-in-rainbow-colors-picture-id1284690585?s=612x612   6000w,
+        https://media.istockphoto.com/photos/colorful-vegetables-and-fruits-vegan-food-in-rainbow-colors-picture-id1284690585             6001w,
+        https://media.istockphoto.com/photos/colorful-vegetables-and-fruits-vegan-food-in-rainbow-colors-picture-id1284690585?s=2048x2048 6002w
+      "
+      sizes="100vw"
+      src="https://media.istockphoto.com/photos/colorful-vegetables-and-fruits-vegan-food-in-rainbow-colors-picture-id1284690585"
+      alt="Colorful vegetables and fruits vegan food in rainbow colors Colorful vegetables and fruits vegan food in rainbow colors arrangement full frame Vegetable Stock Photo"
+      title="Colorful vegetables and fruits vegan food in rainbow colors Colorful vegetables and fruits vegan food in rainbow colors arrangement full frame Vegetable Stock Photo"
+      style="max-width: 556px; max-height: 370px"
+    />
     <button class="add-to-favorites">Add to favorites</button>
     <!-- card for ingredient -->
-    <div class="card">
-      <div class="card-content">
+    
+      <div class="ingredient-card">
         <h3 class="ingredients-title">Ingredients Title</h3>
-        <p class="subtitle">
+        <p class="ingredient-ubtitle">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tempore
           qui hic harum magnam, omnis perspiciatis quo cumque corrupti aliquam
           facilis culpa, provident laborum dolore placeat id magni nihil
@@ -90,7 +102,7 @@
         <p class="card-footer-item">Time to prepare</p>
         <p class="card-footer-item">Serves</p>
         <!-- card for method of ingredient-->
-        <div>
+        <div class="method-card">
           <h2>Method</h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio

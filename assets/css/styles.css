@@ -46,4 +46,17 @@ h3 {
   width: 200px;
   font-size: 1.5rem;
   font-weight: 600px;
+  border: solid black;
+  border-radius: 15px;
+  margin: 3rem;
+}
+
+.ingredient-card {
+  border: solid black;
+  margin: 3rem;
+  padding: 3rem;
+}
+
+.method-card {
+  border: solid black;
 }
