@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bulma.io CDN bootstarp alternative -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+
+    <!-- google fonts CDN-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <!-- css link -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <title>Foodtopia | Dietary Needs</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <header>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <!-- brand logo -->
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <img
+              src="https://bulma.io/images/bulma-logo.png"
+              width="112"
+              height="28"
+            />
+          </a>
+
+          <!-- toggle button - hamburger menu -->
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarMenuItems"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <!-- menu items -->
+        <div id="navbarMenuItems" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item"> Diets </a>
+            <a class="navbar-item"> Recipes </a>
+            <a class="navbar-item"> My Favourites </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Name of recipe-->
+    <h1 class="recipe-name">Recipe name</h1>
+    <!-- picture of food-->
+    <img src="" alt="" />
+    <button class="add-to-favorites">Add to favorites</button>
+    <!-- card for ingredient -->
+    <div class="card">
+      <div class="card-content">
+        <h3 class="ingredients-title">Ingredients Title</h3>
+        <p class="subtitle">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tempore
+          qui hic harum magnam, omnis perspiciatis quo cumque corrupti aliquam
+          facilis culpa, provident laborum dolore placeat id magni nihil
+          blanditiis!
+        </p>
+      </div>
+      <!--footer tag to show time to prepare and servings-->
+      <footer class="card-footer">
+        <p class="card-footer-item">Time to prepare</p>
+        <p class="card-footer-item">Serves</p>
+        <!-- card for method of ingredient-->
+        <div>
+          <h2>Method</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio
+            autem impedit officia minima iure quas mollitia ea molestiae, veniam
+            reprehenderit adipisci quae repudiandae vero esse ipsam dolorum hic,
+            aperiam animi?
+          </p>
+        </div>
+        <div class="card-content">
+          <h3 class="nutrition-card">Nutrition</h3>
+          <p class="subtitle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+            tempore qui hic harum magnam, omnis perspiciatis quo cumque corrupti
+            aliquam facilis culpa, provident laborum dolore placeat id magni
+            nihil blanditiis!
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <a><strong>Foodtopia Group</strong></a>
+          <a href="#"><i class="fab fa-facebook-square"></i></a>
+          <a href="#"><i class="fab fa-instagram-square"></i></a>
+          <a href="#"><i class="fab fa-instagram-square"></i></a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- JQuery CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- JS Script link -->
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
