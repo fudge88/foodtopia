@@ -23,3 +23,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+// Bulma Accordeon
+var accordions = bulmaAccordion.attach();

@@ -18,3 +18,22 @@ h2,
 h3 {
   font-family: "Pacifico", cursive;
 }
+
+.main {
+  margin: 10rem 3rem;
+}
+
+.input {
+  width: 25rem;
+}
+
+/* mobile properties */
+@media screen and (max-width: 576px) {
+  .main {
+    margin: 5rem 1.5rem;
+  }
+
+  .input {
+    width: 15rem;
+  }
+}
