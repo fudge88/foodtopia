@@ -1,18 +1,94 @@
 # Foodtopia
 
-A responsive dynamic app which can be filtered for dietary requirements
+## Description
+
+A responsive dynamic app which will run in the browser. Foodtopia is easy to use application and user led database search engine for different types of recipes. The website requires direct input from the user, in order to display results relating to their specific search. The user can filter their search for different recipes by dietary options, types of cuisines and intolerances and allergies.
 
 ## User story
 
-AS a user when I go on the app, I expect to find a short intro with what the app is offering me (recipes based on dietary preferences and a randomly generated FUN FACT about foods, a navigation bar and a search bar) and tiles with different dietary needs.
-On the navigation bar, I EXPECT to see the app logo and navigation links to “My Favorites”, “Home”, “Recipes”.
+AS a user when I GO on the app,
 
-AFTER, I should be able to search recipes ideas based on the choices I “ticked” on the dropdown search bar. (e.g., Italian food, vegetarian, what’s on my fridge). At the bottom of the search bar, I EXPECT to see different tiles with dietary needs (e.g., vegan, keto, alcohol-free). WHEN I input a search on the Search bar, I SOULD be relocated to the menu page with related recipes to the search.
+I expect to FIND a main page with a navigation bar on the top containing the project LOGO and three links, Recipes, Diet and My Fav.
 
-On the menu page, I EXPECT to see card-recipes (with background image of the food and title of the recipe).
+ALSO a search bar with an Input Box, a Search Button and three filters. Diet, Intolerances and Cuisines.
 
-WHEN I click on the card-recipe, I expect to be relocated to the specific recipe page. In that container I WANT to see the image of recipe on the side and one option button (add to Favorites) and FUN FACTS on the side. When I CLICK on “add to Favorites”, my recipe will be added to “My favorites”. When I hover over the search bar, my previous searches are displayed. When I CLICK on a previous search, I will be TAKEN to that recipe.
+I expect to FIND on the bottom of the page a footer.
 
-Here, I expect to see the ingredients displayed and the steps to prepare the food. I also EXPECT to see the number of calories/per portion, macronutrients percentages (protein, fat, and carbs), and vitamins percentage (vitamins B, vitamin C, vitamin A).
+When I CLICK on the Recipes link,
 
-When I click on “My Favorites” tab on navbar, I EXPECT to be taken on a page where my favorite recipes are presented as a list of cards with recipe image and title. I should also have a button to go back to Search page.
+I should be REDIRECT to the recipes page, Where I expect to SEE a carousel on the top showing recipes that may interest the user, a filter button and card-recipes containing:
+
+- a background image of the dish,
+- the recipe title,
+- the time and the portions,
+- the nutritional info. ( )
+
+When I CLICK on the card-recipe,
+
+I EXPECT to be relocated to the specific recipe page,
+
+Where I WANT to see:
+
+- the recipe name,
+- the image of the respective recipe,
+- a box with the instructions of how to cook the recipe,
+- one option button (add to Favorites),
+- a card showing the time, the portions and the ingredients,
+- box with the nutritional info. ( ),
+- a carousel at the bottom with recipes that may interest the user.
+
+When I CLICK on “add to Favorites”,
+
+I EXPECT my recipe be added to “My favorites”.
+
+When I CLICK on Diet,
+
+I should SEE a scroll bar with the different dietary types ( )
+
+When I CLICK on My Fav,
+
+I EXPECT to be relocated to a page presenting all my favorites recipes cards,
+When I HOVER over the search bar,
+
+I EXPECT my previous searches been displayed.
+
+When I CLICK on a previous search,
+
+I should be TAKEN to that specific recipe.
+
+Also, I should be able to SEARCH recipes ideas based on the choices I “ticked” on the dropdown search bar. (e.g., Italian food, vegetarian, gluten free)
+
+When I INPUT something,
+
+I should be RELOCATED to the menu page with related recipes to the specific search.
+
+## Deployed URL
+
+You can view the GitHub pages deployed application [here](https://)
+
+## Technologies Used
+
+- HTML5
+- Bulma CSS Framework
+- CSS
+- Font Awesome
+- JavaScript
+- JQuery
+
+## Screenshots
+
+### Wireframes
+
+![alt text](assets/images/.png)
+
+![alt text](assets/images/.png)
+
+### Final Website
+
+![alt text](assets/images/.png)
+
+![alt text](assets/images/.png)
+
+![alt text](assets/images/.png)
+
+![alt text](assets/images/.png)
