@@ -23,3 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+$(document).ready(function () {
+  $(".navbar-logo").hover(
+    function () {
+      $("#logo").attr("src", "../assets/images/logo-hover.PNG");
+    },
+    function () {
+      $("#logo").attr("src", "../assets/images/logo.PNG");
+    }
+  );
+});
