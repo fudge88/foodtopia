@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// logo hover change
 $(document).ready(function () {
   $(".navbar-logo").hover(
     function () {
