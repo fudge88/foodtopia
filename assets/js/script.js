@@ -35,3 +35,5 @@ $(document).ready(function () {
     }
   );
 });
+// Bulma Accordeon
+var accordions = bulmaAccordion.attach();

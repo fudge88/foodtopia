@@ -71,6 +71,134 @@
       </nav>
     </header>
 
+    <!-- search plant -->
+    <main class="main">
+      <section>
+        <form class="is-flex is-justify-content-center is-align-content-center">
+          <div class="control">
+            <input
+              class="input is-focused"
+              type="text"
+              placeholder="Search Here"
+            />
+          </div>
+          <button class="button is-primary is-focused">Search</button>
+        </form>
+      </section>
+
+      <section
+        class="
+          column
+          is-flex
+          is-justify-content-center
+          is-align-content-center
+          is-flex-wrap-wrap
+        "
+      >
+        <div class="dropdown is-hoverable">
+          <div class="dropdown-trigger">
+            <button
+              class="button"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu4"
+            >
+              <span>Dietaries</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <div>
+                <input type="checkbox">African</input>
+              </div>
+              <div>
+                <input type="checkbox">British</input>
+              </div>
+              <div>
+                <input type="checkbox">Chinese</input>
+              </div>
+              <div>
+                <input type="checkbox">Italian</input>
+              </div>
+              <div>
+                <input type="checkbox">Thai</input>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dropdown is-hoverable">
+          <div class="dropdown-trigger">
+            <button
+              class="button"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu4"
+            >
+              <span>Intolerances</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <div>
+                <input type="checkbox">African</input>
+              </div>
+              <div>
+                <input type="checkbox">British</input>
+              </div>
+              <div>
+                <input type="checkbox">Chinese</input>
+              </div>
+              <div>
+                <input type="checkbox">Italian</input>
+              </div>
+              <div>
+                <input type="checkbox">Thai</input>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dropdown is-hoverable">
+          <div class="dropdown-trigger">
+            <button
+              class="button"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu4"
+            >
+              <span>Cuisines</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content is-flex is-flex-direction-column">
+              <div>
+                <input type="checkbox">African</input>
+              </div>
+              <div>
+                <input type="checkbox">British</input>
+              </div>
+              <div>
+                <input type="checkbox">Chinese</input>
+              </div>
+              <div>
+                <input type="checkbox">Italian</input>
+              </div>
+              <div>
+                <input type="checkbox">Thai</input>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <!-- footer -->
     <footer class="footer">
       <div class="content has-text-centered">
@@ -82,6 +210,9 @@
         </p>
       </div>
     </footer>
+
+    <!-- Bulma Accordeon -->
+    <script type="text/javascript" src="/node_modules/bulma-accordion/dist/js/bulma-accordion.min.js"></script>
 
     <!-- JQuery CDN -->
     <script
