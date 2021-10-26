@@ -16515,8 +16515,35 @@ bulmaCarousel.attach("#carousel", {
 const carouselContainer = $("#carousel");
 
 //construct and render recipe cards
-const renderRecipeCards = () => {
+const renderRecipeCards = (recipeData) => {
   // construct recipe card
+
+  const callback = (each) => {
+    const recipeCard = `<div class="card m-2 recipe-card">
+    <!-- cards image-->
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img
+          src=${each.image}
+          alt=${each.title}
+        />
+      </figure>
+    </div>
+    <!-- title of recipe -->
+    <div class="card-header-title is-centered">
+      <p class="title is-4">${each.title}</p>
+    </div>
+    <!-- extra content for recipe -->
+    <div class="card-footer">
+      <div class="card-footer-item">${each.time}</div>
+      <div class="card-footer-item">${each.servings}</div>
+      <div class="card-footer-item">${each.calories}</div>
+    </div>
+  </div>`;
+    $("#card-container").append(recipeCard);
+  };
+  $("#card-container").empty();
+  recipeData.forEach(callback);
   // append recipe card to container
 };
 
@@ -16546,8 +16573,7 @@ const onClick = (event) => {
     // transform data into smaller object
     // need to pass in data from API
     const recipeCardArray = constructRecipeObject();
-    console.log(recipeCardArray);
-    // render new recipe object
+    renderRecipeCards(recipeCardArray);
   }
 };
 
