@@ -4,6 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- google fonts CDN-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
@@ -20,12 +36,41 @@
   </head>
 
   <body>
+    <!-- navbar -->
     <header>
-      <nav>
-        <img />
-        <a href="">Recipes</a>
-        <a href="">Diet</a>
-        <a href="">My Favourites</a>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <!-- brand logo -->
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <img
+              src="https://bulma.io/images/bulma-logo.png"
+              width="112"
+              height="28"
+            />
+          </a>
+
+          <!-- toggle button - hamburger menu -->
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarMenuItems"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <!-- menu items -->
+        <div id="navbarMenuItems" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item"> Diets </a>
+            <a class="navbar-item"> Recipes </a>
+            <a class="navbar-item"> My Favourites </a>
+          </div>
+        </div>
       </nav>
     </header>
 
@@ -361,6 +406,17 @@
         </div>
       </div>
     </section>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <a><strong>Foodtopia Group</strong></a>
+          <a href="#"><i class="fab fa-facebook-square"></i></a>
+          <a href="#"><i class="fab fa-instagram-square"></i></a>
+          <a href="#"><i class="fab fa-instagram-square"></i></a>.
+        </p>
+      </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
 
     <script>
