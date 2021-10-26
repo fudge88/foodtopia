@@ -21,19 +21,28 @@ h3 {
 
 /* css for recipes.html */
 
+.recipe-page-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
 .recipe-name {
   border: solid black;
   margin-top: 5rem;
+  margin: 2rem;
   font-size: 3.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  font-family: "Pacifico", cursive;
 }
 
 .recipe-img {
-  margin: 3rem;
-  height: 350px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -42,21 +51,117 @@ h3 {
 .add-to-favorites {
   display: flex;
   flex-direction: row;
-  height: 50px;
-  width: 200px;
+  align-items: center;
+  height: 75px;
+  width: 700px;
   font-size: 1.5rem;
   font-weight: 600px;
   border: solid black;
   border-radius: 15px;
   margin: 3rem;
+  margin-left: 3rem;
 }
 
 .ingredient-card {
   border: solid black;
-  margin: 3rem;
-  padding: 3rem;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+}
+
+.ingredients-title {
+  margin-bottom: 3rem;
 }
 
 .method-card {
   border: solid black;
+  padding: 4px;
+  margin: 2rem;
+}
+
+.method-card-title {
+  margin-bottom: 2rem;
+}
+
+.method-card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2rem;
+
+  font-weight: 2rem;
+}
+
+.nutrition-card {
+  border: solid black;
+  padding: 4px;
+  margin: 2rem;
+}
+
+.nutrition-subtitle {
+  margin-top: 2rem;
+}
+
+.method-nutrition-cards {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 576px) {
+  .recipe-page-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem;
+  }
+
+  .method-nutrition-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem;
+    padding: 2rem;
+  }
+  .add-to-favorites {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+.recipe-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+@media screen and (max-width: 768px) {
+  .recipe-page-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem;
+  }
+
+  .method-nutrition-cards {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+  }
+
+  .add-to-favorites {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+.recipe-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+
 }
