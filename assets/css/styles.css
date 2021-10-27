@@ -46,18 +46,19 @@ a.navbar-item:hover {
   color: var(--terra-cotta);
 }
 
-@media screen and (max-width: 1023px) {
-  .navbar-menu.is-active {
-    background-color: var(--green-sheen);
-  }
-}
-
 .main {
   margin: 10rem 3rem;
 }
 
 .input {
   width: 25rem;
+}
+
+/* tablet properties */
+@media screen and (max-width: 1023px) {
+  .navbar-menu.is-active {
+    background-color: var(--green-sheen);
+  }
 }
 
 /* mobile properties */
@@ -68,5 +69,8 @@ a.navbar-item:hover {
 
   .input {
     width: 15rem;
+  }
+  .navbar-logo img {
+    margin: 0;
   }
 }

@@ -73,6 +73,9 @@ h3 {
   /* transform: scale(1.1); */
 }
 
+.card-footer-item i {
+  padding: 0.5rem;
+}
 @media only screen and (max-width: 768px) {
   .carousel-image-div img {
     width: 280px;
@@ -88,5 +91,6 @@ h3 {
     margin-top: 40px;
     flex-direction: column;
     margin: 30px;
+    max-width: 80%;
   }
 }

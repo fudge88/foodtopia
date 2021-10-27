@@ -16536,7 +16536,7 @@ const renderRecipeCards = (recipeData) => {
     <!-- extra content for recipe -->
     <div class="card-footer">
       <div class="card-footer-item"><i class="far fa-clock"> ${each.time}mins</i></div>
-      <div class="card-footer-item"><i class="fas fa-user-friends"> ${each.servings}</i></div>
+      <div class="card-footer-item"><i class="fas fa-users"> ${each.servings}</i></div>
       <div class="card-footer-item">${each.calories}Kcal</div>
     </div>
   </div>`;
