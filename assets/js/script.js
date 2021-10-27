@@ -35,5 +35,18 @@ $(document).ready(function () {
     }
   );
 });
-// Bulma Accordeon
-var accordions = bulmaAccordion.attach();
+
+//get input value from user
+const handleSearch = (event) => {
+  event.preventDefault();
+
+  const searchInput = $("#search-input").val();
+
+  console.log(searchInput);
+};
+
+// add a event listener submit to get the input value
+$("#search-form").on("submit", handleSearch);
+
+// Bulma Accordion
+//var accordions = bulmaAccordion.attach();
