@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
 
@@ -42,11 +42,12 @@
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <!-- brand logo -->
         <div class="navbar-brand">
-          <a class="navbar-item" href="#">
+          <a class="navbar-logo" href="#">
             <img
-              src="https://bulma.io/images/bulma-logo.png"
+              src="./assets/images/logo.PNG"
               width="112"
               height="28"
+              id="logo"
             />
           </a>
 
@@ -81,330 +82,72 @@
         <div id="carousel" class="recipe-carousel carousel">
           <div class="item-1 carousel-image-div">
             <!-- Slide Content -->
-            <a href="keto"></a>
-            <img src="./assets/images/keto.jpg" />
+            <img src="./assets/images/keto.jpg" id="keto" />
           </div>
+
           <div class="item-2 carousel-image-div">
             <!-- Slide Content -->
-            <a href="vegan"></a>
-            <img src="./assets/images/vegan.jpg" />
+            <img src="./assets/images/vegan.jpg" id="vegan" />
           </div>
+
           <div class="item-3 carousel-image-div">
             <!-- Slide Content -->
-            <a href="keto"></a>
-            <img src="./assets/images/keto.jpg" />
+            <img src="./assets/images/gluten-free.jpg" id="gluten-free" />
           </div>
+
           <div class="item-4 carousel-image-div">
             <!-- Slide Content -->
-            <a href="keto"></a>
-            <img src="./assets/images/keto.jpg" />
+            <img src="assets/images/paleo.jpg" id="paleo" />
           </div>
+
           <div class="item-5 carousel-image-div">
             <!-- Slide Content -->
-            <a href="keto"></a>
-            <img src="./assets/images/keto.jpg" />
-          </div>
-          <div class="item-6 carousel-image-div">
-            <!-- Slide Content -->
-            <a href="keto"></a>
-            <img src="./assets/images/keto.jpg" />
-          </div>
-          <div class="item-7 carousel-image-div">
-            <!-- Slide Content -->
-            <a href="gluten-free"></a>
-            <img src="./assets/images/gluten-free.jpg" />
-          </div>
-          <div class="item-8 carousel-image-div">
-            <!-- Slide Content -->
-            <a href="paleo"></a>
-            <img src="assets/images/paleo.jpg" />
-          </div>
-          <div class="item-9 carousel-image-div">
-            <!-- Slide Content -->
-            <a href="vegetarian"></a>
-            <img src="assets/images/vegetarian.jpg" />
-          </div>
-          <div class="item-10 carousel-image-div">
-            <!-- Slide Content -->
-            <a href="keto"></a>
-            <img src="./assets/images/keto.jpg" />
+            <img src="assets/images/vegetarian.jpg" id="vegetarian" />
           </div>
         </div>
         <!-- End Carousel -->
       </div>
     </section>
 
-    <section class="card-section">
-      <!-- filter toggle for recipe cards -->
-      <div class="filter-toggle">
+    <!-- <section class="card-section"> -->
+    <!-- filter toggle for recipe cards -->
+    <!-- <div class="filter-toggle">
         <button class="button is-pulled-right">Filter</button>
+      </div> -->
+
+    <!-- title for search -->
+    <section class="hero">
+      <div class="hero-body">
+        <h1 class="title has-text-centered">Your recipe search for.....</h1>
       </div>
+    </section>
+
+    <!-- search bar and filter -->
+    <!-- Main container -->
+    <div class="level container is-max-desktop">
+      <!-- Left side -->
+      <div class="level-left">
+        <div class="level-item">
+          <div class="field has-addons">
+            <p class="control">
+              <input class="input" type="text" placeholder="Find a post" />
+            </p>
+            <p class="control">
+              <button class="button">Search</button>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Right side -->
+      <div class="level-right">
+        <p class="level-item"><a class="button">Filter</a></p>
+      </div>
+    </div>
+
+    <section class="card-section">
       <!-- container for the card items -->
-      <div class="card-container">
+      <div class="card-container" id="card-container">
         <!-- recipe card with a margin of 20px -->
-        <div class="card m-2 recipe-card">
-          <!-- cards image-->
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img
-                src="./assets/images/gluten-free.jpg"
-                alt="Placeholder image"
-              />
-            </figure>
-          </div>
-          <!-- title of recipe -->
-          <div class="card-header-title is-centered">
-            <p class="title is-4">Recipe title</p>
-          </div>
-          <!-- extra content for recipe -->
-          <div class="card-footer">
-            <div class="card-footer-item">time</div>
-            <div class="card-footer-item">serving</div>
-            <div class="card-footer-item">nutrition</div>
-          </div>
-        </div>
-
-        <div class="card m-2 recipe-card">
-          <!-- cards recipe-->
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img
-                src="./assets/images/gluten-free.jpg"
-                alt="Placeholder image"
-              />
-            </figure>
-          </div>
-          <!-- title of recipe -->
-          <div class="card-header-title is-centered">
-            <p class="title is-4">Recipe title</p>
-          </div>
-          <!-- extra content for recipe -->
-          <div class="card-footer">
-            <p class="card-footer-item">time</p>
-            <p class="card-footer-item">serving</p>
-            <p class="card-footer-item">nutrition</p>
-          </div>
-        </div>
-
-        <div class="card m-2 recipe-card recipe-card">
-          <!-- cards recipe-->
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img
-                src="./assets/images/gluten-free.jpg"
-                alt="Placeholder image"
-              />
-            </figure>
-          </div>
-          <!-- title of recipe -->
-          <div class="card-header-title is-centered">
-            <p class="title is-4">Recipe title</p>
-          </div>
-          <!-- extra content for recipe -->
-          <div class="card-footer">
-            <p class="card-footer-item">time</p>
-            <p class="card-footer-item">serving</p>
-            <p class="card-footer-item">nutrition</p>
-          </div>
-        </div>
-
-        <div class="card m-2 recipe-card">
-          <!-- cards recipe-->
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img
-                src="./assets/images/gluten-free.jpg"
-                alt="Placeholder image"
-              />
-            </figure>
-          </div>
-          <!-- title of recipe -->
-          <div class="card-header-title is-centered">
-            <p class="title is-4">Recipe title</p>
-          </div>
-          <!-- extra content for recipe -->
-          <footer class="card-footer">
-            <p class="card-footer-item">time</p>
-            <p class="card-footer-item">serving</p>
-            <p class="card-footer-item">nutrition</p>
-          </footer>
-        </div>
-
-        <div class="card m-2 recipe-card">
-          <!-- cards recipe-->
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img
-                src="./assets/images/gluten-free.jpg"
-                alt="Placeholder image"
-              />
-            </figure>
-          </div>
-          <!-- title of recipe -->
-          <div class="card-header-title is-centered">
-            <p class="title is-4">Recipe title</p>
-          </div>
-          <!-- extra content for recipe -->
-          <footer class="card-footer">
-            <p class="card-footer-item">time</p>
-            <p class="card-footer-item">serving</p>
-            <p class="card-footer-item">nutrition</p>
-          </footer>
-        </div>
-
-        <div class="card m-2 recipe-card">
-          <!-- cards recipe-->
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img
-                src="./assets/images/gluten-free.jpg"
-                alt="Placeholder image"
-              />
-            </figure>
-          </div>
-          <!-- title of recipe -->
-          <div class="card-header-title is-centered">
-            <p class="title is-4">Recipe title</p>
-          </div>
-          <!-- extra content for recipe -->
-          <footer class="card-footer">
-            <p class="card-footer-item">time</p>
-            <p class="card-footer-item">serving</p>
-            <p class="card-footer-item">nutrition</p>
-          </footer>
-        </div>
-
-        <div class="card m-2 recipe-card">
-          <!-- cards recipe-->
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img
-                src="./assets/images/gluten-free.jpg"
-                alt="Placeholder image"
-              />
-            </figure>
-          </div>
-          <!-- title of recipe -->
-          <div class="card-header-title is-centered">
-            <p class="title is-4">Recipe title</p>
-          </div>
-          <!-- extra content for recipe -->
-          <footer class="card-footer">
-            <p class="card-footer-item">time</p>
-            <p class="card-footer-item">serving</p>
-            <p class="card-footer-item">nutrition</p>
-          </footer>
-        </div>
-
-        <div class="card m-2 recipe-card">
-          <!-- cards recipe-->
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img
-                src="./assets/images/gluten-free.jpg"
-                alt="Placeholder image"
-              />
-            </figure>
-          </div>
-          <!-- title of recipe -->
-          <div class="card-header-title is-centered">
-            <p class="title is-4">Recipe title</p>
-          </div>
-          <!-- extra content for recipe -->
-          <footer class="card-footer">
-            <p class="card-footer-item">time</p>
-            <p class="card-footer-item">serving</p>
-            <p class="card-footer-item">nutrition</p>
-          </footer>
-        </div>
-
-        <div class="card m-2 recipe-card">
-          <!-- cards recipe-->
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img
-                src="./assets/images/gluten-free.jpg"
-                alt="Placeholder image"
-              />
-            </figure>
-          </div>
-          <!-- title of recipe -->
-          <div class="card-header-title is-centered">
-            <p class="title is-4">Recipe title</p>
-          </div>
-          <!-- extra content for recipe -->
-          <footer class="card-footer">
-            <p class="card-footer-item">time</p>
-            <p class="card-footer-item">serving</p>
-            <p class="card-footer-item">nutrition</p>
-          </footer>
-        </div>
-
-        <div class="card m-2 recipe-card">
-          <!-- cards recipe-->
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img
-                src="./assets/images/gluten-free.jpg"
-                alt="Placeholder image"
-              />
-            </figure>
-          </div>
-          <!-- title of recipe -->
-          <div class="card-header-title is-centered">
-            <p class="title is-4">Recipe title</p>
-          </div>
-          <!-- extra content for recipe -->
-          <footer class="card-footer">
-            <p class="card-footer-item">time</p>
-            <p class="card-footer-item">serving</p>
-            <p class="card-footer-item">nutrition</p>
-          </footer>
-        </div>
-
-        <div class="card m-2 recipe-card">
-          <!-- cards recipe-->
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img
-                src="./assets/images/gluten-free.jpg"
-                alt="Placeholder image"
-              />
-            </figure>
-          </div>
-          <!-- title of recipe -->
-          <div class="card-header-title is-centered">
-            <p class="title is-4">Recipe title</p>
-          </div>
-          <!-- extra content for recipe -->
-          <footer class="card-footer">
-            <p class="card-footer-item">time</p>
-            <p class="card-footer-item">serving</p>
-            <p class="card-footer-item">nutrition</p>
-          </footer>
-        </div>
-
-        <div class="card m-2 recipe-card">
-          <!-- cards recipe-->
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img
-                src="./assets/images/gluten-free.jpg"
-                alt="Placeholder image"
-              />
-            </figure>
-          </div>
-          <!-- title of recipe -->
-          <div class="card-header-title is-centered">
-            <p class="title is-4">Recipe title</p>
-          </div>
-          <!-- extra content for recipe -->
-          <div class="card-footer">
-            <p class="card-footer-item">time</p>
-            <p class="card-footer-item">serving</p>
-            <p class="card-footer-item">nutrition</p>
-          </div>
-        </div>
       </div>
     </section>
     <!-- footer -->
@@ -419,20 +162,7 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
-
-    <script>
-      bulmaCarousel.attach("#carousel", {
-        slidesToScroll: 1,
-        slidesToShow: 5,
-        infinite: true,
-        breakpoints: [
-          { changePoint: 480, slidesToShow: 1, slidesToScroll: 1 },
-          { changePoint: 640, slidesToShow: 2, slidesToScroll: 2 },
-          { changePoint: 768, slidesToShow: 3, slidesToScroll: 3 },
-        ],
-      });
-    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./assets/js/menu.js"></script>
+    <script type="module" src="./assets/js/menu.js"></script>
   </body>
 </html>

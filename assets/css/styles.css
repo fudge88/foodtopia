@@ -1,5 +1,9 @@
 :root {
-  /* coolors go here */
+  --white: #ffffff;
+  --terra-cotta: #e07a5fff;
+  --independence: #3d405bff;
+  --green-sheen: #62a5a1;
+  --deep-champagne: #f2cc8fff;
 }
 
 * {
@@ -16,7 +20,59 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 1px;
+}
+
+/* navbar styling */
+.navbar {
+  background-color: var(--green-sheen);
+  padding: 1rem;
+}
+
+.navbar-logo img {
+  min-height: 1.5rem;
+  margin: 0 2rem;
+}
+.navbar-item {
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 1px;
+  color: white;
+  font-size: 1.5rem;
+}
+
+a.navbar-item:hover {
+  background-color: var(--green-sheen);
+  color: var(--terra-cotta);
+}
+
+.main {
+  margin: 10rem 3rem;
+}
+
+.input {
+  width: 25rem;
+}
+
+/* tablet properties */
+@media screen and (max-width: 1023px) {
+  .navbar-menu.is-active {
+    background-color: var(--green-sheen);
+  }
+}
+
+/* mobile properties */
+@media screen and (max-width: 576px) {
+  .main {
+    margin: 5rem 1.5rem;
+  }
+
+  .input {
+    width: 15rem;
+  }
+  .navbar-logo img {
+    margin: 0;
+  }
 }
 
 /* css for recipes.html */
