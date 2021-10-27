@@ -13,3 +13,16 @@
 .card-header-title {
   text-align: center;
 }
+
+/*media queries for small and medium viewport sizes*/
+@media screen and (max-width: 576px) {
+  .card-container {
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .card {
+    max-width: 16rem;
+    margin-top: 2rem;
+  }
+} ;
