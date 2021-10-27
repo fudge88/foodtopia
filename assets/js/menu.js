@@ -16531,13 +16531,13 @@ const renderRecipeCards = (recipeData) => {
     </div>
     <!-- title of recipe -->
     <div class="card-header-title is-centered">
-      <p class="title is-4">${each.title}</p>
+      <h2 class="is-4">${each.title}</h2>
     </div>
     <!-- extra content for recipe -->
     <div class="card-footer">
-      <div class="card-footer-item">${each.time}</div>
-      <div class="card-footer-item">${each.servings}</div>
-      <div class="card-footer-item">${each.calories}</div>
+      <div class="card-footer-item"><i class="far fa-clock"> ${each.time}mins</i></div>
+      <div class="card-footer-item"><i class="fas fa-user-friends"> ${each.servings}</i></div>
+      <div class="card-footer-item">${each.calories}Kcal</div>
     </div>
   </div>`;
     $("#card-container").append(recipeCard);
