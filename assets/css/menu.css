@@ -1,8 +1,27 @@
 :root {
+  --white: #ffffff;
+  --eggshell: #f4f1deff;
+  --terra-cotta: #e07a5fff;
+  --independence: #3d405bff;
+  --green-sheen: #62a5a1;
+  --deep-champagne: #f2cc8fff;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 1px;
 }
 
 .carousel-section {
@@ -19,16 +38,39 @@ body {
   position: relative;
 }
 
+.card-header-title {
+  background-color: var(--terra-cotta);
+  color: var(--white);
+  text-align: center;
+  font-size: 1rem;
+  width: 80%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card-footer {
+  border-style: none;
+}
+
 .card-container {
   position: absolute;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: var(--eggshell);
 }
 
 .recipe-card {
   width: 300px;
+  transition: all 0.2s ease-in-out;
+}
+.recipe-card:hover {
+  border: var(--green-sheen) solid 3px;
+  box-shadow: 0 0 10px 5px var(--green-sheen);
+  /* box-shadow: 0 1rem 4rem 0 var(--deep-champagne),
+    0 1rem 4rem 0 var(--terra-cotta); */
+  /* transform: scale(1.1); */
 }
 
 .card-footer-item i {
@@ -49,5 +91,6 @@ body {
     margin-top: 40px;
     flex-direction: column;
     margin: 30px;
+    max-width: 80%;
   }
 }

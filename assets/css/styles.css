@@ -70,4 +70,7 @@ a.navbar-item:hover {
   .input {
     width: 15rem;
   }
+  .navbar-logo img {
+    margin: 0;
+  }
 }
