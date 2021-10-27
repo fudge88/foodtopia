@@ -16499,25 +16499,11 @@ const complexSearchApiData = {
   totalResults: 6,
 };
 
-//carousel options
-bulmaCarousel.attach("#carousel", {
-  slidesToScroll: 1,
-  slidesToShow: 4,
-  infinite: true,
-  breakpoints: [
-    { changePoint: 480, slidesToShow: 1, slidesToScroll: 1 },
-    { changePoint: 640, slidesToShow: 2, slidesToScroll: 2 },
-    { changePoint: 768, slidesToShow: 3, slidesToScroll: 3 },
-  ],
-});
-
-//target images carousel
-const carouselContainer = $("#carousel-container");
-
 //construct and render recipe cards
 const renderRecipeCards = (recipeData) => {
-  // construct recipe card
+  $("#card-container").empty();
 
+  // construct recipe card
   const callback = (each) => {
     const recipeCard = `<div class="card m-2 recipe-card">
     <!-- cards image-->
@@ -16542,9 +16528,9 @@ const renderRecipeCards = (recipeData) => {
   </div>`;
     $("#card-container").append(recipeCard);
   };
-  $("#card-container").empty();
-  recipeData.forEach(callback);
+
   // append recipe card to container
+  recipeData.forEach(callback);
 };
 
 const constructRecipeObject = (data) => {
@@ -16558,24 +16544,25 @@ const constructRecipeObject = (data) => {
       calories: each.nutrition.nutrients[0].amount,
     };
   };
+
   // replace with data from API
-  return complexSearchApiData.results.map(callback);
+  return data.results.map(callback);
+};
+const onSubmit = function (event) {
+  event.preventDefault();
+
+  // get search term
+  const searchTerm = $("#search-term").val();
+
+  console.log(searchTerm);
+
+  // get data from API for search term
+
+  const recipeCardsData = constructRecipeObject(complexSearchApiData);
+  renderRecipeCards(recipeCardsData);
 };
 
-const onClick = (event) => {
-  const target = $(event.target);
+const onReady = function () {};
 
-  //if clicked on an image
-  if (target.is("img")) {
-    //get image id
-    const id = target.attr("id");
-    // fetch data from api using id
-    // transform data into smaller object
-    // need to pass in data from API
-    const recipeCardArray = constructRecipeObject();
-    renderRecipeCards(recipeCardArray);
-  }
-};
-
-//add event on carousel container
-carouselContainer.on("click", onClick);
+$("#search-form").on("submit", onSubmit);
+$(document).ready(onReady);

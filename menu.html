@@ -4,37 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- bulma.io CDN bootstarp alternative -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
-
-    <!-- google fonts CDN-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
-
-    <!-- font awesome CDN -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-
-    <!-- css link -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Foodtopia | Dietary Needs</title>
   </head>
 
   <body>
-    <!-- navbar -->
     <header>
+      <!-- navbar -->
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <!-- brand logo -->
         <div class="navbar-brand">
@@ -72,45 +64,6 @@
       </nav>
     </header>
 
-    <section class="carousel-section">
-      <div class="carousel-container">
-        <!-- Start Carousel -->
-        <div id="carousel" class="recipe-carousel carousel">
-          <div class="item-1 carousel-image-div">
-            <!-- Slide Content -->
-            <img src="./assets/images/keto.jpg" id="keto" />
-          </div>
-
-          <div class="item-2 carousel-image-div">
-            <!-- Slide Content -->
-            <img src="./assets/images/vegan.jpg" id="vegan" />
-          </div>
-
-          <div class="item-3 carousel-image-div">
-            <!-- Slide Content -->
-            <img src="./assets/images/gluten-free.jpg" id="gluten-free" />
-          </div>
-
-          <div class="item-4 carousel-image-div">
-            <!-- Slide Content -->
-            <img src="assets/images/paleo.jpg" id="paleo" />
-          </div>
-
-          <div class="item-5 carousel-image-div">
-            <!-- Slide Content -->
-            <img src="assets/images/vegetarian.jpg" id="vegetarian" />
-          </div>
-        </div>
-        <!-- End Carousel -->
-      </div>
-    </section>
-
-    <!-- <section class="card-section"> -->
-    <!-- filter toggle for recipe cards -->
-    <!-- <div class="filter-toggle">
-        <button class="button is-pulled-right">Filter</button>
-      </div> -->
-
     <!-- title for search -->
     <section class="hero">
       <div class="hero-body">
@@ -122,22 +75,25 @@
     <!-- Main container -->
     <div class="level container is-max-desktop">
       <!-- Left side -->
-      <div class="level-left">
-        <div class="level-item">
-          <div class="field has-addons">
-            <p class="control">
-              <input class="input" type="text" placeholder="Find a post" />
-            </p>
-            <p class="control">
-              <button class="button">Search</button>
-            </p>
+      <form id="search-form">
+        <div class="level-left">
+          <div class="level-item">
+            <div class="field has-addons">
+              <p class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Find a post"
+                  id="search-term"
+                />
+              </p>
+              <p class="control">
+                <button class="button" type="submit">Search</button>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Right side -->
-      <div class="level-right">
-        <p class="level-item"><a class="button">Filter</a></p>
-      </div>
+      </form>
     </div>
 
     <section class="card-section">
@@ -164,7 +120,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/menu.js"></script>
   </body>
