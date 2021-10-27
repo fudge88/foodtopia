@@ -16,10 +16,51 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
-    <!--vanilla CSS link-->
+    <!--vanilla CSS links-->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="stylesheet" href="./assets/css/about.css" />
 
     <title>About us | Foodtopia</title>
   </head>
-  <body></body>
+  <body>
+    <!--navbar here-->
+    <header>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <!-- brand logo -->
+        <div class="navbar-brand">
+          <a class="navbar-logo" href="#">
+            <img
+              src="./assets/images/logo.PNG"
+              width="112"
+              height="28"
+              id="logo"
+            />
+          </a>
+
+          <!-- toggle button - hamburger menu -->
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarMenuItems"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <!-- menu items -->
+        <div id="navbarMenuItems" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item"> Diets </a>
+            <a class="navbar-item"> Recipes </a>
+            <a class="navbar-item"> My Favourites </a>
+            <a class="navbar-item"> About Us </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </body>
 </html>
