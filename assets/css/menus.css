@@ -1,0 +1,35 @@
+:root {
+  --white: #ffffff;
+  --terra-cotta: #e07a5fff;
+  --independence: #3d405bff;
+  --green-sheen: #62a5a1;
+  --deep-champagne: #f2cc8fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 1px;
+}
+
+/* carousel */
+.carousel-container {
+  display: flex;
+  flex-direction: row;
+}
+.carousel-card {
+  display: flex;
+  justify-content: space-between;
+}

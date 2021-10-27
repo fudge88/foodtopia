@@ -29,9 +29,9 @@
 
     <!-- css link -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/menus.css" />
     <title>Foodtopia | Dietary Needs</title>
   </head>
-
   <body>
     <!-- navbar -->
     <header>
@@ -72,78 +72,12 @@
       </nav>
     </header>
 
-    <section class="carousel-section">
+    <!-- carousel -->
+    <section class="container">
       <div class="carousel-container">
-        <!-- Start Carousel -->
-        <div id="carousel" class="recipe-carousel carousel">
-          <div class="item-1 carousel-image-div">
-            <!-- Slide Content -->
-            <img src="./assets/images/keto.jpg" id="keto" />
-          </div>
-
-          <div class="item-2 carousel-image-div">
-            <!-- Slide Content -->
-            <img src="./assets/images/vegan.jpg" id="vegan" />
-          </div>
-
-          <div class="item-3 carousel-image-div">
-            <!-- Slide Content -->
-            <img src="./assets/images/gluten-free.jpg" id="gluten-free" />
-          </div>
-
-          <div class="item-4 carousel-image-div">
-            <!-- Slide Content -->
-            <img src="assets/images/paleo.jpg" id="paleo" />
-          </div>
-
-          <div class="item-5 carousel-image-div">
-            <!-- Slide Content -->
-            <img src="assets/images/vegetarian.jpg" id="vegetarian" />
-          </div>
-        </div>
-        <!-- End Carousel -->
-      </div>
-    </section>
-
-    <!-- <section class="card-section"> -->
-    <!-- filter toggle for recipe cards -->
-    <!-- <div class="filter-toggle">
-        <button class="button is-pulled-right">Filter</button>
-      </div> -->
-
-    <!-- title for search -->
-    <section class="hero">
-      <div class="hero-body">
-        <h1 class="title has-text-centered">Your recipe search for.....</h1>
-      </div>
-    </section>
-
-    <!-- search bar and filter -->
-    <!-- Main container -->
-    <div class="level container is-max-desktop">
-      <!-- Left side -->
-      <div class="level-left">
-        <div class="level-item">
-          <div class="field has-addons">
-            <p class="control">
-              <input class="input" type="text" placeholder="Find a post" />
-            </p>
-            <p class="control">
-              <button class="button">Search</button>
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- Right side -->
-      <div class="level-right">
-        <p class="level-item"><a class="button">Filter</a></p>
-      </div>
-    </div>
-
-    <section class="card-section">
-      <!-- container for the card items -->
-      <div class="card-container" id="card-container">
-        <!-- recipe card with a margin of 20px -->
+        <div class="carousel-card">food</div>
+        <div class="carousel-card">food</div>
+        <div class="carousel-card">food</div>
       </div>
     </section>
 
@@ -158,14 +92,17 @@
         </p>
       </div>
     </footer>
+
+    <!-- JQuery CDN -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/menu.js"></script>
+
+    <!-- JS Script link -->
+    <!-- <script src="./assets/js/script.js"></script> -->
+    <script src="./assets/js/menus.js"></script>
   </body>
 </html>

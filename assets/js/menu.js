@@ -16512,7 +16512,7 @@ bulmaCarousel.attach("#carousel", {
 });
 
 //target images carousel
-const carouselContainer = $("#carousel");
+const carouselContainer = $("#carousel-container");
 
 //construct and render recipe cards
 const renderRecipeCards = (recipeData) => {
