@@ -1,0 +1,15 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.card {
+  width: 24rem;
+  margin-top: 5rem;
+}
+
+.card-header-title {
+  text-align: center;
+}
