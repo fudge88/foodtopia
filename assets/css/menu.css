@@ -31,6 +31,9 @@ body {
   width: 300px;
 }
 
+.card-footer-item i {
+  padding: 0.5rem;
+}
 @media only screen and (max-width: 768px) {
   .carousel-image-div img {
     width: 280px;
