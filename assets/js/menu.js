@@ -1,4 +1,7 @@
+const API_KEY = "be6ae57f7b8c425994e6a529e04cb682";
+
 //construct and render recipe cards
+
 const renderRecipeCards = (recipeData) => {
   $("#card-container").empty();
 
@@ -47,6 +50,7 @@ const constructRecipeObject = (data) => {
   // replace with data from API
   return data.results.map(callback);
 };
+
 const onSubmit = function (event) {
   event.preventDefault();
 
@@ -61,7 +65,41 @@ const onSubmit = function (event) {
   renderRecipeCards(recipeCardsData);
 };
 
-const onReady = function () {};
+const getFromLocalStorage = function (key, defaultValue) {
+  const localStorageData = JSON.parse(localStorage.getItem(key));
+
+  if (!localStorageData) {
+    return defaultValue;
+  } else {
+    return localStorageData;
+  }
+};
+
+const constructApiUrl = function (baseUrl, searchOptions) {
+  const searchQuery = searchOptions.query;
+  let dietQuery;
+  let intolerancesQuery;
+  let cuisinesQuery;
+
+  if (searchOptions.diet.length) {
+    dietQuery = `diet=${searchOptions.diet.join(",")}`;
+  }
+  if (searchOptions.intolerances.length) {
+    intolerancesQuery = `intolerances=${searchOptions.intolerances.join(",")}`;
+  }
+  if (searchOptions.cuisines.length) {
+    cuisinesQuery = `cuisines=${searchOptions.cuisines.join(",")}`;
+  }
+  const url = `${baseUrl}?query=${searchQuery}&${dietQuery}&${intolerancesQuery}&${cuisinesQuery}&addRecipeNutrition=true&apiKey=${API_KEY}&number=10`;
+  return url;
+};
+
+const onReady = function () {
+  const searchOptions = getFromLocalStorage("options", {});
+  console.log(searchOptions);
+  const baseUrl = "https://api.spoonacular.com/recipes/complexSearch";
+  const apiUrl = constructApiUrl(baseUrl, searchOptions);
+};
 
 $("#search-form").on("submit", onSubmit);
 $(document).ready(onReady);
