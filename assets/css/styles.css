@@ -21,7 +21,7 @@ h1,
 h2,
 h3 {
   font-family: "Bebas Neue", cursive;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 /* navbar styling */
@@ -54,6 +54,74 @@ a.navbar-item:hover {
   width: 25rem;
 }
 
+/* cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.card {
+  width: 24rem;
+  margin-top: 5rem;
+}
+
+.card-header-title {
+  justify-content: center;
+}
+
+/* recipe cards styling */
+/* .recipe-card:hover {
+  padding: 1rem;
+  border: var(--terra-cotta) solid 3px;
+  border-radius: 10px;
+} */
+
+.recipe-title {
+  background-color: var(--terra-cotta);
+  color: var(--white);
+  font-size: 1.2rem;
+  position: relative;
+  max-width: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.green-outline {
+  font-size: 1.2rem;
+  color: var(--green-sheen);
+  border-color: var(--green-sheen);
+}
+.green-outline:hover {
+  color: var(--white);
+  background-color: var(--green-sheen);
+}
+.recipe-footer {
+  justify-content: center;
+}
+.recipe-img {
+  position: relative;
+}
+.recipe-img-icon-container {
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  position: absolute;
+  text-align: center;
+  background: transparent;
+  top: 0;
+  right: 0;
+}
+.bookmark-icon,
+.info-icon {
+  padding: 1rem;
+  color: var(--green-sheen);
+}
+.bookmark-icon:hover,
+.info-icon:hover {
+  color: var(--terra-cotta);
+}
+
 /* tablet properties */
 @media screen and (max-width: 1023px) {
   .navbar-menu.is-active {
@@ -72,5 +140,14 @@ a.navbar-item:hover {
   }
   .navbar-logo img {
     margin: 0;
+  }
+  .card-container {
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .card {
+    max-width: 16rem;
+    margin-top: 2rem;
   }
 }
