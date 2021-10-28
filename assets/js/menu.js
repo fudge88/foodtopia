@@ -47,6 +47,7 @@ const constructRecipeObject = (data) => {
   // replace with data from API
   return data.results.map(callback);
 };
+
 const onSubmit = function (event) {
   event.preventDefault();
 
@@ -61,7 +62,39 @@ const onSubmit = function (event) {
   renderRecipeCards(recipeCardsData);
 };
 
-const onReady = function () {};
+const getFromLocalStorage = function (key, defaultValue) {
+  const localStorageData = JSON.parse(localStorage.getItem(key));
+
+  if (!localStorageData) {
+    return defaultValue;
+  } else {
+    return localStorageData;
+  }
+};
+
+const constructApiUrl = function (baseUrl, searchOptions) {
+  let dietQuery;
+  let intolerancesQuery;
+  let cuisinesQuery;
+
+  if (searchOptions.diet.length) {
+    dietQuery = `diet=${searchOptions.diet.join(",")}`;
+  }
+  if (searchOptions.intolerances.length) {
+    intolerancesQuery = `intolerances=${searchOptions.intolerances.join(",")}`;
+  }
+  if (searchOptions.cuisines.length) {
+    cuisinesQuery = `cuisines=${searchOptions.cuisines.join(",")}`;
+  }
+  console.log(dietQuery, intolerancesQuery, cuisinesQuery);
+};
+
+const onReady = function () {
+  const searchOptions = getFromLocalStorage("options", {});
+  console.log(searchOptions);
+  const baseUrl = "https://api.spoonacular.com/recipes/complexSearch";
+  const apiUrl = constructApiUrl(baseUrl, searchOptions);
+};
 
 $("#search-form").on("submit", onSubmit);
 $(document).ready(onReady);
