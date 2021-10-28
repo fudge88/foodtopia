@@ -94,11 +94,20 @@ const constructApiUrl = function (baseUrl, searchOptions) {
   return url;
 };
 
-const onReady = function () {
+const getApiData = async (url) => {
+  const dataResponse = await fetch(url);
+
+  const data = await dataResponse.json();
+  return data;
+};
+
+const onReady = async function () {
   const searchOptions = getFromLocalStorage("options", {});
   console.log(searchOptions);
   const baseUrl = "https://api.spoonacular.com/recipes/complexSearch";
   const apiUrl = constructApiUrl(baseUrl, searchOptions);
+  const data = await getApiData(apiUrl);
+  console.log(data);
 };
 
 $("#search-form").on("submit", onSubmit);
