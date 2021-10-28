@@ -54,6 +54,18 @@ a.navbar-item:hover {
   width: 25rem;
 }
 
+/* recipes page styling */
+
+.servings-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.servings {
+  display: flex;
+}
 /* tablet properties */
 @media screen and (max-width: 1023px) {
   .navbar-menu.is-active {
