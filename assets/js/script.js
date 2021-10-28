@@ -202,7 +202,6 @@ const constructAndAppendSearchOptions = (searchOptions) => {
 //construct search plant
 const constructSearchPlant = (searchOptions) => {
   constructAndAppendSearchbar();
-
   constructAndAppendSearchOptions(searchOptions);
 };
 
@@ -217,12 +216,9 @@ const handleSearch = (event) => {
 
 const HandleLoad = () => {
   constructSearchPlant(searchOptions);
-
+  // const accordions = bulmaAccordion.attach();
   // add a event listener submit to get the input value
   $("#search-form").on("submit", handleSearch);
 };
 
 $(document).ready(HandleLoad);
-
-// Bulma Accordion
-//var accordions = bulmaAccordion.attach();
