@@ -160,6 +160,18 @@ a.navbar-item:hover {
   border-right: var(--green-sheen) solid 1px;
 }
 
+/* recipes page styling */
+
+.servings-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.servings {
+  display: flex;
+}
 /* tablet properties */
 @media screen and (max-width: 1023px) {
   .navbar-menu.is-active {
