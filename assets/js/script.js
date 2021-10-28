@@ -220,7 +220,9 @@ const handleSearch = (event) => {
 
   const searchInputs = getSearchInputs();
   localStorage.setItem("options", JSON.stringify(searchInputs));
-  console.log(searchInputs);
+
+  //change page location
+  window.location.assign("../../menu.html");
 };
 
 // brand hover
