@@ -88,19 +88,19 @@ const constructAndAppendSearchbar = () => {
 const constructAndAppendSearchOptions = (searchOptions) => {
   const constructDietOption = (eachDiet) => {
     return `<label class="checkbox">
-    <input type="checkbox">${eachDiet}</input>
+    <input type="checkbox" data-option="diet" id=${eachDiet}>${eachDiet}</input>
   </label>`;
   };
 
   const constructIntolerancesOption = (eachIntolerance) => {
     return `<label class="checkbox">
-    <input type="checkbox">${eachIntolerance}</input>
+    <input type="checkbox" data-option="intolerances" id=${eachIntolerance}>${eachIntolerance}</input>
   </label>`;
   };
 
   const constructCuisinesOption = (eachCuisine) => {
     return `<label class="checkbox">
-    <input type="checkbox">${eachCuisine}</input>
+    <input type="checkbox" data-option="cuisines" id=${eachCuisine}>${eachCuisine}</input>
   </label>`;
   };
 
@@ -198,8 +198,9 @@ const handleSearch = (event) => {
   event.preventDefault();
 
   const searchInput = $("#search-input").val();
-
+  const checkboxInput = $("input[type=checkbox]:checked");
   console.log(searchInput);
+  console.log(checkboxInput);
 };
 
 // brand hover
