@@ -19,7 +19,10 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   font-family: "Bebas Neue", cursive;
   letter-spacing: 1.5px;
 }
@@ -77,7 +80,12 @@ a.navbar-item:hover {
   border: var(--terra-cotta) solid 3px;
   border-radius: 10px;
 } */
-
+.card-header {
+  box-shadow: none;
+}
+.card-footer {
+  border: none;
+}
 .recipe-title {
   background-color: var(--terra-cotta);
   color: var(--white);
@@ -87,21 +95,29 @@ a.navbar-item:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .green-outline {
   font-size: 1.2rem;
   color: var(--green-sheen);
   border-color: var(--green-sheen);
+  position: relative;
+  left: 20%;
+  transform: translate(-50%, -30%);
 }
+
 .green-outline:hover {
   color: var(--white);
   background-color: var(--green-sheen);
 }
+
 .recipe-footer {
   justify-content: center;
 }
+
 .recipe-img {
   position: relative;
 }
+
 .recipe-img-icon-container {
   display: flex;
   flex-direction: column;
@@ -112,14 +128,31 @@ a.navbar-item:hover {
   top: 0;
   right: 0;
 }
+
 .bookmark-icon,
 .info-icon {
   padding: 1rem;
   color: var(--green-sheen);
 }
+
 .bookmark-icon:hover,
 .info-icon:hover {
   color: var(--terra-cotta);
+}
+
+.nutrition-label {
+  display: flex;
+  flex-direction: row;
+  z-index: 6;
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+  text-align: center;
+  background-color: var(--white);
+  border-radius: 10px;
+}
+.nutrient-col {
+  border-right: var(--green-sheen) solid 1px;
 }
 
 /* tablet properties */
