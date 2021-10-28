@@ -1,5 +1,7 @@
 const API_KEY = "be6ae57f7b8c425994e6a529e04cb682";
 
+const mockData = true;
+
 //construct and render recipe cards
 
 const renderRecipeCards = (recipeData) => {
@@ -7,27 +9,52 @@ const renderRecipeCards = (recipeData) => {
 
   // construct recipe card
   const callback = (each) => {
-    const recipeCard = `<div class="card m-2 recipe-card">
-    <!-- cards image-->
-    <div class="card-image">
-      <figure class="image is-4by3">
-        <img
-          src=${each.image}
-          alt=${each.title}
-        />
-      </figure>
+    const recipeCard = ` <div class="card recipe-card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <div class="nutrition-label">
+            <div class="column nutrient-col">
+              <h6>Time</h6>
+              <p>${each.time}</p>
+            </div>
+            <div class="column nutrient-col">
+              <h6>Servings</h6>
+              <p>${each.servings}</p>
+              <span>low</span>
+            </div>
+            <div class="column nutrient-col">
+              <h6>Calories</h6>
+              <p>${each.calories}</p>
+              <span>low</span>
+            </div>
+          </div>
+          <div class="recipe-img-icon-container">
+            <div class="mr-3 bookmark-icon">
+              <i class="fas fa-bookmark"></i>
+            </div>
+            <div class="mr-3 info-icon">
+              <i class="fas fa-info fa-lg"></i>
+            </div>
+          </div>
+          <img
+            class="recipe-img"
+            src=${each.image}
+            alt=${each.title}
+          />
+        </figure>
+
+        <div class="card-header">
+          <h1 class="card-header-title recipe-title">${each.title}</h1>
+        </div>
+
+        <footer class="card-footer recipe-footer">
+          <button id=${each.id} class="button green-outline is-outlined">
+            View Recipe
+          </button>
+        </footer>
+      </div>
     </div>
-    <!-- title of recipe -->
-    <div class="card-header-title is-centered">
-      <h2 class="is-4">${each.title}</h2>
-    </div>
-    <!-- extra content for recipe -->
-    <div class="card-footer">
-      <div class="card-footer-item"><i class="far fa-clock"> ${each.time}mins</i></div>
-      <div class="card-footer-item"><i class="fas fa-users"> ${each.servings}</i></div>
-      <div class="card-footer-item">${each.calories}Kcal</div>
-    </div>
-  </div>`;
+`;
     $("#card-container").append(recipeCard);
   };
 
@@ -103,11 +130,18 @@ const getApiData = async (url) => {
 
 const onReady = async function () {
   const searchOptions = getFromLocalStorage("options", {});
-  console.log(searchOptions);
+
   const baseUrl = "https://api.spoonacular.com/recipes/complexSearch";
   const apiUrl = constructApiUrl(baseUrl, searchOptions);
   const data = await getApiData(apiUrl);
-  console.log(data);
+
+  if (mockData) {
+    const recipeCardsData = constructRecipeObject(complexSearchApiData);
+    renderRecipeCards(recipeCardsData);
+  } else {
+    const recipeCardsData = constructRecipeObject(data);
+    renderRecipeCards(recipeCardsData);
+  }
 };
 
 $("#search-form").on("submit", onSubmit);
