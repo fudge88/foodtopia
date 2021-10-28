@@ -141,7 +141,7 @@ a.navbar-item:hover {
 }
 
 .nutrition-label {
-  display: flex;
+  display: none;
   flex-direction: row;
   z-index: 6;
   position: absolute;
@@ -151,6 +151,11 @@ a.navbar-item:hover {
   background-color: var(--white);
   border-radius: 10px;
 }
+
+.displayed {
+  display: flex;
+}
+
 .nutrient-col {
   border-right: var(--green-sheen) solid 1px;
 }
