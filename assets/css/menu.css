@@ -45,7 +45,7 @@ h3 {
   font-size: 1rem;
   width: 80%;
   position: relative;
-  left: 50%;
+  /* left: 50%; */
   transform: translate(-50%, -50%);
 }
 .card-footer {
@@ -83,7 +83,7 @@ h3 {
 }
 
 @media only screen and (max-width: 576px) {
-  .carousel-container {
+  .carousel-section {
     display: none;
   }
 
@@ -91,6 +91,6 @@ h3 {
     margin-top: 40px;
     flex-direction: column;
     margin: 30px;
-    max-width: 80%;
+    /* max-width: 80%; */
   }
 }

@@ -24,18 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// logo hover change
-$(document).ready(function () {
-  $(".navbar-logo").hover(
-    function () {
-      $("#logo").attr("src", "../assets/images/logo-hover.PNG");
-    },
-    function () {
-      $("#logo").attr("src", "../assets/images/logo.PNG");
-    }
-  );
-});
-
 const mainContainer = $("#main");
 
 //search options
@@ -202,7 +190,6 @@ const constructAndAppendSearchOptions = (searchOptions) => {
 //construct search plant
 const constructSearchPlant = (searchOptions) => {
   constructAndAppendSearchbar();
-
   constructAndAppendSearchOptions(searchOptions);
 };
 
@@ -215,14 +202,22 @@ const handleSearch = (event) => {
   console.log(searchInput);
 };
 
-const HandleLoad = () => {
-  constructSearchPlant(searchOptions);
-
-  // add a event listener submit to get the input value
-  $("#search-form").on("submit", handleSearch);
+// brand hover
+const hoverIn = () => {
+  $("#logo").attr("src", "../assets/images/logo-hover.PNG");
 };
 
-$(document).ready(HandleLoad);
+const hoverOut = () => {
+  $("#logo").attr("src", "../assets/images/logo.PNG");
+};
 
-// Bulma Accordion
-//var accordions = bulmaAccordion.attach();
+const handleLoad = () => {
+  constructSearchPlant(searchOptions);
+  // const accordions = bulmaAccordion.attach();
+  // add a event listener submit to get the input value
+  $("#search-form").on("submit", handleSearch);
+
+  $(".navbar-logo").hover(hoverIn, hoverOut);
+};
+
+$(document).ready(handleLoad);
