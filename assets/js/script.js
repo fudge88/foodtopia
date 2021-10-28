@@ -29,13 +29,13 @@ const mainContainer = $("#main");
 //search options
 const searchOptions = {
   diet: [
-    "Gluten Free",
+    "Gluten-Free",
     "Ketogenic",
     "Vegetarian",
     "Lacto-Vegetarian",
     "Ovo-Vegetarian",
     "Vegan",
-    "Pescetarian",
+    "Pescatarian",
     "Paleo",
   ],
   intolerances: [
@@ -48,7 +48,7 @@ const searchOptions = {
     "Shellfish",
     "Soy",
     "Sulfite",
-    "Tree Nut",
+    "Tree-Nut",
   ],
   cuisines: [
     "American",
@@ -60,7 +60,6 @@ const searchOptions = {
     "Japanese",
     "Mediterranean",
     "Mexican",
-    "Middle Eastern",
     "Spanish",
     "Thai",
   ],
@@ -192,15 +191,35 @@ const constructSearchPlant = (searchOptions) => {
   constructAndAppendSearchbar();
   constructAndAppendSearchOptions(searchOptions);
 };
-
+const getSearchInputs = () => {
+  const searchInput = $("#search-input").val();
+  const checkboxInput = $("input[type=checkbox]:checked");
+  const options = {
+    query: searchInput,
+    diet: [],
+    intolerances: [],
+    cuisines: [],
+  };
+  const callback = function () {
+    if ($(this).data("option") === "diet") {
+      options.diet.push($(this).attr("id"));
+    }
+    if ($(this).data("option") === "intolerances") {
+      options.intolerances.push($(this).attr("id"));
+    }
+    if ($(this).data("option") === "cuisines") {
+      options.cuisines.push($(this).attr("id"));
+    }
+  };
+  checkboxInput.each(callback);
+  return options;
+};
 //get input value from user
 const handleSearch = (event) => {
   event.preventDefault();
 
-  const searchInput = $("#search-input").val();
-  const checkboxInput = $("input[type=checkbox]:checked");
-  console.log(searchInput);
-  console.log(checkboxInput);
+  const searchInputs = getSearchInputs();
+  console.log(searchInputs);
 };
 
 // brand hover
