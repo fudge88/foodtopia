@@ -36,47 +36,175 @@ $(document).ready(function () {
   );
 });
 
-//search options arrays
-const dieatryOptions = [
-  "Gluten Free",
-  "Ketogenic",
-  "Vegetarian",
-  "Lacto-Vegetarian",
-  "Ovo-Vegetarian",
-  "Vegan",
-  "Pescetarian",
-  "Paleo",
-];
+const mainContainer = $("#main");
 
-const intolerancesOptions = [
-  "Dairy",
-  "Egg",
-  "Gluten",
-  "Peanut",
-  "Seafood",
-  "Sesame",
-  "Shellfish",
-  "Soy",
-  "Sulfite",
-  "Tree Nut",
-];
+//search options
+const searchOptions = {
+  diet: [
+    "Gluten Free",
+    "Ketogenic",
+    "Vegetarian",
+    "Lacto-Vegetarian",
+    "Ovo-Vegetarian",
+    "Vegan",
+    "Pescetarian",
+    "Paleo",
+  ],
+  intolerances: [
+    "Dairy",
+    "Egg",
+    "Gluten",
+    "Peanut",
+    "Seafood",
+    "Sesame",
+    "Shellfish",
+    "Soy",
+    "Sulfite",
+    "Tree Nut",
+  ],
+  cuisines: [
+    "American",
+    "British",
+    "Chinese",
+    "French",
+    "Indian",
+    "Italian",
+    "Japanese",
+    "Mediterranean",
+    "Mexican",
+    "Middle Eastern",
+    "Spanish",
+    "Thai",
+  ],
+};
 
-const cuisinesOptions = [
-  "American",
-  "British",
-  "Chinese",
-  "French",
-  "Indian",
-  "Italian",
-  "Japanese",
-  "Mediterranean",
-  "Mexican",
-  "Middle Eastern",
-  "Spanish",
-  "Thai",
-];
+//construct the search input
+const constructAndAppendSearchbar = () => {
+  const searchBar = `<section>
+  <form id="search-form" class="is-flex is-justify-content-center is-align-content-center">
+    <div class="control">
+      <input id="search-input"
+        class="input is-focused"
+        type="text"
+        placeholder="Search Here"
+      />
+    </div>
+    <button class="button is-primary is-focused">Search</button>
+  </form>
+</section>`;
 
-//construct the search bar
+  mainContainer.append(searchBar);
+};
+
+//construct search options
+const constructAndAppendSearchOptions = (searchOptions) => {
+  const constructDietOption = (eachDiet) => {
+    return `<label class="checkbox">
+    <input type="checkbox">${eachDiet}</input>
+  </label>`;
+  };
+
+  const constructIntolerancesOption = (eachIntolerance) => {
+    return `<label class="checkbox">
+    <input type="checkbox">${eachIntolerance}</input>
+  </label>`;
+  };
+
+  const constructCuisinesOption = (eachCuisine) => {
+    return `<label class="checkbox">
+    <input type="checkbox">${eachCuisine}</input>
+  </label>`;
+  };
+
+  //map through the diet
+  const dietOption = searchOptions.diet.map(constructDietOption).join("");
+
+  //map through the intolerance
+  const intolerancesOption = searchOptions.intolerances
+    .map(constructIntolerancesOption)
+    .join("");
+
+  //map through the cuisines
+  const cuisinesOption = searchOptions.cuisines
+    .map(constructCuisinesOption)
+    .join("");
+
+  const searchOptionsContainer = `<section
+  class="
+    column
+    is-flex
+    is-justify-content-center
+    is-align-content-center
+    is-flex-wrap-wrap
+  "
+>
+  <div class="dropdown is-hoverable">
+    <div class="dropdown-trigger">
+      <button
+        class="button"
+        aria-haspopup="true"
+        aria-controls="dropdown-menu4"
+      >
+        <span>Dietaries</span>
+        <span class="icon is-small">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+      <div class="dropdown-content is-flex is-flex-direction-column"> ${dietOption}
+      </div>
+    </div>
+  </div>
+
+  <div class="dropdown is-hoverable">
+    <div class="dropdown-trigger">
+      <button
+        class="button"
+        aria-haspopup="true"
+        aria-controls="dropdown-menu4"
+      >
+        <span>Intolerances</span>
+        <span class="icon is-small">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+      <div class="dropdown-content is-flex is-flex-direction-column"> ${intolerancesOption}
+      </div>
+    </div>
+  </div>
+
+  <div class="dropdown is-hoverable">
+    <div class="dropdown-trigger">
+      <button
+        class="button"
+        aria-haspopup="true"
+        aria-controls="dropdown-menu4"
+      >
+        <span>Cuisines</span>
+        <span class="icon is-small">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+      <div class="dropdown-content is-flex is-flex-direction-column"> ${cuisinesOption}
+      </div>
+    </div>
+  </div>
+</section>`;
+
+  mainContainer.append(searchOptionsContainer);
+};
+
+//construct search plant
+const constructSearchPlant = (searchOptions) => {
+  constructAndAppendSearchbar();
+
+  constructAndAppendSearchOptions(searchOptions);
+};
 
 //get input value from user
 const handleSearch = (event) => {
@@ -87,8 +215,14 @@ const handleSearch = (event) => {
   console.log(searchInput);
 };
 
-// add a event listener submit to get the input value
-$("#search-form").on("submit", handleSearch);
+const HandleLoad = () => {
+  constructSearchPlant(searchOptions);
+
+  // add a event listener submit to get the input value
+  $("#search-form").on("submit", handleSearch);
+};
+
+$(document).ready(HandleLoad);
 
 // Bulma Accordion
 //var accordions = bulmaAccordion.attach();
