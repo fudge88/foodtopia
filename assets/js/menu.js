@@ -1,4 +1,7 @@
+const API_KEY = "be6ae57f7b8c425994e6a529e04cb682";
+
 //construct and render recipe cards
+
 const renderRecipeCards = (recipeData) => {
   $("#card-container").empty();
 
@@ -73,6 +76,7 @@ const getFromLocalStorage = function (key, defaultValue) {
 };
 
 const constructApiUrl = function (baseUrl, searchOptions) {
+  const searchQuery = searchOptions.query;
   let dietQuery;
   let intolerancesQuery;
   let cuisinesQuery;
@@ -86,7 +90,8 @@ const constructApiUrl = function (baseUrl, searchOptions) {
   if (searchOptions.cuisines.length) {
     cuisinesQuery = `cuisines=${searchOptions.cuisines.join(",")}`;
   }
-  console.log(dietQuery, intolerancesQuery, cuisinesQuery);
+  const url = `${baseUrl}?query=${searchQuery}&${dietQuery}&${intolerancesQuery}&${cuisinesQuery}&addRecipeNutrition=true&apiKey=${API_KEY}&number=10`;
+  return url;
 };
 
 const onReady = function () {
