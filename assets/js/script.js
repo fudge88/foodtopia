@@ -219,6 +219,7 @@ const handleSearch = (event) => {
   event.preventDefault();
 
   const searchInputs = getSearchInputs();
+  localStorage.setItem("options", JSON.stringify(searchInputs));
   console.log(searchInputs);
 };
 
