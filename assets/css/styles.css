@@ -109,13 +109,12 @@ a.navbar-item:hover {
 }
 
 .small-screen-button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: var(--green-sheen);
   background: transparent;
 }
-
+.recipe-img-icon-container button {
+  border: none;
+  box-shadow: none;
+}
 .add-to-favourites:hover,
 .green-outline:hover {
   color: var(--white);
