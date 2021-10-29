@@ -153,11 +153,11 @@ a.navbar-item:hover {
 
 .nutrition-label {
   display: none;
+  top: 5%;
   flex-direction: row;
   z-index: 6;
   position: absolute;
-  bottom: 2rem;
-  left: 1rem;
+  left: 12%;
   text-align: center;
   background-color: var(--white);
   border-radius: 10px;

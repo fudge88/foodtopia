@@ -244,3 +244,13 @@ const handleLoad = () => {
 };
 
 $(document).ready(handleLoad);
+$(".info-icon").hover(
+  function () {
+    $(".nutrition-label").attr("class", "nutrition-label displayed");
+    console.log("hey");
+  },
+  function () {
+    $(".nutrition-label").removeClass("displayed");
+    console.log("bye");
+  }
+);
