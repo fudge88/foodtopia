@@ -63,6 +63,7 @@ a.navbar-item:hover {
   flex-wrap: wrap;
   justify-content: space-around;
   flex-direction: row;
+  background-color: var(--deep-champagne);
 }
 
 .card {
@@ -95,7 +96,9 @@ a.navbar-item:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+.recipe-img {
+  position: relative;
+}
 .green-outline {
   font-size: 1.2rem;
   color: var(--green-sheen);
@@ -105,7 +108,15 @@ a.navbar-item:hover {
   transform: translate(-50%, -30%);
 }
 
-.add-to-favourites,
+.small-screen-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--green-sheen);
+  background: transparent;
+}
+
+.add-to-favourites:hover,
 .green-outline:hover {
   color: var(--white);
   background-color: var(--green-sheen);
@@ -166,30 +177,60 @@ a.navbar-item:hover {
 .servings-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1rem;
 }
-
-.servings {
-  display: flex;
+.servings-tab {
+  border: var(--white) solid 1px;
+  border-radius: 10px 10px 0 0;
+}
+.servings-tab:active {
+  color: var(--terra-cotta);
+  border-bottom: 0;
+}
+.servings-tab a {
+  text-align: center;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  color: black;
 }
 
-.add-to-favourites {
-  color: var(--green-sheen);
-  border-color: var(--green-sheen);
-  background-color: var(--white);
-  margin: 1rem;
-  font-size: 1rem;
+.recipe-info-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.recipe-info-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-info,
+.servings {
+  display: flex;
+  justify-content: center;
 }
 
 .container {
   margin: 2rem;
 }
-
-.subtitle {
+.desc-container {
+  background-color: var(--deep-champagne);
+  padding: 1rem;
 }
 
-.servings-container {
+.method-container {
+  background-color: var(--deep-champagne);
+  padding: 1rem;
+}
+
+.ingredients-container {
+  background-color: var(--terra-cotta);
+  padding: 1rem;
+}
+
+.prep-time-heading {
+  font-size: 2rem;
 }
 
 /* tablet properties */
@@ -223,10 +264,16 @@ a.navbar-item:hover {
   .add-to-favourites {
     display: none;
   }
+  .prep-time-heading {
+    font-size: 1.5rem;
+  }
+  .recipe-info-container {
+    flex-direction: column;
+  }
 }
 
 @media screen and (min-width: 576px) {
-  .small-screen-button {
+  /* .small-screen-button {
     display: none;
-  }
+  } */
 }
