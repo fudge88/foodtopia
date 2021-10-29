@@ -179,9 +179,21 @@ a.navbar-item:hover {
   justify-content: space-between;
   padding: 1rem;
 }
+.servings-tab {
+  border: var(--white) solid 1px;
+  border-radius: 10px 10px 0 0;
+}
+.servings-tab:active {
+  color: var(--terra-cotta);
+  border-bottom: 0;
+}
+.servings-tab a {
+  text-decoration: none;
+}
 
 .servings {
   display: flex;
+  justify-content: center;
 }
 
 .add-to-favourites {
@@ -194,6 +206,14 @@ a.navbar-item:hover {
 
 .container {
   margin: 2rem;
+}
+.ingredients-container {
+  background-color: var(--green-sheen);
+  padding: 1rem;
+}
+
+.prep-time-heading {
+  font-size: 2rem;
 }
 
 /* tablet properties */

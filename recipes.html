@@ -75,7 +75,7 @@
         <div class="tile is-vertical is-8">
           <div class="tile">
             <div class="tile is-parent is-vertical">
-              <article class="tile is-child notification is-primary">
+              <article class="tile is-child notification">
                 <figure class="image is-4by3">
                   <img
                     class="recipe-img"
@@ -86,15 +86,13 @@
                     <i class="bookmark-icon fas fa-bookmark fa-lg"></i>
                   </button>
                 </figure>
+                <div class="card-header">
+                  <h1 class="card-header-title recipe-title">Recipe Name</h1>
+                </div>
                 <footer class="card-footer">
-                  <a href="#" class="card-footer-item"
-                    ><i class="far fa-user"> 4</i></a
-                  >
-
-                  <a href="#" class="card-footer-item"
-                    ><i class="far fa-clock"> 30mins</i></a
-                  >
-
+                  <div class="card-footer-item">
+                    <h1 class="prep-time-heading">Time to Prepare 30mins</i></h1>
+                  </div>
                   <button class="add-to-favourites button is-outlined">
                     Add to Favourites
                   </button>
@@ -108,28 +106,33 @@
           </div>
         </div>
         <div class="tile is-parent">
-          <article class="tile is-child notification is-success">
-            <h2 class="subtitle">Select Servings</h2>
+          <article class="tile is-child notification ingredients-container">
+            <h2 class="has-text-centered">Select Servings Quantity</h2>
             <div class="servings-container">
-              <div class="servings">
+              <div class="servings servings-tab is-gapless">
                 <a href="#" class="card-footer-item"
-                  ><i class="far fa-user"> 20</i></a
+                  ><i class="fas fa-user"> 4</i></a
                 >
               </div>
-              <div class="servings">
+              <div class="servings servings-tab is-gapless">
                 <a href="#" class="card-footer-item"
-                  ><i class="far fa-user"> 50</i></a
+                  ><i class="fas fa-user"> 20</i></a
                 >
               </div>
-              <div class="servings">
+              <div class="servings is-gapless servings-tab">
                 <a href="#" class="card-footer-item"
-                  ><i class="far fa-user"> 100</i></a
+                  ><i class="fas fa-user"> 50</i></a
+                >
+              </div>
+              <div class="servings servings-tab is-gapless">
+                <a href="#" class="card-footer-item"
+                  ><i class="fas fa-user"> 100</i></a
                 >
               </div>
             </div>
 
             <div class="content">
-              <h2>Ingredients</h2>
+              <h2 class="has-text-centered">Ingredients</h2>
 
               <div class="content">
                 <ul>
