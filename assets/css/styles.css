@@ -105,6 +105,7 @@ a.navbar-item:hover {
   transform: translate(-50%, -30%);
 }
 
+.add-to-favourites,
 .green-outline:hover {
   color: var(--white);
   background-color: var(--green-sheen);
@@ -174,21 +175,21 @@ a.navbar-item:hover {
 }
 
 .add-to-favourites {
-  border: none;
-  color: var(--terra-cotta);
-  text-align: center;
-  display: inline-block;
+  color: var(--green-sheen);
+  border-color: var(--green-sheen);
+  background-color: var(--white);
   margin: 1rem;
-  border-radius: 10px;
-  padding: 0.5rem;
-}
-
-.add-to-favourites:hover {
-  color: var(--independence);
+  font-size: 1rem;
 }
 
 .container {
   margin: 2rem;
+}
+
+.subtitle {
+}
+
+.servings-container {
 }
 
 /* tablet properties */
@@ -218,5 +219,14 @@ a.navbar-item:hover {
   .card {
     max-width: 16rem;
     margin-top: 2rem;
+  }
+  .add-to-favourites {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .small-screen-button {
+    display: none;
   }
 }
