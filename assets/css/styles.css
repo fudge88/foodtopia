@@ -95,7 +95,9 @@ a.navbar-item:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+.recipe-img {
+  position: relative;
+}
 .green-outline {
   font-size: 1.2rem;
   color: var(--green-sheen);
@@ -105,7 +107,15 @@ a.navbar-item:hover {
   transform: translate(-50%, -30%);
 }
 
-.add-to-favourites,
+.small-screen-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--green-sheen);
+  background: transparent;
+}
+
+.add-to-favourites:hover,
 .green-outline:hover {
   color: var(--white);
   background-color: var(--green-sheen);
@@ -184,12 +194,6 @@ a.navbar-item:hover {
 
 .container {
   margin: 2rem;
-}
-
-.subtitle {
-}
-
-.servings-container {
 }
 
 /* tablet properties */
