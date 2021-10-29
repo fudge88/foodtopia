@@ -236,7 +236,7 @@ const hoverOut = () => {
 
 const handleLoad = () => {
   constructSearchPlant(searchOptions);
-  // const accordions = bulmaAccordion.attach();
+  const accordions = bulmaAccordion.attach();
   // add a event listener submit to get the input value
   $("#search-form").on("submit", handleSearch);
 

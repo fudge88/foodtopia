@@ -49,14 +49,57 @@ a.navbar-item:hover {
   color: var(--terra-cotta);
 }
 
-.main {
+/* .main {
   margin: 10rem 3rem;
 }
 
 .input {
   width: 25rem;
+} */
+
+/* accordion styling */
+.accordions .accordion .accordion-header {
+  background-color: var(--deep-champagne);
+  justify-content: center;
 }
 
+/* test */
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+.searchTerm {
+  width: 100%;
+  border: 3px solid var(--terra-cotta);
+  border-right: none;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
+}
+
+.searchTerm:focus {
+  color: var(--terra-cotta);
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: var(--terra-cotta) 1px solid;
+  background: var(--terra-cotta);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 /* cards */
 .card-container {
   display: flex;
