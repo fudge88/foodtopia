@@ -75,7 +75,7 @@
         <div class="tile is-vertical is-8">
           <div class="tile">
             <div class="tile is-parent is-vertical">
-              <article class="tile is-child notification">
+              <article class="tile is-child">
                 <figure class="image is-4by3">
                   <img
                     class="recipe-img"
@@ -83,30 +83,51 @@
                     alt="placeholder image"
                   />
                   <button class="small-screen-button button is-outlined">
-                    <i class="bookmark-icon fas fa-bookmark fa-lg"></i>
+                    <i class="mt-4 bookmark-icon fas fa-bookmark fa-2x"></i>
                   </button>
                 </figure>
                 <div class="card-header">
                   <h1 class="card-header-title recipe-title">Recipe Name</h1>
                 </div>
-                <footer class="card-footer">
-                  <div class="card-footer-item">
-                    <h1 class="prep-time-heading">Time to Prepare 30mins</i></h1>
+                <footer class="card-footer recipe-info-container">
+                  
+                  <div class="card-footer-item  recipe-info-box">
+                    <p>COOK</p>
+                    <h2 class="prep-time-heading">30mins</h2>
                   </div>
-                  <button class="add-to-favourites button is-outlined">
-                    Add to Favourites
-                  </button>
+                  <div class="card-footer-item recipe-info-box">
+                    <p>SERVES</p>
+                    <h2 class="prep-time-heading">4</h2>
+                  </div>
+                  
+                  <div class="card-footer-item recipe-info-box">
+                    <p>DIFFICULTY</p>
+                    <h2 class="prep-time-heading">Low</i></h2>
+                  </div>
+                  <div class="card-footer-item recipe-info-box">
+                    <p>ORIGIN</p>
+                    <h2 class="prep-time-heading">Spain</i></h2>
+                  </div>
                 </footer>
               </article>
-              <article class="tile is-child notification is-warning">
-                <h2>Method</h2>
-                <p class="subtitle">Bottom tile</p>
+              <article class="tile is-child desc-container">
+                <h2 class="title">Description</h2>
+                <p class="subtitle">Short description of dish/recipe</p>
               </article>
             </div>
           </div>
+          <div class="tile is-parent">
+            <article class="tile is-child method-container">
+              <h2 class="title">Method</h2>
+                <p class="subtitle">method of cooking/steps</p>
+              <div class="content">
+                <!-- Content -->
+              </div>
+            </article>
+          </div>
         </div>
         <div class="tile is-parent">
-          <article class="tile is-child notification ingredients-container">
+          <article class="tile is-child ingredients-container">
             <h2 class="has-text-centered">Select Servings Quantity</h2>
             <div class="servings-container">
               <div class="servings servings-tab is-gapless">
@@ -131,8 +152,8 @@
               </div>
             </div>
 
-            <div class="content">
-              <h2 class="has-text-centered">Ingredients</h2>
+            <div class="content mt-4">
+              <h2 class="has-text-centered title">Ingredients</h2>
 
               <div class="content">
                 <ul>
