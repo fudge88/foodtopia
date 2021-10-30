@@ -9,7 +9,7 @@ const renderRecipeCards = (recipeData) => {
 
   // construct recipe card
   const callback = (each) => {
-    const recipeCard = ` <div class="card recipe-card">
+    let recipeCard = ` <div class="card recipe-card">
       <div class="card-image">
         <figure class="image is-4by3">
           <div class="nutrition-label">
@@ -55,6 +55,9 @@ const renderRecipeCards = (recipeData) => {
       </div>
     </div>
 `;
+    recipeCard = $(recipeCard);
+
+    recipeCard.on("click", handleViewRecipeDetails);
 
     $("#card-container").append(recipeCard);
   };
@@ -91,6 +94,16 @@ const onSubmit = function (event) {
 
   const recipeCardsData = constructRecipeObject(complexSearchApiData);
   renderRecipeCards(recipeCardsData);
+};
+
+const handleViewRecipeDetails = (event) => {
+  const target = $(event.target);
+  if (target.is("button")) {
+    const recipeId = target.attr("Id");
+    console.log(recipeId);
+    // add recipe id value to local storage
+    localStorage.setItem("recipeId", JSON.stringify(recipeId));
+  }
 };
 
 const getFromLocalStorage = function (key, defaultValue) {

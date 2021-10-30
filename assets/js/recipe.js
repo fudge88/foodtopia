@@ -85,13 +85,17 @@ const getCostRange = (data) => {
 };
 
 //get popularity score
-const getHealthScore = (data) => {
+const getPopularityScore = (data) => {
   if (data.veryPopular) {
     return "high";
   } else {
     return "low";
   }
 };
+
+// add a function to construct API URL
+
+const constructApiUrl = (searchQuery) => {};
 
 //render cooking methods card
 const renderCookingMethodCard = (data) => {
