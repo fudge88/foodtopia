@@ -55,6 +55,7 @@ const renderRecipeCards = (recipeData) => {
       </div>
     </div>
 `;
+
     $("#card-container").append(recipeCard);
   };
 
@@ -155,3 +156,11 @@ $(".info-icon").hover(
     $(".nutrition-label").removeClass("displayed");
   }
 );
+
+const callback = (event) => {
+  const target = event.target;
+  console.log(target);
+};
+
+//add event listener on recipe container
+$(".recipe-card").on("click", callback);
