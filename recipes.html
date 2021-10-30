@@ -74,9 +74,9 @@
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-8">
           <div class="tile">
-            <div class="tile is-parent is-vertical">
-              <article class="tile is-child">
-                <figure class="image is-4by3">
+            <div class="tile is-parent is-vertical" id="image-recipe-container">
+              <!-- <article class="tile is-child"> -->
+              <!-- <figure class="image is-4by3">
                   <img
                     class="recipe-img"
                     src="https://bulma.io/images/placeholders/1280x960.png"
@@ -116,9 +116,9 @@
                     <p>0.3g</p>
                     <span>med</span>
                   </div>
-                </div>
-                
-                <div class="card-header">
+                </div> -->
+
+              <!-- <div class="card-header">
                   <h1 class="card-header-title recipe-title">Recipe Name</h1>
                 </div>
                 <footer class="card-footer recipe-info-container">
@@ -140,22 +140,20 @@
                     <p>ORIGIN</p>
                     <h2 class="prep-time-heading">Spain</i></h2>
                   </div>
-                </footer>
-              </article>
+                </footer> -->
+              <!-- </article>
               <article class="tile is-child desc-container">
                 <h2 class="title">Description</h2>
                 <p class="subtitle">Short description of dish/recipe</p>
-              </article>
+              </article> -->
             </div>
           </div>
-          <div class="tile is-parent">
-            <article class="tile is-child method-container">
+          <div class="tile is-parent" id="method-container">
+            <!-- <article class="tile is-child method-container">
               <h2 class="title">Method</h2>
-                <p class="subtitle">method of cooking/steps</p>
-              <div class="content">
-                <!-- Content -->
-              </div>
-            </article>
+              <p class="subtitle">Method of cooking/steps</p>
+              <div class="content"></div>
+            </article> -->
           </div>
         </div>
         <div class="tile is-parent">
@@ -184,7 +182,7 @@
               </div>
             </div>
 
-            <div class="content mt-4">
+            <div class="content mt-4" id="ingredients-container">
               <h2 class="has-text-centered title">Ingredients</h2>
 
               <div class="content">
@@ -193,7 +191,6 @@
                   <li>bread</li>
                   <li>sugar</li>
                 </ul>
-                <!-- Content -->
               </div>
             </div>
           </article>
@@ -225,5 +222,6 @@
 
     <!-- JS Script link -->
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/recipes.js"></script>
   </body>
 </html>
