@@ -3007,6 +3007,15 @@ const renderCookingMethodCard = (data) => {
   $("#method-container").append(cookingMethodsCard);
 };
 
+//render ingredients card
+const renderIngredientsCard = (data) => {
+  const constructIngredientItem = (each) => {
+    const ingredientItem = `<li>${each.ingredientName} ${each.quantity} ${each.quantityUnit}</li>`;
+    $("#ingredients-container").append(ingredientItem);
+  };
+  data.forEach(constructIngredientItem);
+};
+
 //transform recipe info data from API
 const constructRecipeObject = (data) => {
   return {
@@ -3043,6 +3052,16 @@ const constructCookingMethodObject = (data) => {
 };
 
 //transform ingredients data from the API
+const constructIngredientsObject = (data) => {
+  const callback = (each) => {
+    return {
+      ingredientName: each.name,
+      quantity: each.measures.metric.amount,
+      quantityUnit: each.measures.metric.unitShort,
+    };
+  };
+  return data.extendedIngredients.map(callback);
+};
 
 const onLoad = () => {
   //get recipe info and render recipe image card
@@ -3052,6 +3071,10 @@ const onLoad = () => {
   //get cooking methods info and render cooking method card
   const cookingMethodsData = constructCookingMethodObject(mockData);
   renderCookingMethodCard(cookingMethodsData);
+
+  //get ingredients info and render ingredients list
+  const ingredientsData = constructIngredientsObject(mockData);
+  renderIngredientsCard(ingredientsData);
 };
 
 $(document).ready(onLoad);
