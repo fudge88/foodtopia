@@ -56,22 +56,41 @@ const renderImageRecipeCard = (data) => {
         <h2 class="prep-time-heading">${data.serves}</h2>
       </div>
       <div class="card-footer-item recipe-info-box">
-        <p>DIFFICULTY</p>
-        <h2 class="prep-time-heading">Low</h2>
+        <p>Cost</p>
+        <h2 class="prep-time-heading">${getCostRange(data)}</h2>
       </div>
       <div class="card-footer-item recipe-info-box">
-        <p>ORIGIN</p>
-        <h2 class="prep-time-heading">Spain</h2>
+        <p>Popularity</p>
+        <h2 class="prep-time-heading">${getHealthScore(data)}</h2>
       </div>
     </footer>
   </article>
   <article class="tile is-child desc-container">
-    <h2 class="title">Description</h2>
+    <h2 class="title">Wine Pairing?</h2>
     <p class="subtitle">${data.summary}</p>
   </article>`;
 
+  getCostRange(data);
   //append image card and nutritional info on icon hover
   $("#image-recipe-container").append(imageRecipeCard);
+};
+
+//get cost range
+const getCostRange = (data) => {
+  if (data.cheap) {
+    return "cheap";
+  } else {
+    return "admirable";
+  }
+};
+
+//get popularity score
+const getHealthScore = (data) => {
+  if (data.veryPopular) {
+    return "high";
+  } else {
+    return "low";
+  }
 };
 
 //render cooking methods card
@@ -123,7 +142,7 @@ const constructRecipeObject = (data) => {
     title: data.title,
     time: data.readyInMinutes,
     serves: data.servings,
-    summary: data.summary,
+    summary: data.winePairing.pairingText,
 
     //calories
     energy: energy?.amount || "N/A",
