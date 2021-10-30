@@ -272,7 +272,7 @@ const mockRecipe = {
   nutrition: {
     nutrients: [
       {
-        name: "Caloriesx",
+        name: "Calories",
         title: "Calories",
         amount: 364.64,
         unit: "kcal",

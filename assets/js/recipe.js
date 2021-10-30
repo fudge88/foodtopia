@@ -25,22 +25,22 @@ const renderImageRecipeCard = (data) => {
       <div class="column nutrient-col">
         <h6>Fat</h6>
         <p>${data.fat}${data.fatUnit}</p>
-        <span>${data.fatPerDay}</span>
+        <span>${data.fatPerDay}%</span>
       </div>
       <div class="column nutrient-col">
         <h6>Saturates</h6>
         <p>${data.saturates}${data.saturatesUnit}</p>
-        <span>${data.saturatesPerDay}</span>
+        <span>${data.saturatesPerDay}%</span>
       </div>
       <div class="column nutrient-col">
         <h6>Sugars</h6>
         <p>${data.sugars}${data.sugarsUnit}</p>
-        <span>${data.sugarsPerDay}</span>
+        <span>${data.sugarsPerDay}%</span>
       </div>
       <div class="column">
         <h6>Salt</h6>
         <p>${data.salt}${data.saltUnit}</p>
-        <span>${data.saltPerDay}</span>
+        <span>${data.saltPerDay}%</span>
       </div>
     </div>
     <div class="card-header">
@@ -102,6 +102,7 @@ const renderIngredientsCard = (data) => {
   data.forEach(constructIngredientItem);
 };
 
+//get nutrient key name from nutrients array
 const getNutrient = (arr, key) => {
   return arr.find((each) => {
     return each.name === key;
@@ -113,6 +114,9 @@ const constructRecipeObject = (data) => {
   const nutrients = data?.nutrition?.nutrients || [];
   const energy = getNutrient(nutrients, "Calories");
   const fat = getNutrient(nutrients, "Fat");
+  const saturates = getNutrient(nutrients, "Saturated Fat");
+  const sugars = getNutrient(nutrients, "Sugar");
+  const salt = getNutrient(nutrients, "Sodium");
 
   return {
     image: data.image,
@@ -120,19 +124,29 @@ const constructRecipeObject = (data) => {
     time: data.readyInMinutes,
     serves: data.servings,
     summary: data.summary,
+
+    //calories
     energy: energy?.amount || "N/A",
+
+    //fats
     fat: fat?.amount || "N/A",
-    // fatPerDay: data.nutrition.nutrients[1].percentOfDailyNeeds,
-    // fatUnit: data.nutrition.nutrients[1].unit,
-    // saturates: data.nutrition.nutrients[2].amount,
-    // saturatesPerDay: data.nutrition.nutrients[2].percentOfDailyNeeds,
-    // saturatesUnit: data.nutrition.nutrients[2].unit,
-    // sugars: data.nutrition.nutrients[5].amount,
-    // sugarsPerDay: data.nutrition.nutrients[5].percentOfDailyNeeds,
-    // sugarsUnit: data.nutrition.nutrients[5].unit,
-    // salt: data.nutrition.nutrients[7].amount,
-    // saltPerDay: data.nutrition.nutrients[7].percentOfDailyNeeds,
-    // saltUnit: data.nutrition.nutrients[7].unit,
+    fatPerDay: fat?.percentOfDailyNeeds || "N/A",
+    fatUnit: fat?.unit,
+
+    //saturated fats
+    saturates: saturates?.amount || "N/A",
+    saturatesPerDay: saturates?.percentOfDailyNeeds || "N/A",
+    saturatesUnit: saturates?.unit,
+
+    //sugar
+    sugars: sugars?.amount || "N/A",
+    sugarsPerDay: sugars?.percentOfDailyNeeds || "N/A",
+    sugarsUnit: sugars?.unit,
+
+    //salt
+    salt: salt?.amount || "N/A",
+    saltPerDay: salt?.percentOfDailyNeeds || "N/A",
+    saltUnit: salt?.unit,
   };
 };
 
