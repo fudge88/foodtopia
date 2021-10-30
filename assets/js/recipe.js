@@ -1,13 +1,12 @@
 //render image card
 const renderImageRecipeCard = (data) => {
   //construct image card
-
   const imageRecipeCard = `<article class="tile is-child">
     <figure class="image is-4by3">
       <img
         class="recipe-img"
         src=${data.image}
-        alt="${data.title}
+        alt=${data.title}
       />
       <div class="recipe-img-icon-container">
         <button class="small-screen-button">
@@ -58,11 +57,11 @@ const renderImageRecipeCard = (data) => {
       </div>
       <div class="card-footer-item recipe-info-box">
         <p>DIFFICULTY</p>
-        <h2 class="prep-time-heading">Low</i></h2>
+        <h2 class="prep-time-heading">Low</h2>
       </div>
       <div class="card-footer-item recipe-info-box">
         <p>ORIGIN</p>
-        <h2 class="prep-time-heading">Spain</i></h2>
+        <h2 class="prep-time-heading">Spain</h2>
       </div>
     </footer>
   </article>
@@ -78,16 +77,15 @@ const renderImageRecipeCard = (data) => {
 //render cooking methods card
 const renderCookingMethodCard = (data) => {
   //construct cooking methods card
-  const cookingMethodsCard = `<article class="tile is-child method-container">
+  const cookingMethodsCard = $(`<article class="tile is-child method-container">
     <h2 class="title">Method</h2>
     <p class="subtitle">Method of cooking/steps</p>
-  </article>`;
+  </article>`);
 
   //construct each cooking method container
   const constructEachCookingMethod = (each) => {
     const cookingMethod = `<div class="content">${each.stepNumber}. ${each.stepInstruction}</div>`;
     $(cookingMethod).appendTo(cookingMethodsCard);
-    console.log(cookingMethod);
   };
 
   data.forEach(constructEachCookingMethod);
@@ -104,27 +102,37 @@ const renderIngredientsCard = (data) => {
   data.forEach(constructIngredientItem);
 };
 
+const getNutrient = (arr, key) => {
+  return arr.find((each) => {
+    return each.name === key;
+  });
+};
+
 //transform recipe info data from API
 const constructRecipeObject = (data) => {
+  const nutrients = data?.nutrition?.nutrients || [];
+  const energy = getNutrient(nutrients, "Calories");
+  const fat = getNutrient(nutrients, "Fat");
+
   return {
     image: data.image,
     title: data.title,
     time: data.readyInMinutes,
     serves: data.servings,
     summary: data.summary,
-    energy: data.nutrition.nutrients[0].amount,
-    fat: data.nutrition.nutrients[1].amount,
-    fatPerDay: data.nutrition.nutrients[1].percentOfDailyNeeds,
-    fatUnit: data.nutrition.nutrients[1].unit,
-    saturates: data.nutrition.nutrients[2].amount,
-    saturatesPerDay: data.nutrition.nutrients[2].percentOfDailyNeeds,
-    saturatesUnit: data.nutrition.nutrients[2].unit,
-    sugars: data.nutrition.nutrients[5].amount,
-    sugarsPerDay: data.nutrition.nutrients[5].percentOfDailyNeeds,
-    sugarsUnit: data.nutrition.nutrients[5].unit,
-    salt: data.nutrition.nutrients[7].amount,
-    saltPerDay: data.nutrition.nutrients[7].percentOfDailyNeeds,
-    saltUnit: data.nutrition.nutrients[7].unit,
+    energy: energy?.amount || "N/A",
+    fat: fat?.amount || "N/A",
+    // fatPerDay: data.nutrition.nutrients[1].percentOfDailyNeeds,
+    // fatUnit: data.nutrition.nutrients[1].unit,
+    // saturates: data.nutrition.nutrients[2].amount,
+    // saturatesPerDay: data.nutrition.nutrients[2].percentOfDailyNeeds,
+    // saturatesUnit: data.nutrition.nutrients[2].unit,
+    // sugars: data.nutrition.nutrients[5].amount,
+    // sugarsPerDay: data.nutrition.nutrients[5].percentOfDailyNeeds,
+    // sugarsUnit: data.nutrition.nutrients[5].unit,
+    // salt: data.nutrition.nutrients[7].amount,
+    // saltPerDay: data.nutrition.nutrients[7].percentOfDailyNeeds,
+    // saltUnit: data.nutrition.nutrients[7].unit,
   };
 };
 
