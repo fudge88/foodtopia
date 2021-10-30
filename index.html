@@ -81,44 +81,18 @@
       
       <div class="main-container">
         <!-- search bar goes here -->
-        <form>
+        <form id="search-form">
           <div class="control">
             <div class="wrap">
               <div class="search">
-                 <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                 <input id = "search-input" type="text" class="searchTerm" placeholder="What are you looking for?">
                  <button type="submit" class="searchButton">
                    <i class="fa fa-search"></i>
                 </button>
               </div>
            </div>
         </form>
-        <section class="accordions">
-          <article class="accordion is-active">
-            <div class="accordion-header toggle">
-              <p>Choose your diet...</p>
-            </div>
-            <div class="accordion-body">
-              <div class="accordion-content">facilisis sodales sem.</div>
-            </div>
-          </article>
-          <article class="accordion">
-            <div class="accordion-header">
-              <p>Any Intolerances?...</p>
-              <button class="toggle" aria-label="toggle"></button>
-            </div>
-            <div class="accordion-body">
-              <div class="accordion-content">Lorem ipsum dolor sit amet</div>
-            </div>
-          </article>
-          <article class="accordion">
-            <div class="accordion-header">
-              <p>Choose your Cuisine...</p>
-              <button class="toggle" aria-label="toggle"></button>
-            </div>
-            <div class="accordion-body">
-              <div class="accordion-content">Lorem ipsum dolor sit amet</div>
-            </div>
-          </article>
+        <section id="accordions" class="accordions">
         </section>
       </div>
     </main>
@@ -146,7 +120,7 @@
     <!-- JS Script link -->
     <script src="https://cdn.jsdelivr.net/npm/bulma-accordion@2.0.1/dist/js/bulma-accordion.min.js"></script>
     <script src="./mockData/complexSearchData.js"></script>
+    <script src="./assets/js/generic-script.js"></script>
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/menu.js"></script>
   </body>
 </html>

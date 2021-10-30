@@ -1,9 +1,8 @@
-const API_KEY = "be6ae57f7b8c425994e6a529e04cb682";
+const API_KEY = "4731ee74aad14fa38024f70a3abacc85";
 
-const mockData = true;
+const mockData = false;
 
 //construct and render recipe cards
-
 const renderRecipeCards = (recipeData) => {
   $("#card-container").empty();
 
