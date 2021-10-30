@@ -61,7 +61,7 @@ const renderImageRecipeCard = (data) => {
       </div>
       <div class="card-footer-item recipe-info-box">
         <p>Popularity</p>
-        <h2 class="prep-time-heading">${getHealthScore(data)}</h2>
+        <h2 class="prep-time-heading">${getPopularityScore(data)}</h2>
       </div>
     </footer>
   </article>
@@ -208,6 +208,18 @@ const onLoad = () => {
   //get ingredients info and render ingredients list
   const ingredientsData = constructIngredientsObject(mockRecipe);
   renderIngredientsCard(ingredientsData);
+
+  //get recipe id from local storage
+  const recipeIdValue = getFromLocalStorage("recipeId");
+
+  if (recipeIdValue) {
+    //build url API
+    const apiUrl = `https://api.spoonacular.com/recipes/${recipeIdValue}/information?includeNutrition=true&apiKey=${API_KEY}`;
+
+    //fetch data
+    const recipeData = getApiData(apiUrl);
+  }
+  console.log(recipeIdValue);
 };
 
 $(document).ready(onLoad);

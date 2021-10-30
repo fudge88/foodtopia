@@ -1,5 +1,14 @@
-// taken from Bulma for coss and burger icon on smaller screen
+const API_KEY = "4731ee74aad14fa38024f70a3abacc85";
 
+//fetch API data
+const getApiData = async (url) => {
+  const dataResponse = await fetch(url);
+
+  const data = await dataResponse.json();
+  return data;
+};
+
+// taken from Bulma for coss and burger icon on smaller screen
 document.addEventListener("DOMContentLoaded", () => {
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(
@@ -31,4 +40,14 @@ const hoverIn = () => {
 
 const hoverOut = () => {
   $("#logo").attr("src", "../assets/images/logo.PNG");
+};
+
+const getFromLocalStorage = function (key, defaultValue) {
+  const localStorageData = JSON.parse(localStorage.getItem(key));
+
+  if (!localStorageData) {
+    return defaultValue;
+  } else {
+    return localStorageData;
+  }
 };

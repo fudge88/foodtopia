@@ -1,5 +1,3 @@
-const API_KEY = "4731ee74aad14fa38024f70a3abacc85";
-
 const mockData = false;
 
 //construct and render recipe cards
@@ -100,18 +98,12 @@ const handleViewRecipeDetails = (event) => {
   if (target.is("button")) {
     const recipeId = target.attr("Id");
     console.log(recipeId);
+
     // add recipe id value to local storage
     localStorage.setItem("recipeId", JSON.stringify(recipeId));
-  }
-};
 
-const getFromLocalStorage = function (key, defaultValue) {
-  const localStorageData = JSON.parse(localStorage.getItem(key));
-
-  if (!localStorageData) {
-    return defaultValue;
-  } else {
-    return localStorageData;
+    //change location to recipe html
+    window.location.assign("../../recipes.html");
   }
 };
 
@@ -132,13 +124,6 @@ const constructApiUrl = function (baseUrl, searchOptions) {
   }
   const url = `${baseUrl}?query=${searchQuery}&${dietQuery}&${intolerancesQuery}&${cuisinesQuery}&addRecipeNutrition=true&apiKey=${API_KEY}&number=10`;
   return url;
-};
-
-const getApiData = async (url) => {
-  const dataResponse = await fetch(url);
-
-  const data = await dataResponse.json();
-  return data;
 };
 
 const onReady = async function () {
