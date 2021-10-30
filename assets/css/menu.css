@@ -58,7 +58,6 @@ h3 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: var(--eggshell);
 }
 
 .recipe-card {
