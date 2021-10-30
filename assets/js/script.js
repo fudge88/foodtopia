@@ -1,28 +1,5 @@
-// taken from Bulma for coss and burger icon on smaller screen
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Get all "navbar-burger" elements
-  const $navbarBurgers = Array.prototype.slice.call(
-    document.querySelectorAll(".navbar-burger"),
-    0
-  );
-
-  // Check if there are any navbar burgers
-  if ($navbarBurgers.length > 0) {
-    // Add a click event on each of them
-    $navbarBurgers.forEach((el) => {
-      el.addEventListener("click", () => {
-        // Get the target from the "data-target" attribute
-        const target = el.dataset.target;
-        const $target = document.getElementById(target);
-
-        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-        el.classList.toggle("is-active");
-        $target.classList.toggle("is-active");
-      });
-    });
-  }
-});
+//bulma accordion
 
 const mainContainer = $("#main");
 
@@ -65,42 +42,25 @@ const searchOptions = {
   ],
 };
 
-//construct the search input
-const constructAndAppendSearchbar = () => {
-  const searchBar = `<section>
-  <form id="search-form" class="is-flex is-justify-content-center is-align-content-center">
-    <div class="control">
-      <input id="search-input"
-        class="input is-focused"
-        type="text"
-        placeholder="Search Here"
-      />
-    </div>
-    <button class="button is-primary is-focused">Search</button>
-  </form>
-</section>`;
-
-  mainContainer.append(searchBar);
-};
-
 //construct search options
 const constructAndAppendSearchOptions = (searchOptions) => {
   const constructDietOption = (eachDiet) => {
-    return `<label class="checkbox">
+    return `<div id="accordion-content-diet" class="accordion-content"><label class="checkbox">
     <input type="checkbox" data-option="diet" id=${eachDiet}>${eachDiet}</input>
-  </label>`;
+  </label></div>
+    `;
   };
 
   const constructIntolerancesOption = (eachIntolerance) => {
-    return `<label class="checkbox">
+    return `<div id="accordion-content-intolerances" class="accordion-content"><label class="checkbox">
     <input type="checkbox" data-option="intolerances" id=${eachIntolerance}>${eachIntolerance}</input>
-  </label>`;
+  </label></div>`;
   };
 
   const constructCuisinesOption = (eachCuisine) => {
-    return `<label class="checkbox">
+    return `<div id= "accordion-content-cuisines" class="accordion-content"><label class="checkbox">
     <input type="checkbox" data-option="cuisines" id=${eachCuisine}>${eachCuisine}</input>
-  </label>`;
+  </label></div>`;
   };
 
   //map through the diet
@@ -116,84 +76,40 @@ const constructAndAppendSearchOptions = (searchOptions) => {
     .map(constructCuisinesOption)
     .join("");
 
-  const searchOptionsContainer = `<section
-  class="
-    column
-    is-flex
-    is-justify-content-center
-    is-align-content-center
-    is-flex-wrap-wrap
-  "
->
-  <div class="dropdown is-hoverable">
-    <div class="dropdown-trigger">
-      <button
-        class="button"
-        aria-haspopup="true"
-        aria-controls="dropdown-menu4"
-      >
-        <span>Dietaries</span>
-        <span class="icon is-small">
-          <i class="fas fa-angle-down" aria-hidden="true"></i>
-        </span>
-      </button>
+  const searchOptionsContainer = `<article class="accordion is-active">
+    <div class="accordion-header toggle">
+      <p>Choose your diet...</p>
     </div>
-    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-      <div class="dropdown-content is-flex is-flex-direction-column"> ${dietOption}
-      </div>
+    <div id= "accordion-body" class="accordion-body">
+    ${dietOption}
     </div>
-  </div>
+  </article>
+  <article class="accordion">
+    <div class="accordion-header">
+      <p>Any Intolerances?...</p>
+      <button class="toggle" aria-label="toggle"></button>
+    </div>
+    <div class="accordion-body">
+    ${intolerancesOption}
+    </div>
+  </article>
+  <article class="accordion">
+    <div class="accordion-header">
+      <p>Choose your Cuisine...</p>
+      <button class="toggle" aria-label="toggle"></button>
+    </div>
+    <div class="accordion-body">
+    ${cuisinesOption}
+    </div>
+  </article>`;
 
-  <div class="dropdown is-hoverable">
-    <div class="dropdown-trigger">
-      <button
-        class="button"
-        aria-haspopup="true"
-        aria-controls="dropdown-menu4"
-      >
-        <span>Intolerances</span>
-        <span class="icon is-small">
-          <i class="fas fa-angle-down" aria-hidden="true"></i>
-        </span>
-      </button>
-    </div>
-    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-      <div class="dropdown-content is-flex is-flex-direction-column"> ${intolerancesOption}
-      </div>
-    </div>
-  </div>
-
-  <div class="dropdown is-hoverable">
-    <div class="dropdown-trigger">
-      <button
-        class="button"
-        aria-haspopup="true"
-        aria-controls="dropdown-menu4"
-      >
-        <span>Cuisines</span>
-        <span class="icon is-small">
-          <i class="fas fa-angle-down" aria-hidden="true"></i>
-        </span>
-      </button>
-    </div>
-    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-      <div class="dropdown-content is-flex is-flex-direction-column"> ${cuisinesOption}
-      </div>
-    </div>
-  </div>
-</section>`;
-
-  mainContainer.append(searchOptionsContainer);
+  $("#accordions").append(searchOptionsContainer);
 };
 
-//construct search plant
-const constructSearchPlant = (searchOptions) => {
-  constructAndAppendSearchbar();
-  constructAndAppendSearchOptions(searchOptions);
-};
 const getSearchInputs = () => {
   const searchInput = $("#search-input").val();
-  const checkboxInput = $("input[type=checkbox]:checked");
+  const checkBoxInput = $("input[type=checkbox]:checked");
+
   const options = {
     query: searchInput,
     diet: [],
@@ -210,8 +126,9 @@ const getSearchInputs = () => {
     if ($(this).data("option") === "cuisines") {
       options.cuisines.push($(this).attr("id"));
     }
+    console.log(this);
   };
-  checkboxInput.each(callback);
+  checkBoxInput.each(callback);
   return options;
 };
 //get input value from user
@@ -219,23 +136,19 @@ const handleSearch = (event) => {
   event.preventDefault();
 
   const searchInputs = getSearchInputs();
+
+  console.log(searchInputs);
+
   localStorage.setItem("options", JSON.stringify(searchInputs));
 
   //change page location
   window.location.assign("../../menu.html");
 };
 
-// brand hover
-const hoverIn = () => {
-  $("#logo").attr("src", "../assets/images/logo-hover.PNG");
-};
-
-const hoverOut = () => {
-  $("#logo").attr("src", "../assets/images/logo.PNG");
-};
-
 const handleLoad = () => {
-  constructSearchPlant(searchOptions);
+  constructAndAppendSearchOptions(searchOptions);
+
+  //bulma accordion
   const accordions = bulmaAccordion.attach();
   // add a event listener submit to get the input value
   $("#search-form").on("submit", handleSearch);
@@ -244,6 +157,7 @@ const handleLoad = () => {
 };
 
 $(document).ready(handleLoad);
+
 $(".info-icon").hover(
   function () {
     $(".nutrition-label").attr("class", "nutrition-label displayed");
