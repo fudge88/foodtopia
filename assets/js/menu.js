@@ -52,8 +52,7 @@ const renderRecipeCards = (recipeData) => {
           </button>
         </footer>
       </div>
-    </div>
-`;
+    </div>`;
     recipeCard = $(recipeCard);
 
     recipeCard.on("click", handleViewRecipeDetails);
