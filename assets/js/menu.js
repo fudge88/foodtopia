@@ -144,15 +144,6 @@ const onReady = async function () {
 $("#search-form").on("submit", onSubmit);
 $(document).ready(onReady);
 
-$(".info-icon").hover(
-  function () {
-    $(".nutrition-label").attr("class", "nutrition-label displayed");
-  },
-  function () {
-    $(".nutrition-label").removeClass("displayed");
-  }
-);
-
 const callback = (event) => {
   const target = event.target;
   console.log(target);

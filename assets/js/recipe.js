@@ -73,6 +73,14 @@ const renderImageRecipeCard = (data) => {
   getCostRange(data);
   //append image card and nutritional info on icon hover
   $("#image-recipe-container").append(imageRecipeCard);
+  $(".info-icon").hover(
+    function () {
+      $(".nutrition-label").attr("class", "nutrition-label displayed");
+    },
+    function () {
+      $(".nutrition-label").removeClass("displayed");
+    }
+  );
 };
 
 //get cost range
