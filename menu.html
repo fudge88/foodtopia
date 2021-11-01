@@ -69,6 +69,22 @@
       <div class="hero-body">
         <h1 class="title has-text-centered">Your recipe search for.....</h1>
       </div>
+      <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <form class="filter" id="filter-form">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Filter options</p>
+              <button class="delete close-modal" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body"></section>
+            <footer class="modal-card-foot">
+              <button class="button is-success">Save changes</button>
+              <button class="button">Cancel</button>
+            </footer>
+          </form>
+        </div>
+      </div>
     </section>
 
     <!-- search bar and filter -->
@@ -265,6 +281,7 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="./mockData/complexSearchData.js"></script>
+    <script src="./assets/js/filterOptions.js"></script>
     <script src="./assets/js/generic-script.js"></script>
     <script src="./assets/js/menu.js"></script>
   </body>
