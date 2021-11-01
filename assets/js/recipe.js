@@ -210,6 +210,7 @@ const onLoad = async () => {
 
     //fetch data
     const recipeData = await getApiData(apiUrl);
+
     //get recipe info and render recipe image card
     const recipeInformationData = constructRecipeObject(recipeData);
     renderImageRecipeCard(recipeInformationData);
