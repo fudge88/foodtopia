@@ -225,5 +225,4 @@ const onLoad = async () => {
   }
   console.log(recipeIdValue);
 };
-
 $(document).ready(onLoad);
