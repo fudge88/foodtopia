@@ -6,7 +6,7 @@ const renderRecipeCards = (recipeData) => {
 
   // construct recipe card
   const callback = (each) => {
-    let recipeCard = ` <div class="card recipe-card">
+    const recipeCard = ` <div class="card recipe-card">
       <div class="card-image">
         <figure class="image is-4by3">
           <div class="nutrition-label">
@@ -26,8 +26,8 @@ const renderRecipeCards = (recipeData) => {
             </div>
           </div>
           <div class="recipe-img-icon-container">
-            <div class="mr-3 bookmark-icon">
-              <i class="fas fa-bookmark"></i>
+            <div id=${each.id} class="mr-3 bookmark-icon">
+              <i id=${each.id} class="fas fa-bookmark"></i>
             </div>
             <div class="mr-3 info-icon">
               <i class="fas fa-info fa-lg"></i>
@@ -45,17 +45,39 @@ const renderRecipeCards = (recipeData) => {
         </div>
 
         <footer class="card-footer recipe-footer">
-          <button id=${each.id} class="button green-outline is-outlined">
+          <button id=${each.id} class="button green-outline is-outlined view-info">
             View Recipe
           </button>
         </footer>
       </div>
     </div>`;
-    recipeCard = $(recipeCard);
-
-    recipeCard.on("click", handleViewRecipeDetails);
 
     $("#card-container").append(recipeCard);
+
+    $(".view-info").on("click", handleViewRecipeDetails);
+
+    const addToFavourites = (event) => {
+      const target = event.target;
+
+      if ($(target).attr("id") == each.id) {
+        const favouritesRecipe = {
+          id: each.id,
+          title: each.title,
+          time: each.readyInMinutes,
+          servings: each.servings,
+          image: each.image,
+        };
+
+        const favourites = getFromLocalStorage("favourites", []);
+
+        favourites.push(favouritesRecipe);
+
+        localStorage.setItem("favourites", JSON.stringify(favourites));
+      }
+    };
+
+    //add to local storage
+    $(".bookmark-icon").on("click", addToFavourites);
   };
 
   // append recipe card to container
@@ -121,7 +143,7 @@ const constructApiUrl = function (baseUrl, searchOptions) {
   if (searchOptions.cuisines.length) {
     cuisinesQuery = `cuisines=${searchOptions.cuisines.join(",")}`;
   }
-  const url = `${baseUrl}?query=${searchQuery}&${dietQuery}&${intolerancesQuery}&${cuisinesQuery}&addRecipeNutrition=true&apiKey=${API_KEY}`;
+  const url = `${baseUrl}?query=${searchQuery}&${dietQuery}&${intolerancesQuery}&${cuisinesQuery}&addRecipeNutrition=true&apiKey=${API_KEY}&number=1`;
   return url;
 };
 
