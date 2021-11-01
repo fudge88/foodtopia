@@ -196,18 +196,27 @@ const constructIngredientsObject = (data) => {
   return data.extendedIngredients.map(callback);
 };
 
-const onLoad = () => {
-  //get recipe info and render recipe image card
-  const recipeInformationData = constructRecipeObject(mockRecipe);
-  renderImageRecipeCard(recipeInformationData);
+const onLoad = async () => {
+  //get recipe id from local storage
+  const recipeIdValue = getFromLocalStorage("recipeId", {});
 
-  //get cooking methods info and render cooking method card
-  const cookingMethodsData = constructCookingMethodObject(mockRecipe);
-  renderCookingMethodCard(cookingMethodsData);
+  if (recipeIdValue) {
+    //build url API
+    const apiUrl = `https://api.spoonacular.com/recipes/${recipeIdValue}/information?includeNutrition=true&apiKey=${API_KEY}`;
 
-  //get ingredients info and render ingredients list
-  const ingredientsData = constructIngredientsObject(mockRecipe);
-  renderIngredientsCard(ingredientsData);
+    //fetch data
+    const recipeData = await getApiData(apiUrl);
+    //get recipe info and render recipe image card
+    const recipeInformationData = constructRecipeObject(recipeData);
+    renderImageRecipeCard(recipeInformationData);
+
+    //get cooking methods info and render cooking method card
+    const cookingMethodsData = constructCookingMethodObject(recipeData);
+    renderCookingMethodCard(cookingMethodsData);
+
+    //get ingredients info and render ingredients list
+    const ingredientsData = constructIngredientsObject(recipeData);
+    renderIngredientsCard(ingredientsData);
+  }
 };
-
 $(document).ready(onLoad);
