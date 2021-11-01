@@ -4,40 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- bulma.io CDN bootstarp alternative -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma-accordion@2.0.1/dist/css/bulma-accordion.min.css"
-    />
-
-    <!-- google fonts CDN-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
-
-    <!-- font awesome CDN -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-
-    <!-- css link -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Foodtopia | Dietary Needs</title>
   </head>
-  <body class="background-img">
-    <!-- navbar -->
+
+  <body>
     <header>
+      <!-- navbar -->
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <!-- brand logo -->
         <div class="navbar-brand">
@@ -75,29 +64,16 @@
       </nav>
     </header>
 
-    <!-- search plant -->
-    <!-- <main class="main" id="main"></main> -->
-    <main>
-      
-      <div class="main-container">
-        <!-- search bar goes here -->
-        <form id="search-form">
-          <div class="control">
-            <div class="wrap">
-              <div class="search">
-                 <input id = "search-input" type="text" class="searchTerm" placeholder="What are you looking for?">
-                 <button type="submit" class="searchButton">
-                   <i class="fa fa-search"></i>
-                </button>
-              </div>
-           </div>
-        </form>
-        <section id="accordions" class="accordions">
-        </section>
+    <!-- title for favourites -->
+    <section class="hero">
+      <div class="hero-body">
+        <h1 class="title has-text-centered">Here are your Favourites.....</h1>
       </div>
-    </main>
+    </section>
 
-    <!-- footer -->
+    <section class="card-section" id="card-section"></section>
+
+    <!-- footer
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
@@ -107,20 +83,15 @@
           <a href="#"><i class="fab fa-instagram-square"></i></a>.
         </p>
       </div>
-    </footer>
-
-    <!-- JQuery CDN -->
+    </footer>-->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-
-    <!-- JS Script link -->
-    <script src="https://cdn.jsdelivr.net/npm/bulma-accordion@2.0.1/dist/js/bulma-accordion.min.js"></script>
     <script src="./mockData/complexSearchData.js"></script>
     <script src="./assets/js/generic-script.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/favourites.js"></script>
   </body>
 </html>
