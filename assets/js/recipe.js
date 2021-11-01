@@ -61,7 +61,7 @@ const renderImageRecipeCard = (data) => {
       </div>
       <div class="card-footer-item recipe-info-box">
         <p>Popularity</p>
-        <h2 class="prep-time-heading">${getHealthScore(data)}</h2>
+        <h2 class="prep-time-heading">${getPopularityScore(data)}</h2>
       </div>
     </footer>
   </article>
@@ -94,8 +94,12 @@ const getPopularityScore = (data) => {
 };
 
 // add a function to construct API URL
+const constructApiUrl = (searchQuery) => {
+  let recipeId = searchQuery;
 
-const constructApiUrl = (searchQuery) => {};
+  const url = `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=true&apiKey=${API_KEY}`;
+  return url;
+};
 
 //render cooking methods card
 const renderCookingMethodCard = (data) => {
@@ -206,6 +210,7 @@ const onLoad = async () => {
 
     //fetch data
     const recipeData = await getApiData(apiUrl);
+
     //get recipe info and render recipe image card
     const recipeInformationData = constructRecipeObject(recipeData);
     renderImageRecipeCard(recipeInformationData);
@@ -218,5 +223,6 @@ const onLoad = async () => {
     const ingredientsData = constructIngredientsObject(recipeData);
     renderIngredientsCard(ingredientsData);
   }
+  console.log(recipeIdValue);
 };
 $(document).ready(onLoad);
