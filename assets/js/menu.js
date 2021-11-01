@@ -122,7 +122,7 @@ const constructApiUrl = function (baseUrl, searchOptions) {
   if (searchOptions.cuisines.length) {
     cuisinesQuery = `cuisines=${searchOptions.cuisines.join(",")}`;
   }
-  const url = `${baseUrl}?query=${searchQuery}&${dietQuery}&${intolerancesQuery}&${cuisinesQuery}&addRecipeNutrition=true&apiKey=${API_KEY}&number=10`;
+  const url = `${baseUrl}?query=${searchQuery}&${dietQuery}&${intolerancesQuery}&${cuisinesQuery}&addRecipeNutrition=true&apiKey=${API_KEY}`;
   return url;
 };
 

@@ -94,8 +94,12 @@ const getPopularityScore = (data) => {
 };
 
 // add a function to construct API URL
+const constructApiUrl = (searchQuery) => {
+  let recipeId = searchQuery;
 
-const constructApiUrl = (searchQuery) => {};
+  const url = `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=true&apiKey=${API_KEY}`;
+  return url;
+};
 
 //render cooking methods card
 const renderCookingMethodCard = (data) => {
@@ -196,28 +200,28 @@ const constructIngredientsObject = (data) => {
   return data.extendedIngredients.map(callback);
 };
 
-const onLoad = () => {
-  //get recipe info and render recipe image card
-  const recipeInformationData = constructRecipeObject(mockRecipe);
-  renderImageRecipeCard(recipeInformationData);
-
-  //get cooking methods info and render cooking method card
-  const cookingMethodsData = constructCookingMethodObject(mockRecipe);
-  renderCookingMethodCard(cookingMethodsData);
-
-  //get ingredients info and render ingredients list
-  const ingredientsData = constructIngredientsObject(mockRecipe);
-  renderIngredientsCard(ingredientsData);
-
+const onLoad = async () => {
   //get recipe id from local storage
-  const recipeIdValue = getFromLocalStorage("recipeId");
+  const recipeIdValue = getFromLocalStorage("recipeId", {});
 
   if (recipeIdValue) {
     //build url API
     const apiUrl = `https://api.spoonacular.com/recipes/${recipeIdValue}/information?includeNutrition=true&apiKey=${API_KEY}`;
 
     //fetch data
-    const recipeData = getApiData(apiUrl);
+    const recipeData = await getApiData(apiUrl);
+
+    //get recipe info and render recipe image card
+    const recipeInformationData = constructRecipeObject(recipeData);
+    renderImageRecipeCard(recipeInformationData);
+
+    //get cooking methods info and render cooking method card
+    const cookingMethodsData = constructCookingMethodObject(recipeData);
+    renderCookingMethodCard(cookingMethodsData);
+
+    //get ingredients info and render ingredients list
+    const ingredientsData = constructIngredientsObject(recipeData);
+    renderIngredientsCard(ingredientsData);
   }
   console.log(recipeIdValue);
 };
