@@ -3,7 +3,6 @@ const mainContainer = $("#main");
 //search options
 
 const renderModal = () => {
-  constructModal();
   $(".modal").attr("class", "modal is-active");
 };
 
@@ -11,7 +10,7 @@ const closeModal = () => {
   $(".modal").removeClass("is-active");
 };
 //construct search options
-const constructAndAppendSearchOptions = (searchOptions) => {
+const constructAndAppendModal = (searchOptions, searchInput) => {
   const constructDietOption = (eachDiet) => {
     return `<input type="checkbox" data-option="diet" id=${eachDiet}>${eachDiet}</input>`;
   };
@@ -46,6 +45,10 @@ const constructAndAppendSearchOptions = (searchOptions) => {
         <button class="delete close-modal" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
+      <div class="field">
+      <div class="control">
+      <input class="input" type="text" value="${searchInput}" placeholder="Search" />
+      </div>
       <h3>Choose your diet...</h3>
       <label class="checkbox">
       ${dietOption}</label>
@@ -54,10 +57,10 @@ const constructAndAppendSearchOptions = (searchOptions) => {
         ${intolerancesOption} </label>
       <h3>Choose your Cuisine...</h3>
       <label class="checkbox">
-      ${cuisinesOptions}</label>
+      ${cuisinesOption}</label>
       </section>
       <footer class="modal-card-foot">
-        <button class="button is-success">Search</button>
+        <button class="button is-success" id="advance-search">Search</button>
         <button class="button">Cancel</button>
       </footer>
     </form>
@@ -66,7 +69,7 @@ const constructAndAppendSearchOptions = (searchOptions) => {
 </section>
       `;
 
-  $("#model-container").append(searchOptionsContainer);
+  $("#modal-container").append(searchOptionsContainer);
 };
 
 const getSearchInputs = () => {
@@ -89,7 +92,6 @@ const getSearchInputs = () => {
     if ($(this).data("option") === "cuisines") {
       options.cuisines.push($(this).attr("id"));
     }
-    console.log(this);
   };
   checkBoxInput.each(callback);
   return options;
@@ -100,20 +102,20 @@ const handleSearch = (event) => {
 
   const searchInputs = getSearchInputs();
 
-  console.log(searchInputs);
-
   localStorage.setItem("options", JSON.stringify(searchInputs));
 
   //change page location
   window.location.assign("../../menu.html");
 };
 
-const onSubmit = (event) => {
-  event.preventDefault();
-};
-
 const handleLoad = () => {
-  constructAndAppendSearchOptions(searchOptions);
+  const onClick = (event) => {
+    event.preventDefault();
+    const searchInput = $("#search-input").val();
+    constructAndAppendModal(searchOptions, searchInput);
+    $("#advance-search").on("click", handleSearch);
+  };
+  $("#filter-toggle").on("click", onClick);
 
   // add a event listener submit to get the input value
   $("#search-form").on("submit", handleSearch);
@@ -126,14 +128,11 @@ $(document).ready(handleLoad);
 $(".info-icon").hover(
   function () {
     $(".nutrition-label").attr("class", "nutrition-label displayed");
-    console.log("hey");
   },
   function () {
     $(".nutrition-label").removeClass("displayed");
-    console.log("bye");
   }
 );
 
 $("#filter-toggle").on("click", renderModal);
-$("#filter-form").on("submit", onSubmit);
 $(".close-modal").on("click", closeModal);

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- bulma.io CDN bootstarp alternative -->
+    <!-- bulma.io CDN bootstrap alternative -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
@@ -77,6 +77,7 @@
 
     <!-- search field -->
     <main>
+      <div class="modal-container" id="modal-container"></div>
       <section class="background-img">
         <div class="main-container">
           <form id="search-form">
@@ -93,9 +94,10 @@
                   <i class="fa fa-search"></i>
                 </button>
                        <!-- modal search html -->
-        <button class="filter-toggle" id="filter-toggle">Advance search</button>
+
             </div>
           </form>
+          <button class="filter-toggle" id="filter-toggle" type="submit">Advance search</button>
           <div id="modal-container" class="modal-container"></div>
         </div>
       </section>
