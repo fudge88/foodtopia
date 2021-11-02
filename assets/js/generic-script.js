@@ -1,5 +1,8 @@
 const API_KEY = "d5bd0d880e244425a602e6444407fbb6";
 
+//YouTube API key
+const API_KEY_YOU_TUBE = "AIzaSyD3IzncJHty07ay5Pg3oKx_8moMyicMXIw";
+
 //fetch API data
 const getApiData = async (url) => {
   const dataResponse = await fetch(url);
