@@ -1,30 +1,27 @@
-
-//bulma accordion
-
 const mainContainer = $("#main");
 
 //search options
 
+const renderModal = () => {
+  constructModal();
+  $(".modal").attr("class", "modal is-active");
+};
 
+const closeModal = () => {
+  $(".modal").removeClass("is-active");
+};
 //construct search options
 const constructAndAppendSearchOptions = (searchOptions) => {
   const constructDietOption = (eachDiet) => {
-    return `<div id="accordion-content-diet" class="accordion-content"><label class="checkbox">
-    <input type="checkbox" data-option="diet" id=${eachDiet}>${eachDiet}</input>
-  </label></div>
-    `;
+    return `<input type="checkbox" data-option="diet" id=${eachDiet}>${eachDiet}</input>`;
   };
 
   const constructIntolerancesOption = (eachIntolerance) => {
-    return `<div id="accordion-content-intolerances" class="accordion-content"><label class="checkbox">
-    <input type="checkbox" data-option="intolerances" id=${eachIntolerance}>${eachIntolerance}</input>
-  </label></div>`;
+    return `<input type="checkbox" data-option="intolerances" id=${eachIntolerance}>${eachIntolerance}</input>`;
   };
 
   const constructCuisinesOption = (eachCuisine) => {
-    return `<div id= "accordion-content-cuisines" class="accordion-content"><label class="checkbox">
-    <input type="checkbox" data-option="cuisines" id=${eachCuisine}>${eachCuisine}</input>
-  </label></div>`;
+    return `<input type="checkbox" data-option="cuisines" id=${eachCuisine}>${eachCuisine}</input>`;
   };
 
   //map through the diet
@@ -40,34 +37,36 @@ const constructAndAppendSearchOptions = (searchOptions) => {
     .map(constructCuisinesOption)
     .join("");
 
-  const searchOptionsContainer = `<article class="accordion is-active">
-    <div class="accordion-header toggle">
-      <p>Choose your diet...</p>
-    </div>
-    <div id= "accordion-body" class="accordion-body">
-    ${dietOption}
-    </div>
-  </article>
-  <article class="accordion">
-    <div class="accordion-header">
-      <p>Any Intolerances?...</p>
-      <button class="toggle" aria-label="toggle"></button>
-    </div>
-    <div class="accordion-body">
-    ${intolerancesOption}
-    </div>
-  </article>
-  <article class="accordion">
-    <div class="accordion-header">
-      <p>Choose your Cuisine...</p>
-      <button class="toggle" aria-label="toggle"></button>
-    </div>
-    <div class="accordion-body">
-    ${cuisinesOption}
-    </div>
-  </article>`;
+  const searchOptionsContainer = `<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <form class="filter" id="filter-form">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Advance search</p>
+        <button class="delete close-modal" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+      <h3>Choose your diet...</h3>
+      <label class="checkbox">
+      ${dietOption}</label>
+      <h3>Any Intolerances?...</h3>
+      <label class="checkbox">
+        ${intolerancesOption} </label>
+      <h3>Choose your Cuisine...</h3>
+      <label class="checkbox">
+      ${cuisinesOptions}</label>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Search</button>
+        <button class="button">Cancel</button>
+      </footer>
+    </form>
+  </div>
+</div>
+</section>
+      `;
 
-  $("#accordions").append(searchOptionsContainer);
+  $("#model-container").append(searchOptionsContainer);
 };
 
 const getSearchInputs = () => {
@@ -109,11 +108,13 @@ const handleSearch = (event) => {
   window.location.assign("../../menu.html");
 };
 
+const onSubmit = (event) => {
+  event.preventDefault();
+};
+
 const handleLoad = () => {
   constructAndAppendSearchOptions(searchOptions);
 
-  //bulma accordion
-  const accordions = bulmaAccordion.attach();
   // add a event listener submit to get the input value
   $("#search-form").on("submit", handleSearch);
 
@@ -132,3 +133,7 @@ $(".info-icon").hover(
     console.log("bye");
   }
 );
+
+$("#filter-toggle").on("click", renderModal);
+$("#filter-form").on("submit", onSubmit);
+$(".close-modal").on("click", closeModal);
