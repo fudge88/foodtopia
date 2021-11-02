@@ -70,9 +70,17 @@ const renderRecipeCards = (recipeData) => {
 
         const favourites = getFromLocalStorage("favourites", []);
 
-        favourites.push(favouritesRecipe);
+        const findRecipeId = (each) => {
+          return each.id == $(target).attr("id");
+        };
 
-        localStorage.setItem("favourites", JSON.stringify(favourites));
+        const isRecipeInFavourites = favourites.find(findRecipeId);
+
+        if (!isRecipeInFavourites) {
+          favourites.push(favouritesRecipe);
+
+          localStorage.setItem("favourites", JSON.stringify(favourites));
+        }
       }
     };
 
@@ -117,7 +125,7 @@ const onSubmit = function (event) {
 const handleViewRecipeDetails = (event) => {
   const target = $(event.target);
   if (target.is("button")) {
-    const recipeId = target.attr("Id");
+    const recipeId = target.attr("id");
     console.log(recipeId);
 
     // add recipe id value to local storage
