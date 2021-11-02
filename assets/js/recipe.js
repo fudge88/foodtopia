@@ -128,6 +128,12 @@ const renderCookingMethodCard = (data) => {
   $("#method-container").append(cookingMethodsCard);
 };
 
+const renderServingQuantities = function (userServings) {
+  console.log(userServings);
+  const serving = (document.getElementById("original-serving").innerHTML =
+    userServings.servings);
+};
+
 // ingredients calculator
 const ingredientsCalculator = (servingData, ingredientsData, userServings) => {
   const servings = servingData.serves;
@@ -277,6 +283,8 @@ const onLoad = async () => {
     };
 
     $("#servings-container").on("click", getUserServings);
+
+    renderServingQuantities(recipeData);
   }
   console.log(recipeIdValue);
 };
