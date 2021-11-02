@@ -12,8 +12,8 @@ const renderImageRecipeCard = (data) => {
         <button class="small-screen-button">
           <i class="mt-4 bookmark-icon fas fa-bookmark fa-2x"></i>
         </button>
-        <button class="small-screen-button info-icon">
-          <i class="mt-4 bookmark-icon fas fa-info fa-2x"></i>
+        <button class="small-screen-button ">
+          <i class="mt-4 bookmark-icon fas fa-info fa-2x info-icon"></i>
         </button>
       </div>
     </figure>
@@ -158,7 +158,7 @@ const constructRecipeObject = (data) => {
     title: data.title,
     time: data.readyInMinutes,
     serves: data.servings,
-    summary: data.winePairing.pairingText,
+    summary: data.winePairing.pairingText || "No wine pairings were found",
 
     //calories
     energy: energy?.amount || "N/A",
