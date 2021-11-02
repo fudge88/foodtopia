@@ -70,9 +70,17 @@ const renderRecipeCards = (recipeData) => {
 
         const favourites = getFromLocalStorage("favourites", []);
 
-        favourites.push(favouritesRecipe);
+        const findRecipeId = (each) => {
+          return each.id == $(target).attr("id");
+        };
 
-        localStorage.setItem("favourites", JSON.stringify(favourites));
+        const isRecipeInFavourites = favourites.find(findRecipeId);
+
+        if (!isRecipeInFavourites) {
+          favourites.push(favouritesRecipe);
+
+          localStorage.setItem("favourites", JSON.stringify(favourites));
+        }
       }
     };
 
