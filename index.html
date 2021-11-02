@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Foodtopia | Dietary Needs</title>
   </head>
-  <body class="background-img">
+  <body>
     <!-- navbar -->
     <header>
       <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -69,45 +69,276 @@
           <div class="navbar-end">
             <a href="./menu.html" class="navbar-item"> Diets </a>
             <a href="./about.html" class="navbar-item"> About </a>
-            <a class="navbar-item"> My Favourites </a>
+            <a href="./favourites.html" class="navbar-item"> My Favourites </a>
           </div>
         </div>
       </nav>
     </header>
 
-    <!-- search plant -->
-    <!-- <main class="main" id="main"></main> -->
+    <!-- search field -->
     <main>
-      
-      <div class="main-container">
-        <!-- search bar goes here -->
-        <form id="search-form">
-          <div class="control">
-            <div class="wrap">
+      <section class="background-img">
+        <div class="main-container">
+          <form id="search-form">
+            <h1>Find a recipe</h1>
+            <div class="control">
               <div class="search">
-                 <input id = "search-input" type="text" class="searchTerm" placeholder="What are you looking for?">
-                 <button type="submit" class="searchButton">
-                   <i class="fa fa-search"></i>
+                <input
+                  id="search-input"
+                  type="text"
+                  class="searchTerm"
+                  placeholder="What are you looking for?"
+                />
+                <button type="submit" class="searchButton">
+                  <i class="fa fa-search"></i>
                 </button>
+            </div>
+          </form>
+          <div id="accordions" class="accordions"></div>
+        </div>
+      </section>
+
+      <!-- highly rated -->
+
+      <section class="centralising-content">
+        <h3 class="section-title">Get Inspired</h3>
+        <div class="high-rated-container">
+          <div class="high-rated-recipe">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+            <h3>Recipe Title</h3>
+            </figure>
+          </div>
+          <div class="high-rated-recipe">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+              <h3>Recipe Title</h3>
+            </figure>
+          </div>
+          <div class="high-rated-recipe">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+              <h3>Recipe Title</h3>
+            </figure>
+          </div>
+          <div class="high-rated-recipe">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+              <h3>Recipe Title</h3>
+            </figure>
+          </div>
+          <div class="high-rated-recipe">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+              <h3>Recipe Title</h3>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+
+      
+      <section class="centralising-content">
+
+          <!--cards container-->
+          <div class="card-container">
+            <!--each team member cards here-->
+            <div class="card">
+              <!--team member image-->
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img
+                    src="https://bulma.io/images/placeholders/1280x960.png"
+                    alt="placeholder image"
+                  />
+                </figure>
+    
+                <!--name-->
+                <div class="card-header">
+                  <p class="card-header-title">Team member 1</p>
+                </div>
+    
+                <!--description paragraph-->
+                <div class="card-content">
+                  <div class="content">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Assumenda corporis vero alias, voluptatem aspernatur praesentium
+                    illum numquam laudantium maiores labore earum distinctio
+                    excepturi vel? Illo ea dicta eligendi maxime cupiditate!
+                  </div>
+                </div>
+                <!--GitHub, Portfolio and LinkedIn Links-->
+                <footer class="card-footer">
+                  <a href="#" class="card-footer-item"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a href="#" class="card-footer-item">View Portfolio</a>
+                  <a href="#" class="card-footer-item"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </footer>
               </div>
-           </div>
-        </form>
-        <section id="accordions" class="accordions">
-        </section>
-      </div>
+            </div>
+    
+            <div class="card">
+              <!--team member image-->
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img
+                    src="https://bulma.io/images/placeholders/1280x960.png"
+                    alt="placeholder image"
+                  />
+                </figure>
+    
+                <!--name-->
+                <div class="card-header">
+                  <p class="card-header-title">Team member 2</p>
+                </div>
+    
+                <!--description paragraph-->
+                <div class="card-content">
+                  <div class="content">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Assumenda corporis vero alias, voluptatem aspernatur praesentium
+                    illum numquam laudantium maiores labore earum distinctio
+                    excepturi vel? Illo ea dicta eligendi maxime cupiditate!
+                  </div>
+                </div>
+                <!--GitHub, Portfolio and LinkedIn Links-->
+                <footer class="card-footer">
+                  <a href="#" class="card-footer-item"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a href="#" class="card-footer-item">View Portfolio</a>
+                  <a href="#" class="card-footer-item"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </footer>
+              </div>
+            </div>
+    
+            <div class="card">
+              <!--team member image-->
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img
+                    src="https://bulma.io/images/placeholders/1280x960.png"
+                    alt="placeholder image"
+                  />
+                </figure>
+    
+                <!--name-->
+                <div class="card-header">
+                  <p class="card-header-title">Team member 3</p>
+                </div>
+    
+                <!--description paragraph-->
+                <div class="card-content">
+                  <div class="content">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Assumenda corporis vero alias, voluptatem aspernatur praesentium
+                    illum numquam laudantium maiores labore earum distinctio
+                    excepturi vel? Illo ea dicta eligendi maxime cupiditate!
+                  </div>
+                </div>
+                <!--GitHub, Portfolio and LinkedIn Links-->
+                <footer class="card-footer">
+                  <a href="#" class="card-footer-item"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a href="#" class="card-footer-item">View Portfolio</a>
+                  <a href="#" class="card-footer-item"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </footer>
+              </div>
+            </div>
+    
+            <div class="card">
+              <!--team member image-->
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img
+                    src="https://bulma.io/images/placeholders/1280x960.png"
+                    alt="placeholder image"
+                  />
+                </figure>
+    
+                <!--name-->
+                <div class="card-header">
+                  <p class="card-header-title">Team member 4</p>
+                </div>
+    
+                <!--description paragraph-->
+                <div class="card-content">
+                  <div class="content">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Assumenda corporis vero alias, voluptatem aspernatur praesentium
+                    illum numquam laudantium maiores labore earum distinctio
+                    excepturi vel? Illo ea dicta eligendi maxime cupiditate!
+                  </div>
+                </div>
+                <!--GitHub, Portfolio and LinkedIn Links-->
+                <footer class="card-footer">
+                  <a href="#" class="card-footer-item"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a href="#" class="card-footer-item">View Portfolio</a>
+                  <a href="#" class="card-footer-item"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </footer>
+              </div>
+            </div>
+    
+            <div class="card">
+              <!--team member image-->
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img
+                    src="https://bulma.io/images/placeholders/1280x960.png"
+                    alt="placeholder image"
+                  />
+                </figure>
+    
+                <!--name-->
+                <div class="card-header">
+                  <p class="card-header-title">Team member 5</p>
+                </div>
+    
+                <!--description paragraph-->
+                <div class="card-content">
+                  <div class="content">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Assumenda corporis vero alias, voluptatem aspernatur praesentium
+                    illum numquam laudantium maiores labore earum distinctio
+                    excepturi vel? Illo ea dicta eligendi maxime cupiditate!
+                  </div>
+                </div>
+                <!--GitHub, Portfolio and LinkedIn Links-->
+                <footer class="card-footer">
+                  <a href="#" class="card-footer-item"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a href="#" class="card-footer-item">View Portfolio</a>
+                  <a href="#" class="card-footer-item"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </footer>
+              </div>
+            </div>
+          </div>
+
+      </section>
     </main>
 
     <!-- footer -->
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>
-          <a><strong>Foodtopia Group</strong></a>
-          <a href="#"><i class="fab fa-facebook-square"></i></a>
-          <a href="#"><i class="fab fa-instagram-square"></i></a>
-          <a href="#"><i class="fab fa-instagram-square"></i></a>.
-        </p>
-      </div>
-    </footer>
+    <div class="footer-basic">
+      <footer>
+          <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+          <p class="copyright">Foodtopia © 2021</p>
+      </footer>
+  </div>
 
     <!-- JQuery CDN -->
     <script

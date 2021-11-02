@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <title>Foodtopia | Dietary Needs</title>
+  </head>
+
+  <body>
+    <header>
+      <!-- navbar -->
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <!-- brand logo -->
+        <div class="navbar-brand">
+          <a class="navbar-logo" href="./index.html">
+            <img
+              src="./assets/images/logo.PNG"
+              width="112"
+              height="28"
+              id="logo"
+            />
+          </a>
+
+          <!-- toggle button - hamburger menu -->
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarMenuItems"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <!-- menu items -->
+        <div id="navbarMenuItems" class="navbar-menu">
+          <div class="navbar-end">
+            <a href="./menu.html" class="navbar-item"> Diets </a>
+            <a href="./about.html" class="navbar-item"> About </a>
+            <a href="./favourites.html" class="navbar-item"> My Favourites </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- title for favourites -->
+    <section class="hero">
+      <div class="hero-body">
+        <h1 class="title has-text-centered">Here are your Favourites.....</h1>
+      </div>
+    </section>
+
+    <section class="card-section" id="card-section"></section>
+
+    <!-- footer
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <a><strong>Foodtopia Group</strong></a>
+          <a href="#"><i class="fab fa-facebook-square"></i></a>
+          <a href="#"><i class="fab fa-instagram-square"></i></a>
+          <a href="#"><i class="fab fa-instagram-square"></i></a>.
+        </p>
+      </div>
+    </footer>-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./mockData/complexSearchData.js"></script>
+    <script src="./assets/js/generic-script.js"></script>
+    <script src="./assets/js/favourites.js"></script>
+  </body>
+</html>
