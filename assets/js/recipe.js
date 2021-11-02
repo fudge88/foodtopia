@@ -137,6 +137,23 @@ const renderIngredientsCard = (data) => {
   data.forEach(constructIngredientItem);
 };
 
+//render youtube videos
+const renderYouTubeVideos = (data) => {
+  const callback = (each) => {
+    const videoCard = `<div class="mb-3">
+    <iframe
+      width="100%"
+      height="auto"
+      src="https://youtube.com/embed/${each.videoId}"
+      allowfullscreen
+    ></iframe>
+  </div>`;
+    $("#video-container").append(videoCard);
+  };
+
+  data.forEach(callback);
+};
+
 //get nutrient key name from nutrients array
 const getNutrient = (arr, key) => {
   return arr.find((each) => {
@@ -208,6 +225,19 @@ const constructIngredientsObject = (data) => {
   return data.extendedIngredients.map(callback);
 };
 
+//transform video data fro YT API
+const constructVideosObject = (data) => {
+  console.log(data);
+  const callback = (each) => {
+    return {
+      videoId: each.id.videoId,
+      title: each.snippet.title,
+      thumbnail: each.snippet.thumbnails.default.url,
+    };
+  };
+  return data.items.map(callback);
+};
+
 const onLoad = async () => {
   //get recipe id from local storage
   const recipeIdValue = getFromLocalStorage("recipeId", {});
@@ -230,6 +260,9 @@ const onLoad = async () => {
     //get ingredients info and render ingredients list
     const ingredientsData = constructIngredientsObject(recipeData);
     renderIngredientsCard(ingredientsData);
+
+    const videosData = constructVideosObject(youtubeVideosMockData);
+    renderYouTubeVideos(videosData);
   }
   console.log(recipeIdValue);
 };
