@@ -129,20 +129,28 @@ const renderCookingMethodCard = (data) => {
 };
 
 // ingredients calculator
-const ingredientsCalculator = (servingData, ingredientsData) => {
+const ingredientsCalculator = (servingData, ingredientsData, userServings) => {
   const servings = servingData.serves;
   const ingredientsCalculatorItem = (each) => {
+    // console.log(each);
     // get value from each ingredient
     const value = each.quantity;
     // divide value by number of servings with the recipe
     const baseServing = value / servings;
-    console.log(value, typeof value);
-    console.log(servings, typeof servings);
-    console.log(baseServing);
+    const selectedServings = Math.floor(baseServing * userServings);
+    // console.log(each.ingredientName, selectedServings);
+
+    const ingredientItem = `<div>
+      <span>${selectedServings}</span>
+      ${each.quantityUnit} ${each.ingredientName}
+      </div>`;
+    console.log(ingredientItem);
+    $("#ingredients-container").append(ingredientItem);
     // get number of servings user wishes to use
     // times the new value with teh number of servings
     // render new value
   };
+  $("#ingredients-container").empty();
   ingredientsData.forEach(ingredientsCalculatorItem);
 };
 
@@ -254,8 +262,18 @@ const onLoad = async () => {
     const ingredientsData = constructIngredientsObject(recipeData);
     renderIngredientsCard(ingredientsData);
 
-    const getUserServings = () => {
-      ingredientsCalculator(recipeInformationData, ingredientsData);
+    const getUserServings = (event) => {
+      const target = event.target;
+      if ($(target).hasClass("servings-value")) {
+        const servingTabValue = $(target).data("value");
+        console.log(servingTabValue);
+
+        ingredientsCalculator(
+          recipeInformationData,
+          ingredientsData,
+          servingTabValue
+        );
+      }
     };
 
     $("#servings-container").on("click", getUserServings);
