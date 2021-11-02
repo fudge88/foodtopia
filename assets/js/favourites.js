@@ -59,7 +59,11 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
 
       $("#card-section").empty();
 
-      constructAndAppendFavouritesCards(newFavouritesRecipes);
+      if (newFavouritesRecipes.length === 0) {
+        constructAndAppendMessage();
+      } else {
+        constructAndAppendFavouritesCards(newFavouritesRecipes);
+      }
     }
   };
 
@@ -67,10 +71,24 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
   $(".bookmark-icon").on("click", removeRecipe);
 };
 
+//construct and append the message
+const constructAndAppendMessage = () => {
+  const message = `<div class ="notification is-primary">
+  OOPS LOOKS LIKE YOU HAVE NO RECIPES ADDED TO YOUR FAVOURITES
+</div>`;
+
+  //append to card container
+  $("#card-section").append(message);
+};
+
 const onReady = () => {
   const favouritesRecipes = getFromLocalStorage("favourites", []);
 
-  constructAndAppendFavouritesCards(favouritesRecipes);
+  if (favouritesRecipes.length === 0) {
+    constructAndAppendMessage();
+  } else {
+    constructAndAppendFavouritesCards(favouritesRecipes);
+  }
 };
 
 $(document).ready(onReady);
