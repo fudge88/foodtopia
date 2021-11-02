@@ -70,9 +70,17 @@ const renderRecipeCards = (recipeData) => {
 
         const favourites = getFromLocalStorage("favourites", []);
 
-        favourites.push(favouritesRecipe);
+        const findRecipeId = (each) => {
+          return each.id == $(target).attr("id");
+        };
 
-        localStorage.setItem("favourites", JSON.stringify(favourites));
+        const isRecipeInFavourites = favourites.find(findRecipeId);
+
+        if (!isRecipeInFavourites) {
+          favourites.push(favouritesRecipe);
+
+          localStorage.setItem("favourites", JSON.stringify(favourites));
+        }
       }
     };
 
@@ -117,7 +125,7 @@ const onSubmit = function (event) {
 const handleViewRecipeDetails = (event) => {
   const target = $(event.target);
   if (target.is("button")) {
-    const recipeId = target.attr("Id");
+    const recipeId = target.attr("id");
     console.log(recipeId);
 
     // add recipe id value to local storage
@@ -143,7 +151,7 @@ const constructApiUrl = function (baseUrl, searchOptions) {
   if (searchOptions.cuisines.length) {
     cuisinesQuery = `cuisines=${searchOptions.cuisines.join(",")}`;
   }
-  const url = `${baseUrl}?query=${searchQuery}&${dietQuery}&${intolerancesQuery}&${cuisinesQuery}&addRecipeNutrition=true&apiKey=${API_KEY}&number=1`;
+  const url = `${baseUrl}?query=${searchQuery}&${dietQuery}&${intolerancesQuery}&${cuisinesQuery}&addRecipeNutrition=true&apiKey=${API_KEY}&number=12`;
   return url;
 };
 

@@ -12,8 +12,8 @@ const renderImageRecipeCard = (data) => {
         <button class="small-screen-button">
           <i class="mt-4 bookmark-icon fas fa-bookmark fa-2x"></i>
         </button>
-        <button class="small-screen-button info-icon">
-          <i class="mt-4 bookmark-icon fas fa-info fa-2x"></i>
+        <button class="small-screen-button ">
+          <i class="mt-4 bookmark-icon fas fa-info fa-2x info-icon"></i>
         </button>
       </div>
     </figure>
@@ -174,6 +174,23 @@ const renderIngredientsCard = (data) => {
   data.forEach(constructIngredientItem);
 };
 
+//render youtube videos
+const renderYouTubeVideos = (data) => {
+  const callback = (each) => {
+    const videoCard = `<div class="mb-3">
+    <iframe
+      width="100%"
+      height="auto"
+      src="https://youtube.com/embed/${each.videoId}"
+      allowfullscreen
+    ></iframe>
+  </div>`;
+    $("#video-container").append(videoCard);
+  };
+
+  data.forEach(callback);
+};
+
 //get nutrient key name from nutrients array
 const getNutrient = (arr, key) => {
   return arr.find((each) => {
@@ -195,7 +212,7 @@ const constructRecipeObject = (data) => {
     title: data.title,
     time: data.readyInMinutes,
     serves: data.servings,
-    summary: data.winePairing.pairingText,
+    summary: data.winePairing.pairingText || "No wine pairings were found",
 
     //calories
     energy: energy?.amount || "N/A",
@@ -245,6 +262,18 @@ const constructIngredientsObject = (data) => {
   return data.extendedIngredients.map(callback);
 };
 
+//transform video data fro YT API
+const constructVideosObject = (data) => {
+  const callback = (each) => {
+    return {
+      videoId: each.id.videoId,
+      // title: each.snippet.title,
+      // thumbnail: each.snippet.thumbnails.default.url,
+    };
+  };
+  return data.items.map(callback);
+};
+
 const onLoad = async () => {
   //get recipe id from local storage
   const recipeIdValue = getFromLocalStorage("recipeId", {});
@@ -253,7 +282,7 @@ const onLoad = async () => {
     //build url API
     const apiUrl = `https://api.spoonacular.com/recipes/${recipeIdValue}/information?includeNutrition=true&apiKey=${API_KEY}`;
 
-    //fetch data
+    //fetch recipe information data
     const recipeData = await getApiData(apiUrl);
 
     //get recipe info and render recipe image card
@@ -285,7 +314,19 @@ const onLoad = async () => {
     $("#servings-container").on("click", getUserServings);
 
     renderServingQuantities(recipeData);
+    //get recipe title, which will be used as parameter for YouTube api call; remove blank space between words
+    const recipeTitle = recipeInformationData.title.split(" ").join("");
+
+    //build youtube api url
+    const youTubeApiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${recipeTitle}&key=${API_KEY_YOU_TUBE}&maxResults=3`;
+
+    //fetch youtube video information
+    const videoDataRecipe = await getApiData(youTubeApiUrl);
+
+    //get recipe video data and render video cards
+    const videosData = constructVideosObject(videoDataRecipe);
+    renderYouTubeVideos(videosData);
   }
-  console.log(recipeIdValue);
 };
+
 $(document).ready(onLoad);
