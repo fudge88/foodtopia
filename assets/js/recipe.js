@@ -128,10 +128,47 @@ const renderCookingMethodCard = (data) => {
   $("#method-container").append(cookingMethodsCard);
 };
 
+const renderServingQuantities = function (userServings) {
+  console.log(userServings);
+  const serving = (document.getElementById("original-serving").innerHTML =
+    userServings.servings);
+};
+
+// ingredients calculator
+const ingredientsCalculator = (servingData, ingredientsData, userServings) => {
+  const servings = servingData.serves;
+  const ingredientsCalculatorItem = (each) => {
+    // console.log(each);
+    // get value from each ingredient
+    const value = each.quantity;
+    // divide value by number of servings with the recipe
+    const baseServing = value / servings;
+    const selectedServings = Math.floor(baseServing * userServings);
+    // console.log(each.ingredientName, selectedServings);
+
+    const ingredientItem = `<div>
+      <span>${selectedServings}</span>
+      ${each.quantityUnit} ${each.ingredientName}
+      </div>`;
+    console.log(ingredientItem);
+    $("#ingredients-container").append(ingredientItem);
+    // get number of servings user wishes to use
+    // times the new value with teh number of servings
+    // render new value
+  };
+  $("#ingredients-container").empty();
+  ingredientsData.forEach(ingredientsCalculatorItem);
+};
+
 //render ingredients card
 const renderIngredientsCard = (data) => {
   const constructIngredientItem = (each) => {
-    const ingredientItem = `<li>${each.ingredientName} ${each.quantity} ${each.quantityUnit}</li>`;
+    // const ingredientItem = `<li>${each.ingredientName} ${each.quantity} ${each.quantityUnit}</li>`;
+
+    const ingredientItem = `<div>
+    <span>${each.quantity}</span>
+    ${each.quantityUnit} ${each.ingredientName}
+    </div>`;
     $("#ingredients-container").append(ingredientItem);
   };
   data.forEach(constructIngredientItem);
@@ -260,6 +297,23 @@ const onLoad = async () => {
     const ingredientsData = constructIngredientsObject(recipeData);
     renderIngredientsCard(ingredientsData);
 
+    const getUserServings = (event) => {
+      const target = event.target;
+      if ($(target).hasClass("servings-value")) {
+        const servingTabValue = $(target).data("value");
+        console.log(servingTabValue);
+
+        ingredientsCalculator(
+          recipeInformationData,
+          ingredientsData,
+          servingTabValue
+        );
+      }
+    };
+
+    $("#servings-container").on("click", getUserServings);
+
+    renderServingQuantities(recipeData);
     //get recipe title, which will be used as parameter for YouTube api call; remove blank space between words
     const recipeTitle = recipeInformationData.title.split(" ").join("");
 
