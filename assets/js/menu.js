@@ -1,4 +1,4 @@
-const mockData = false;
+const mockData = true;
 
 //construct and render recipe cards
 const renderRecipeCards = (recipeData) => {

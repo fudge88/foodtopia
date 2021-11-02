@@ -1,4 +1,4 @@
-const API_KEY = "0b9710560c1b4d9fa9e3081882514a7b";
+const API_KEY = "81e0e3574c784dc48cfb9685ec91f934";
 
 //fetch API data
 const getApiData = async (url) => {
