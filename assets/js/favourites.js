@@ -39,8 +39,27 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
 
   const removeRecipe = (event) => {
     const target = $(event.target);
+
+    const favouritesRecipes = getFromLocalStorage("favourites", []);
+
     if (target.is("i")) {
       const recipeId = target.attr("id");
+
+      const getFilteredFavourites = (each) => {
+        console.log(recipeId, each.id);
+        return each.id != recipeId;
+      };
+
+      const newFavourites = favouritesRecipes.filter(getFilteredFavourites);
+      console.log(newFavourites);
+
+      localStorage.setItem("favourites", JSON.stringify(newFavourites));
+
+      const newFavouritesRecipes = getFromLocalStorage("favourites", []);
+
+      $("#card-section").empty();
+
+      constructAndAppendFavouritesCards(newFavouritesRecipes);
     }
   };
 
