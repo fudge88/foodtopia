@@ -24,16 +24,6 @@ h3 {
   letter-spacing: 1px;
 }
 
-.carousel-section {
-  margin-top: 3rem;
-}
-
-.carousel-image-div,
-.carousel-image-div img {
-  width: 250px;
-  padding: 5px;
-}
-
 .card-section {
   position: relative;
 }

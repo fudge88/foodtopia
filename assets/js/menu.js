@@ -1,5 +1,6 @@
 const mockData = true;
 
+// render advance search
 //construct and render recipe cards
 const renderRecipeCards = (recipeData) => {
   $("#card-container").empty();
@@ -122,6 +123,17 @@ const onSubmit = function (event) {
   renderRecipeCards(recipeCardsData);
 };
 
+const handleSearch = (event) => {
+  event.preventDefault();
+
+  const searchInputs = getSearchInputs();
+
+  localStorage.setItem("options", JSON.stringify(searchInputs));
+
+  //change page location
+  window.location.assign("../../menu.html");
+};
+
 const handleViewRecipeDetails = (event) => {
   const target = $(event.target);
   if (target.is("button")) {
@@ -179,5 +191,22 @@ const callback = (event) => {
   console.log(target);
 };
 
+const handleAdvanceSearch = (event) => {
+  event.preventDefault();
+
+  const searchInputs = getSearchInputs();
+
+  localStorage.setItem("options", JSON.stringify(searchInputs));
+  window.location.reload();
+};
+
+const onClick = (event) => {
+  event.preventDefault();
+  const searchTerm = $("#search-term").val();
+  constructAndAppendModal(searchOptions, searchTerm);
+  $("#advance-search").on("click", handleAdvanceSearch);
+};
 //add event listener on recipe container
 $(".recipe-card").on("click", callback);
+$("#filter-toggle").on("click", onClick);
+$(".close-modal").on("click", closeModal);

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- bulma.io CDN bootstarp alternative -->
+    <!-- bulma.io CDN bootstrap alternative -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
@@ -92,9 +92,12 @@
                 <button type="submit" class="searchButton">
                   <i class="fa fa-search"></i>
                 </button>
+                       <!-- modal search html -->
+
             </div>
           </form>
-          <div id="accordions" class="accordions"></div>
+          <button class="filter-toggle" id="filter-toggle" type="submit">Advance search</button>
+          <div id="modal-container" class="modal-container"></div>
         </div>
       </section>
 
@@ -351,6 +354,7 @@
     <!-- JS Script link -->
     <script src="https://cdn.jsdelivr.net/npm/bulma-accordion@2.0.1/dist/js/bulma-accordion.min.js"></script>
     <script src="./mockData/complexSearchData.js"></script>
+    <script src="./assets/js/filterOptions.js"></script>
     <script src="./assets/js/generic-script.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
