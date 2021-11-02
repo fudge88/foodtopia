@@ -68,18 +68,33 @@
     <section class="hero">
       <div class="hero-body">
         <h1 class="title has-text-centered">Your recipe search for.....</h1>
+        <!-- modal search html -->
+        <button class="advance-search">Advance search</button>
       </div>
-      <div class="modal">
+      <div class="modal is-active">
         <div class="modal-background"></div>
         <div class="modal-card">
           <form class="filter" id="filter-form">
             <header class="modal-card-head">
-              <p class="modal-card-title">Filter options</p>
+              <p class="modal-card-title">Advance search</p>
               <button class="delete close-modal" aria-label="close"></button>
             </header>
-            <section class="modal-card-body"></section>
+            <section class="modal-card-body">
+              <h3>Diets</h3>
+              <label class="checkbox">
+                <input type="checkbox" name="diets" /> Soy
+              </label>
+              <h3>Intolerances</h3>
+              <label class="checkbox">
+                <input type="checkbox" name="intolerances" /> Soy
+              </label>
+              <h3>Cuisines</h3>
+              <label class="checkbox">
+                <input type="checkbox" name="cuisines" /> Soy
+              </label>
+            </section>
             <footer class="modal-card-foot">
-              <button class="button is-success">Save changes</button>
+              <button class="button is-success">Search</button>
               <button class="button">Cancel</button>
             </footer>
           </form>
