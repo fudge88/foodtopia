@@ -12,8 +12,8 @@ const renderImageRecipeCard = (data) => {
         <button class="small-screen-button">
           <i class="mt-4 bookmark-icon fas fa-bookmark fa-2x"></i>
         </button>
-        <button class="small-screen-button info-icon">
-          <i class="mt-4 bookmark-icon fas fa-info fa-2x"></i>
+        <button class="small-screen-button ">
+          <i class="mt-4 bookmark-icon fas fa-info fa-2x info-icon"></i>
         </button>
       </div>
     </figure>
@@ -128,13 +128,67 @@ const renderCookingMethodCard = (data) => {
   $("#method-container").append(cookingMethodsCard);
 };
 
+const renderServingQuantities = function (userServings) {
+  console.log(userServings);
+  const serving = (document.getElementById("original-serving").innerHTML =
+    userServings.servings);
+};
+
+// ingredients calculator
+const ingredientsCalculator = (servingData, ingredientsData, userServings) => {
+  const servings = servingData.serves;
+  const ingredientsCalculatorItem = (each) => {
+    // console.log(each);
+    // get value from each ingredient
+    const value = each.quantity;
+    // divide value by number of servings with the recipe
+    const baseServing = value / servings;
+    const selectedServings = Math.floor(baseServing * userServings);
+    // console.log(each.ingredientName, selectedServings);
+
+    const ingredientItem = `<div>
+      <span>${selectedServings}</span>
+      ${each.quantityUnit} ${each.ingredientName}
+      </div>`;
+    console.log(ingredientItem);
+    $("#ingredients-container").append(ingredientItem);
+    // get number of servings user wishes to use
+    // times the new value with teh number of servings
+    // render new value
+  };
+  $("#ingredients-container").empty();
+  ingredientsData.forEach(ingredientsCalculatorItem);
+};
+
 //render ingredients card
 const renderIngredientsCard = (data) => {
   const constructIngredientItem = (each) => {
-    const ingredientItem = `<li>${each.ingredientName} ${each.quantity} ${each.quantityUnit}</li>`;
+    // const ingredientItem = `<li>${each.ingredientName} ${each.quantity} ${each.quantityUnit}</li>`;
+
+    const ingredientItem = `<div>
+    <span>${each.quantity}</span>
+    ${each.quantityUnit} ${each.ingredientName}
+    </div>`;
     $("#ingredients-container").append(ingredientItem);
   };
   data.forEach(constructIngredientItem);
+};
+
+//render youtube videos
+const renderYouTubeVideos = (data) => {
+  const callback = (each) => {
+    const videoCard = `<div class="mb-3">
+    <iframe
+      width="100%"
+      height="auto"
+      src="https://youtube.com/embed/${each.videoId}"
+      allowfullscreen
+    ></iframe>
+  </div>`;
+    $("#video-container").append(videoCard);
+  };
+
+  data.forEach(callback);
 };
 
 //get nutrient key name from nutrients array
@@ -158,7 +212,7 @@ const constructRecipeObject = (data) => {
     title: data.title,
     time: data.readyInMinutes,
     serves: data.servings,
-    summary: data.winePairing.pairingText,
+    summary: data.winePairing.pairingText || "No wine pairings were found",
 
     //calories
     energy: energy?.amount || "N/A",
@@ -208,6 +262,18 @@ const constructIngredientsObject = (data) => {
   return data.extendedIngredients.map(callback);
 };
 
+//transform video data fro YT API
+const constructVideosObject = (data) => {
+  const callback = (each) => {
+    return {
+      videoId: each.id.videoId,
+      // title: each.snippet.title,
+      // thumbnail: each.snippet.thumbnails.default.url,
+    };
+  };
+  return data.items.map(callback);
+};
+
 const onLoad = async () => {
   //get recipe id from local storage
   const recipeIdValue = getFromLocalStorage("recipeId", {});
@@ -216,7 +282,7 @@ const onLoad = async () => {
     //build url API
     const apiUrl = `https://api.spoonacular.com/recipes/${recipeIdValue}/information?includeNutrition=true&apiKey=${API_KEY}`;
 
-    //fetch data
+    //fetch recipe information data
     const recipeData = await getApiData(apiUrl);
 
     //get recipe info and render recipe image card
@@ -230,7 +296,37 @@ const onLoad = async () => {
     //get ingredients info and render ingredients list
     const ingredientsData = constructIngredientsObject(recipeData);
     renderIngredientsCard(ingredientsData);
+
+    const getUserServings = (event) => {
+      const target = event.target;
+      if ($(target).hasClass("servings-value")) {
+        const servingTabValue = $(target).data("value");
+        console.log(servingTabValue);
+
+        ingredientsCalculator(
+          recipeInformationData,
+          ingredientsData,
+          servingTabValue
+        );
+      }
+    };
+
+    $("#servings-container").on("click", getUserServings);
+
+    renderServingQuantities(recipeData);
+    //get recipe title, which will be used as parameter for YouTube api call; remove blank space between words
+    const recipeTitle = recipeInformationData.title.split(" ").join("");
+
+    //build youtube api url
+    const youTubeApiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${recipeTitle}&key=${API_KEY_YOU_TUBE}&maxResults=3`;
+
+    //fetch youtube video information
+    const videoDataRecipe = await getApiData(youTubeApiUrl);
+
+    //get recipe video data and render video cards
+    const videosData = constructVideosObject(videoDataRecipe);
+    renderYouTubeVideos(videosData);
   }
-  console.log(recipeIdValue);
 };
+
 $(document).ready(onLoad);

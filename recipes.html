@@ -70,7 +70,7 @@
       </nav>
     </header>
 
-    <div class="container">
+    <div class="center-content">
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-8">
           <div class="tile">
@@ -159,26 +159,30 @@
         <div class="tile is-parent">
           <article class="tile is-child ingredients-container">
             <h2 class="has-text-centered">Select Servings Quantity</h2>
-            <div class="servings-container">
+            <div class="servings-container" id="servings-container">
               <div class="servings servings-tab is-gapless">
-                <a href="#" class="card-footer-item"
-                  ><i class="fas fa-user"> 4</i></a
-                >
+                <div class="card-footer-item servings-value">
+                  <i class="fas fa-user servings-value" id="original-serving">
+                    4</i
+                  >
+                </div>
               </div>
               <div class="servings servings-tab is-gapless">
-                <a href="#" class="card-footer-item"
-                  ><i class="fas fa-user"> 20</i></a
-                >
+                <div class="card-footer-item servings-value" data-value="20">
+                  <i class="fas fa-user servings-value" data-value="20"> 20</i>
+                </div>
               </div>
               <div class="servings is-gapless servings-tab">
-                <a href="#" class="card-footer-item"
-                  ><i class="fas fa-user"> 50</i></a
-                >
+                <div class="card-footer-item servings-value" data-value="50">
+                  <i class="fas fa-user servings-value" data-value="50"> 50</i>
+                </div>
               </div>
               <div class="servings servings-tab is-gapless">
-                <a href="#" class="card-footer-item"
-                  ><i class="fas fa-user"> 100</i></a
-                >
+                <div class="card-footer-item servings-value" data-value="100">
+                  <i class="fas fa-user servings-value" data-value="100">
+                    100</i
+                  >
+                </div>
               </div>
             </div>
 
@@ -193,6 +197,43 @@
                 </ul>
               </div>
             </div>
+            <!--youtube videos here-->
+            <section>
+              <div class="container">
+                <div class="column" id="video-container">
+                  <h1>Related to your search</h1>
+                  <!-- <div class="mb-3"> -->
+                  <!-- <youtube :video-id="video1"></youtube> -->
+                  <!-- <iframe
+                      width="100%"
+                      height="auto"
+                      src="https://youtube.com/embed/xxxxxxx"
+                      allowfullscreen
+                    ></iframe> -->
+                  <!-- </div>
+                  <div class="mb-3"> -->
+                  <!-- <youtube :video-id="video2"></youtube> -->
+                  <!-- <iframe
+                      width="100%"
+                      height="auto"
+                      src="https://youtube.com/embed/xxxxxxx"
+                      allowfullscreen
+                    ></iframe>
+                  </div> -->
+                  <!-- </div>
+                  <div class="columns"> -->
+                  <!-- <div> -->
+                  <!-- <youtube :video-id="video3"></youtube> -->
+                  <!-- <iframe
+                      width="100%"
+                      height="auto"
+                      src="https://youtube.com/embed/xxxxxxx"
+                      allowfullscreen
+                    ></iframe>
+                  </div> -->
+                </div>
+              </div>
+            </section>
           </article>
         </div>
       </div>
@@ -224,6 +265,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bulma-accordion@2.0.1/dist/js/bulma-accordion.min.js"></script>
     <script src="assets/js/mocks/mockRecipe.js"></script>
     <script src="assets/js/filterOptions.js"></script>
+    <script src="assets/js/mocks/youtubeMockData.js"></script>
     <script src="./assets/js/generic-script.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/recipe.js"></script>

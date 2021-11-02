@@ -5,8 +5,8 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
     <div class="card-image">
       <figure class="image is-4by3">
         <div class="recipe-img-icon-container">
-          <div class="mr-3 bookmark-icon">
-            <i class="fas fa-minus-circle"></i>
+          <div id=${each.id} class="mr-3 bookmark-icon">
+          <i id=${each.id} class="remove-icon fas fa-minus-circle"></i>
           </div>
         </div>
         <img
@@ -21,7 +21,7 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
       </div>
 
       <footer class="card-footer recipe-footer">
-        <button class="button green-outline is-outlined">
+        <button id=${each.id} class="view-info button green-outline is-outlined">
           View Recipe
         </button>
       </footer>
@@ -36,13 +36,76 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
 
   //append to card container
   $("#card-section").append(favouriteCardsContainer);
+
+  const removeRecipe = (event) => {
+    const target = $(event.target);
+
+    const favouritesRecipes = getFromLocalStorage("favourites", []);
+
+    if (target.is("i")) {
+      const recipeId = target.attr("id");
+
+      const getFilteredFavourites = (each) => {
+        console.log(recipeId, each.id);
+        return each.id != recipeId;
+      };
+
+      const newFavourites = favouritesRecipes.filter(getFilteredFavourites);
+      console.log(newFavourites);
+
+      localStorage.setItem("favourites", JSON.stringify(newFavourites));
+
+      const newFavouritesRecipes = getFromLocalStorage("favourites", []);
+
+      $("#card-section").empty();
+
+      if (newFavouritesRecipes.length === 0) {
+        constructAndAppendMessage();
+      } else {
+        constructAndAppendFavouritesCards(newFavouritesRecipes);
+      }
+    }
+  };
+
+  //remove recipe from local Storage
+  $(".bookmark-icon").on("click", removeRecipe);
+
+  const handleViewRecipeDetails = (event) => {
+    const target = $(event.target);
+    if (target.is("button")) {
+      const recipeId = target.attr("id");
+      console.log(recipeId);
+
+      // add recipe id value to local storage
+      localStorage.setItem("recipeId", JSON.stringify(recipeId));
+
+      //change location to recipe html
+      window.location.assign("../../recipes.html");
+    }
+  };
+
+  //view recipe info
+  $(".view-info").on("click", handleViewRecipeDetails);
+};
+
+//construct and append the message
+const constructAndAppendMessage = () => {
+  const message = `<div class ="notification is-primary">
+  OOPS LOOKS LIKE YOU HAVE NO RECIPES ADDED TO YOUR FAVOURITES
+</div>`;
+
+  //append to card container
+  $("#card-section").append(message);
 };
 
 const onReady = () => {
   const favouritesRecipes = getFromLocalStorage("favourites", []);
 
-  //render div with initial score
-  constructAndAppendFavouritesCards(favouritesRecipes);
+  if (favouritesRecipes.length === 0) {
+    constructAndAppendMessage();
+  } else {
+    constructAndAppendFavouritesCards(favouritesRecipes);
+  }
 };
 
 $(document).ready(onReady);
