@@ -117,7 +117,7 @@ const onSubmit = function (event) {
 const handleViewRecipeDetails = (event) => {
   const target = $(event.target);
   if (target.is("button")) {
-    const recipeId = target.attr("Id");
+    const recipeId = target.attr("id");
     console.log(recipeId);
 
     // add recipe id value to local storage

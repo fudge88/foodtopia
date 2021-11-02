@@ -21,7 +21,7 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
       </div>
 
       <footer class="card-footer recipe-footer">
-        <button class="button green-outline is-outlined">
+        <button id=${each.id} class="view-info button green-outline is-outlined">
           View Recipe
         </button>
       </footer>
@@ -69,6 +69,23 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
 
   //remove recipe from local Storage
   $(".bookmark-icon").on("click", removeRecipe);
+
+  const handleViewRecipeDetails = (event) => {
+    const target = $(event.target);
+    if (target.is("button")) {
+      const recipeId = target.attr("id");
+      console.log(recipeId);
+
+      // add recipe id value to local storage
+      localStorage.setItem("recipeId", JSON.stringify(recipeId));
+
+      //change location to recipe html
+      window.location.assign("../../recipes.html");
+    }
+  };
+
+  //view recipe info
+  $(".view-info").on("click", handleViewRecipeDetails);
 };
 
 //construct and append the message
