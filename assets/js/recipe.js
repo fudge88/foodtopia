@@ -227,7 +227,6 @@ const constructIngredientsObject = (data) => {
 
 //transform video data fro YT API
 const constructVideosObject = (data) => {
-  console.log(data);
   const callback = (each) => {
     return {
       videoId: each.id.videoId,
