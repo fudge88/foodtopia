@@ -26,6 +26,10 @@ body {
   position: relative;
 }
 
+.center-content {
+  margin: 5rem 10rem;
+  justify-content: space-around;
+}
 h1,
 h2,
 h3,
