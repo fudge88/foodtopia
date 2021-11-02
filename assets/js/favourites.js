@@ -5,8 +5,8 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
     <div class="card-image">
       <figure class="image is-4by3">
         <div class="recipe-img-icon-container">
-          <div class="mr-3 bookmark-icon">
-            <i class="fas fa-minus-circle"></i>
+          <div id=${each.id} class="mr-3 bookmark-icon">
+          <i id=${each.id} class="remove-icon fas fa-minus-circle"></i>
           </div>
         </div>
         <img
@@ -36,12 +36,21 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
 
   //append to card container
   $("#card-section").append(favouriteCardsContainer);
+
+  const removeRecipe = (event) => {
+    const target = $(event.target);
+    if (target.is("i")) {
+      const recipeId = target.attr("id");
+    }
+  };
+
+  //remove recipe from local Storage
+  $(".bookmark-icon").on("click", removeRecipe);
 };
 
 const onReady = () => {
   const favouritesRecipes = getFromLocalStorage("favourites", []);
 
-  //render div with initial score
   constructAndAppendFavouritesCards(favouritesRecipes);
 };
 
