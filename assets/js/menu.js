@@ -1,95 +1,6 @@
 const mockData = false;
 
 // render advance search
-const renderModal = () => {
-  constructModal();
-  $(".modal").attr("class", "modal is-active");
-};
-
-const closeModal = () => {
-  $(".modal").removeClass("is-active");
-};
-
-const constructAndAppendAdvanceSearchOptions = (searchOptions) => {
-  const constructDietOption = (eachDiet) => {
-    return `<input type="checkbox" data-option="diet" id=${eachDiet}>${eachDiet}</input>`;
-  };
-
-  const constructIntolerancesOption = (eachIntolerance) => {
-    return `<input type="checkbox" data-option="intolerances" id=${eachIntolerance}>${eachIntolerance}</input>`;
-  };
-
-  const constructCuisinesOption = (eachCuisine) => {
-    return ` <input type="checkbox" data-option="cuisines" id=${eachCuisine}>${eachCuisine}</input>`;
-  };
-
-  const dietOption = searchOptions.diet.map(constructDietOption).join("");
-
-  //map through the intolerance
-  const intolerancesOption = searchOptions.intolerances
-    .map(constructIntolerancesOption)
-    .join("");
-
-  //map through the cuisines
-  const cuisinesOption = searchOptions.cuisines
-    .map(constructCuisinesOption)
-    .join("");
-};
-
-const constructModal = (searchOptions) => {
-  ` <div class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-card">
-    <form class="filter" id="filter-form">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Advance search</p>
-        <button class="delete close-modal" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <h3>Diets</h3>
-        <label class="checkbox">
-        ${dietOption} </label>
-        <h3>Intolerances</h3>
-        <label class="checkbox">
-        ${intolerancesOption} </label>
-        <h3>Cuisines</h3>
-        <label class="checkbox">
-        ${cuisinesOptions}</label>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Search</button>
-        <button class="button">Cancel</button>
-      </footer>
-    </form>
-  </div>
-</div>
-</section>
-
-<!-- search bar and filter -->
-<!-- Main container -->
-<div class="level container is-max-desktop">
-<!-- Left side -->
-<form id="search-form">
-  <div class="level-left">
-    <div class="level-item">
-      <div class="field has-addons">
-        <p class="control">
-          <input
-            class="input"
-            type="text"
-            placeholder="Find a post"
-            id="search-term"
-          />
-        </p>
-        <p class="control">
-          <button class="button" type="submit">Search</button>
-        </p>
-      </div>
-    </div>
-  </div>
-</form>
-</div>`;
-};
 //construct and render recipe cards
 const renderRecipeCards = (recipeData) => {
   $("#card-container").empty();
@@ -204,6 +115,17 @@ const onSubmit = function (event) {
   renderRecipeCards(recipeCardsData);
 };
 
+const handleSearch = (event) => {
+  event.preventDefault();
+
+  const searchInputs = getSearchInputs();
+
+  localStorage.setItem("options", JSON.stringify(searchInputs));
+
+  //change page location
+  window.location.assign("../../menu.html");
+};
+
 const handleViewRecipeDetails = (event) => {
   const target = $(event.target);
   if (target.is("button")) {
@@ -261,8 +183,22 @@ const callback = (event) => {
   console.log(target);
 };
 
+const handleAdvanceSearch = (event) => {
+  event.preventDefault();
+
+  const searchInputs = getSearchInputs();
+
+  localStorage.setItem("options", JSON.stringify(searchInputs));
+  window.location.reload();
+};
+
+const onClick = (event) => {
+  event.preventDefault();
+  const searchTerm = $("#search-term").val();
+  constructAndAppendModal(searchOptions, searchTerm);
+  $("#advance-search").on("click", handleAdvanceSearch);
+};
 //add event listener on recipe container
 $(".recipe-card").on("click", callback);
-$("#filter-toggle").on("click", renderModal);
-$("#filter-form").on("submit", onSubmit);
+$("#filter-toggle").on("click", onClick);
 $(".close-modal").on("click", closeModal);
