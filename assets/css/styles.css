@@ -70,7 +70,7 @@ a.navbar-item:hover {
 
 /* test */
 form {
-  margin-top: 10rem;
+  margin-top: 8rem;
   min-width: 20rem;
 }
 
@@ -105,6 +105,17 @@ form {
 }
 .searchButton:hover {
   color: var(--terra-cotta);
+}
+
+.advance-search-btn {
+  border: none;
+  box-shadow: none;
+  color: var(--terra-cotta);
+  background-color: transparent;
+}
+
+.advance-search-btn:hover {
+  color: var(--black);
 }
 
 .main-container {
