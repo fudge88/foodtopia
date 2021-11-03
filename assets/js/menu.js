@@ -1,4 +1,4 @@
-const mockData = true;
+const mockData = false;
 
 // render advance search
 //construct and render recipe cards
@@ -142,7 +142,7 @@ const handleSearch = (event) => {
   localStorage.setItem("options", JSON.stringify(searchInputs));
 
   //change page location
-  window.location.assign("../../menu.html");
+  window.location.assign("./menu.html");
 };
 
 const handleViewRecipeDetails = (event) => {
@@ -155,7 +155,7 @@ const handleViewRecipeDetails = (event) => {
     localStorage.setItem("recipeId", JSON.stringify(recipeId));
 
     //change location to recipe html
-    window.location.assign("../../recipes.html");
+    window.location.assign("./recipes.html");
   }
 };
 

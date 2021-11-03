@@ -9,7 +9,7 @@ const handleSearch = (event) => {
   localStorage.setItem("options", JSON.stringify(searchInputs));
 
   //change page location
-  window.location.assign("../../menu.html");
+  window.location.assign("./menu.html");
 };
 
 const handleLoad = () => {
