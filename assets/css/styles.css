@@ -78,6 +78,11 @@ form {
   width: 100%;
   display: flex;
 }
+
+.image img.is-rounded {
+  height: 8rem;
+}
+
 .searchTerm {
   width: 100%;
   border: 3px solid var(--black);
