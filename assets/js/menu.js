@@ -58,6 +58,17 @@ const renderRecipeCards = (recipeData) => {
     $(".view-info").on("click", handleViewRecipeDetails);
 
     const addToFavourites = (event) => {
+      // Get the snackbar DIV
+      var toast = $("#toast");
+
+      // Add the "show" class to DIV
+      toast.addClass("show");
+
+      // After 3 seconds, remove the show class from DIV
+      setTimeout(function () {
+        toast.attr("class", "");
+      }, 3000);
+
       const target = event.target;
 
       if ($(target).attr("id") == each.id) {
@@ -206,7 +217,21 @@ const onClick = (event) => {
   constructAndAppendModal(searchOptions, searchTerm);
   $("#advance-search").on("click", handleAdvanceSearch);
 };
+
 //add event listener on recipe container
 $(".recipe-card").on("click", callback);
 $("#filter-toggle").on("click", onClick);
 $(".close-modal").on("click", closeModal);
+
+function showToast() {
+  // Get the snackbar DIV
+  var toast = $("#toast");
+
+  // Add the "show" class to DIV
+  toast.addClass("show");
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function () {
+    toast.attr("class", "");
+  }, 3000);
+}
