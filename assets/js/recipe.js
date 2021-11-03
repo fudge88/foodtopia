@@ -129,9 +129,9 @@ const renderCookingMethodCard = (data) => {
 };
 
 const renderServingQuantities = function (userServings) {
-  console.log(userServings);
-  const serving = (document.getElementById("original-serving").innerHTML =
-    userServings.servings);
+  $("#original-serving-div").append(`<div>${userServings.servings}</div>`);
+  $("#original-serving-div").data("value", userServings.servings);
+  $("#original-serving").data("value", userServings.servings);
 };
 
 // ingredients calculator
@@ -150,7 +150,7 @@ const ingredientsCalculator = (servingData, ingredientsData, userServings) => {
       <span>${selectedServings}</span>
       ${each.quantityUnit} ${each.ingredientName}
       </div>`;
-    console.log(ingredientItem);
+
     $("#ingredients-container").append(ingredientItem);
     // get number of servings user wishes to use
     // times the new value with teh number of servings
