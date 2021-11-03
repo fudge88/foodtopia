@@ -277,6 +277,12 @@ form {
   border: var(--white) solid 1px;
   border-radius: 10px 10px 0 0;
 }
+
+.servings-tab:hover {
+  cursor: pointer;
+  background-color: var(--green-sheen);
+}
+
 .servings-tab:active {
   color: var(--terra-cotta);
   border-bottom: 0;
