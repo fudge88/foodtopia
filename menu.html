@@ -72,30 +72,29 @@
 
     <!-- search bar and filter -->
     <!-- Main container -->
-    <div class="level container is-max-desktop">
-      <!-- Left side -->
-      <form id="search-form">
-        <div class="level-left">
-          <div class="level-item">
-            <div class="field has-addons">
-              <p class="control">
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Find a post"
-                  id="search-term"
-                />
-              </p>
-              <p class="control">
-                <button class="button" type="submit">Search</button>
-              </p>
-            </div>
+    <section class="">
+      <div class="main-container">
+        <form id="search-form">
+          <h1>Find a recipe</h1>
+          <div class="control">
+            <div class="search">
+              <input
+                id="search-input"
+                type="text"
+                class="searchTerm"
+                placeholder="What are you looking for?"
+              />
+              <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+              </button>
+                     <!-- modal search html -->
+
           </div>
-        </div>
-      </form>
-      <button class="filter-toggle" id="filter-toggle">Advance search</button>
-      <div id="modal-container" class="modal-container"></div>
- </div>
+        </form>
+        <button class="filter-toggle advance-search-btn pt-3" id="filter-toggle" type="submit"><h3>Advance Search</h3></button>
+        <div id="modal-container" class="modal-container"></div>
+      </div>
+    </section>
 
     <section class="card-section">
       <div id="toast">Recipe added to Favourites.</div>
