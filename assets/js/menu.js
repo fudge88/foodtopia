@@ -46,9 +46,10 @@ const renderRecipeCards = (recipeData) => {
         const favouritesRecipe = {
           id: each.id,
           title: each.title,
-          time: each.readyInMinutes,
+          time: each.time,
           servings: each.servings,
           image: each.image,
+          calories: each.calories,
         };
 
         const favourites = getFromLocalStorage("favourites", []);
