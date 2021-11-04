@@ -64,20 +64,10 @@ const handleLoad = async () => {
   // // render random recipes cards
   const randomRecipesData = constructRandomRecipeObject(getRandomRecipesData);
   constructRandomRecipeCards(randomRecipesData);
-
-  // const onClick = (event) => {
-  //   event.preventDefault();
-  //   const searchInput = $("#search-input").val();
-  //   constructAndAppendModal(searchOptions, searchInput);
-  //   $("#advance-search").on("click", handleSearch);
-  // };
-  // $("#filter-toggle").on("click", onClick);
-
-  // // add a event listener submit to get the input value
-  // $("#search-form").on("submit", handleSearch);
-
-  // $(".navbar-logo").hover(hoverIn, hoverOut);
 };
+
+// add a event listener submit to get the input value
+$("#search-form").on("submit", handleSearch);
 
 const onClick = (event) => {
   event.preventDefault();
