@@ -53,7 +53,7 @@ const renderRecipeCards = (recipeData) => {
       </div>
     </div>`;
 
-    $("#card-container").append(recipeCard);
+    // $("#card-container").append(recipeCard);
 
     $(".view-info").on("click", handleViewRecipeDetails);
 
@@ -131,7 +131,7 @@ const onSubmit = function (event) {
   // get data from API for search term
 
   const recipeCardsData = constructRecipeObject(complexSearchApiData);
-  renderRecipeCards(recipeCardsData);
+  // renderRecipeCards(recipeCardsData);
 };
 
 const handleSearch = (event) => {
@@ -187,10 +187,10 @@ const onReady = async function () {
 
   if (mockData) {
     const recipeCardsData = constructRecipeObject(complexSearchApiData);
-    renderRecipeCards(recipeCardsData);
+    // renderRecipeCards(recipeCardsData);
   } else {
     const recipeCardsData = constructRecipeObject(data);
-    renderRecipeCards(recipeCardsData);
+    // renderRecipeCards(recipeCardsData);
   }
 };
 
