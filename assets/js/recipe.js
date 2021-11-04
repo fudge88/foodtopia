@@ -115,7 +115,7 @@ const renderImageRecipeCard = (data) => {
 
   getCostRange(data);
   //append image card and nutritional info on icon hover
-  $("#image-recipe-container").append(imageRecipeCard);
+  // $("#image-recipe-container").append(imageRecipeCard);
   $(".info-icon").hover(
     function () {
       $(".nutrition-label").attr("class", "nutrition-label displayed");
@@ -212,7 +212,7 @@ const renderIngredientsCard = (data) => {
     <span>${each.quantity}</span>
     ${each.quantityUnit} ${each.ingredientName}
     </div>`;
-    $("#ingredients-container").append(ingredientItem);
+    // $("#ingredients-container").append(ingredientItem);
   };
   data.forEach(constructIngredientItem);
 };
@@ -228,7 +228,7 @@ const renderYouTubeVideos = (data) => {
       allowfullscreen
     ></iframe>
   </div>`;
-    $("#video-container").append(videoCard);
+    // $("#video-container").append(videoCard);
   };
 
   data.forEach(callback);
@@ -330,15 +330,15 @@ const onLoad = async () => {
 
     //get recipe info and render recipe image card
     const recipeInformationData = constructRecipeObject(recipeData);
-    renderImageRecipeCard(recipeInformationData);
+    // renderImageRecipeCard(recipeInformationData);
 
     //get cooking methods info and render cooking method card
     const cookingMethodsData = constructCookingMethodObject(recipeData);
-    renderCookingMethodCard(cookingMethodsData);
+    // renderCookingMethodCard(cookingMethodsData);
 
     //get ingredients info and render ingredients list
     const ingredientsData = constructIngredientsObject(recipeData);
-    renderIngredientsCard(ingredientsData);
+    // renderIngredientsCard(ingredientsData);
 
     const getUserServings = (event) => {
       const target = event.target;
