@@ -34,6 +34,14 @@ body {
   position: relative;
 }
 
+.background-img-fav {
+  height: 500px;
+  background-image: url(/assets/images/full-set.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
 .center-content {
   margin: 5rem 10rem;
   justify-content: space-around;
@@ -149,6 +157,7 @@ a.navbar-item:hover {
   justify-content: center;
   text-align: center;
   align-content: center;
+  position: relative;
 }
 
 .section-title {
@@ -197,6 +206,11 @@ a.navbar-item:hover {
 }
 
 .user-search-text {
+  margin-top: 11rem;
+  font-size: 40px;
+}
+
+.user-fav-text {
   margin-top: 11rem;
   font-size: 40px;
 }
