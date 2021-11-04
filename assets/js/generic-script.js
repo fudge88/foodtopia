@@ -1,7 +1,7 @@
-const API_KEY = "be6ae57f7b8c425994e6a529e04cb682";
+const API_KEY = "0b9710560c1b4d9fa9e3081882514a7b";
 
 //YouTube API key
-const API_KEY_YOU_TUBE = "AIzaSyD3IzncJHty07ay5Pg3oKx_8moMyicMXIw";
+const API_KEY_YOU_TUBE = "AIzaSyCxheWdliwEmBooGitbAPqK_7RrXSyXZZA";
 
 //fetch API data
 const getApiData = async (url) => {
@@ -161,3 +161,14 @@ const getFromLocalStorage = function (key, defaultValue) {
     return localStorageData;
   }
 };
+
+$(".navbar-logo").hover(hoverIn, hoverOut);
+
+$(".info-icon").hover(
+  function () {
+    $(".nutrition-label").attr("class", "nutrition-label displayed");
+  },
+  function () {
+    $(".nutrition-label").removeClass("displayed");
+  }
+);

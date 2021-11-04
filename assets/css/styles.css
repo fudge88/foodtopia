@@ -291,7 +291,6 @@ a.navbar-item:hover {
   color: red;
 }
 .fa-heart:hover {
-  color: var(--green-sheen);
   padding-top: 5px;
   transform: scale(2);
 }
@@ -320,7 +319,7 @@ a.navbar-item:hover {
 }
 .menu-card-img {
   width: 10rem;
-  height: 10rem;
+  height: 16rem;
 }
 .menu-img img {
   /* padding-top: 1rem; */
@@ -528,6 +527,11 @@ a.navbar-item:hover {
   However, delay the fade out process for 2.5 seconds */
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.about-me img {
+  width: 100%;
+  object-fit: contain;
 }
 
 /* Animations to fade the snackbar in and out */

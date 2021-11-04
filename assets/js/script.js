@@ -61,35 +61,37 @@ const handleLoad = async () => {
   const randomRecipesApiUrl = `https://api.spoonacular.com/recipes/random?number=5&apiKey=${API_KEY}`;
   //get random recipes data from the API
   const getRandomRecipesData = await getApiData(randomRecipesApiUrl);
-  // render random recipes cards
+  // // render random recipes cards
   const randomRecipesData = constructRandomRecipeObject(getRandomRecipesData);
   constructRandomRecipeCards(randomRecipesData);
 
-  const onClick = (event) => {
-    event.preventDefault();
-    const searchInput = $("#search-input").val();
-    constructAndAppendModal(searchOptions, searchInput);
-    $("#advance-search").on("click", handleSearch);
-  };
-  $("#filter-toggle").on("click", onClick);
+  // const onClick = (event) => {
+  //   event.preventDefault();
+  //   const searchInput = $("#search-input").val();
+  //   constructAndAppendModal(searchOptions, searchInput);
+  //   $("#advance-search").on("click", handleSearch);
+  // };
+  // $("#filter-toggle").on("click", onClick);
 
-  // add a event listener submit to get the input value
-  $("#search-form").on("submit", handleSearch);
+  // // add a event listener submit to get the input value
+  // $("#search-form").on("submit", handleSearch);
 
-  $(".navbar-logo").hover(hoverIn, hoverOut);
+  // $(".navbar-logo").hover(hoverIn, hoverOut);
 };
+
+const onClick = (event) => {
+  event.preventDefault();
+  const searchInput = $("#search-input").val();
+  constructAndAppendModal(searchOptions, searchInput);
+  $("#advance-search").on("click", handleSearch);
+};
+$("#filter-toggle").on("click", onClick);
+
+// add a event listener submit to get the input value
+$("#search-form").on("submit", handleSearch);
 
 $(document).ready(handleLoad);
 
-$(".info-icon").hover(
-  function () {
-    $(".nutrition-label").attr("class", "nutrition-label displayed");
-  },
-  function () {
-    $(".nutrition-label").removeClass("displayed");
-  }
-);
-
-// $("#filter-toggle").on("click", renderModal);
+$("#filter-toggle").on("click", renderModal);
 
 $(".close-modal").on("click", closeModal);
