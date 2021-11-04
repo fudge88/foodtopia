@@ -1,10 +1,27 @@
+![Foodtopia Logo Image](./assets/images/logo.png)
+
 # Foodtopia
+
+## Table of Contents
+
+- [Foodtopia](#foodtopia)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [User Story](#user-story)
+  - [Deployed URL](#deployed-url)
+  - [Technologies Used](#technologies-used)
+  - [API Documentation](#api-documentation)
+  - [Contributors](#contributors)
+  - [Improvements](#improvements)
+  - [Screenshots](#screenshots)
+    - [Wireframes](#wireframes)
+    - [Final Website](#final-website)
 
 ## Description
 
 A responsive dynamic app which will run in the browser. Foodtopia is easy to use application and user led database search engine for different types of recipes. The website requires direct input from the user, in order to display results relating to their specific search. The user can filter their search for different recipes by dietary options, types of cuisines and intolerances and allergies.
 
-## User story
+## User Story
 
 AS a user when I GO on the app,
 
@@ -74,6 +91,27 @@ You can view the GitHub pages deployed application [here](https://)
 - Font Awesome
 - JavaScript
 - JQuery
+
+## API Documentation
+
+[Spoonacular]() and [YouTube]() APIs
+
+- Spoonacular
+- YouTube
+
+## Contributors
+
+- Anab: [https://github.com/anabwarsame](https://github.com/anabwarsame)
+- Fahra: [https://github.com/fudge88](https://github.com/fudge88)
+- Leanne: [https://github.com/lenny-g](https://github.com/lenny-g)
+- Liana: [https://github.com/lianavaleria15](https://github.com/lianavaleria15)
+- Luiz: [https://github.com/luizfroes](https://github.com/luizfroes)
+
+## Improvements
+
+- to add
+- to add
+- to add
 
 ## Screenshots
 
