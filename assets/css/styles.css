@@ -157,9 +157,11 @@ a.navbar-item:hover {
   justify-content: center;
   text-align: center;
   align-content: center;
-  position: relative;
 }
 
+.flex-column-content {
+  flex-direction: column;
+}
 .section-title {
   margin: 20px auto;
   text-align: center;
@@ -211,8 +213,11 @@ a.navbar-item:hover {
 }
 
 .user-fav-text {
-  margin-top: 11rem;
+  margin-top: 5rem;
   font-size: 40px;
+}
+.fav-subheading {
+  margin-top: 11rem;
 }
 /* test */
 .menu-card-container {
