@@ -61,10 +61,14 @@ const handleLoad = async () => {
   const randomRecipesApiUrl = `https://api.spoonacular.com/recipes/random?number=5&apiKey=${API_KEY}`;
   //get random recipes data from the API
   const getRandomRecipesData = await getApiData(randomRecipesApiUrl);
-  // render random recipes cards
+  // // render random recipes cards
   const randomRecipesData = constructRandomRecipeObject(getRandomRecipesData);
   constructRandomRecipeCards(randomRecipesData);
 };
+
+// add a event listener submit to get the input value
+$("#search-form").on("submit", handleSearch);
+
 const onClick = (event) => {
   event.preventDefault();
   const searchInput = $("#search-input").val();
@@ -76,17 +80,7 @@ $("#filter-toggle").on("click", onClick);
 // add a event listener submit to get the input value
 $("#search-form").on("submit", handleSearch);
 
-$(".navbar-logo").hover(hoverIn, hoverOut);
 $(document).ready(handleLoad);
-
-$(".info-icon").hover(
-  function () {
-    $(".nutrition-label").attr("class", "nutrition-label displayed");
-  },
-  function () {
-    $(".nutrition-label").removeClass("displayed");
-  }
-);
 
 $("#filter-toggle").on("click", renderModal);
 
