@@ -361,6 +361,11 @@ a.navbar-item:hover {
   padding-top: 7px;
   padding-left: 2px;
 }
+.recipe-info-icon:hover,
+.servings-btn:hover {
+  background-color: var(--green-sheen);
+  border: var(--green-sheen) solid 1px;
+}
 
 /* cards */
 .card-container {
@@ -680,6 +685,9 @@ a.navbar-item:hover {
 @media screen and (min-width: 769px) {
   .ingredients-container {
     padding: 1rem 2rem;
+  }
+  .recipe-wrap {
+    margin: 2rem 5rem;
   }
 }
 @media screen and (max-width: 768px) {
