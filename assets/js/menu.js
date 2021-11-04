@@ -138,7 +138,7 @@ const handleSearch = (event) => {
   event.preventDefault();
 
   const searchInputs = getSearchInputs();
-
+  console.log(searchInputs);
   localStorage.setItem("options", JSON.stringify(searchInputs));
 
   //change page location
@@ -194,7 +194,7 @@ const onReady = async function () {
   }
 };
 
-$("#search-form").on("submit", onSubmit);
+//$("#search-form").on("submit", onSubmit);
 $(document).ready(onReady);
 
 const callback = (event) => {
@@ -235,3 +235,7 @@ function showToast() {
     toast.attr("class", "");
   }, 3000);
 }
+
+$("#search-form").submit(function (event) {
+  handleSearch(event);
+});

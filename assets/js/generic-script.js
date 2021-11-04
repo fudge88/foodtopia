@@ -51,15 +51,18 @@ const closeModal = () => {
 const constructAndAppendModal = (searchOptions, searchInput) => {
   console.log(searchOptions, searchInput);
   const constructDietOption = (eachDiet) => {
-    return `<input type="checkbox" data-option="diet" id=${eachDiet}> ${eachDiet} </input>`;
+    return `<input type="checkbox" data-option="diet" id=${eachDiet}>
+    <label for="${eachDiet}">${eachDiet}</label>`;
   };
 
   const constructIntolerancesOption = (eachIntolerance) => {
-    return `<input type="checkbox" data-option="intolerances" id=${eachIntolerance}> ${eachIntolerance} </input>`;
+    return `<input type="checkbox" data-option="intolerances" id=${eachIntolerance}>
+    <label for="${eachIntolerance}">${eachIntolerance}</label>`;
   };
 
   const constructCuisinesOption = (eachCuisine) => {
-    return `<input type="checkbox" data-option="cuisines" id=${eachCuisine}> ${eachCuisine} </input>`;
+    return `<input type="checkbox" data-option="cuisines" id=${eachCuisine}>
+    <label for="${eachCuisine}">${eachCuisine}</label>`;
   };
 
   //map through the diet
@@ -90,14 +93,14 @@ const constructAndAppendModal = (searchOptions, searchInput) => {
       <input class="input" id="search-input" type="text" value="${searchInput}" placeholder="Search" />
       </div>
       <h3>Choose your diet...</h3>
-      <label class="checkbox">
-      ${dietOption} </label>
+      <div class="diet-options">
+      ${dietOption}</div>
       <h3>Any Intolerances?...</h3>
-      <label class="checkbox">
-        ${intolerancesOption} </label>
+      <div class="intolerance-options">
+        ${intolerancesOption} </div>
       <h3>Choose your Cuisine...</h3>
-      <label class="checkbox">
-      ${cuisinesOption}</label>
+      <div class="cuisine-option">
+      ${cuisinesOption}</div>
       </section>
       <footer class="modal-card-foot">
         <button class="button is-success" id="advance-search">Search</button>
