@@ -47,6 +47,15 @@ h6 {
   font-family: "Bebas Neue", cursive;
   letter-spacing: 1.5px;
 }
+.sub-title {
+  font-size: 40px;
+}
+.sub-title-menu {
+  font-size: 30px;
+}
+.caption {
+  font-size: 20px;
+}
 
 /* navbar styling */
 .navbar {
@@ -78,7 +87,7 @@ a.navbar-item:hover {
 
 /* test */
 .index-form {
-  margin-top: 8rem;
+  margin-top: 6rem;
   min-width: 20rem;
 }
 .menu-form {
@@ -146,7 +155,7 @@ a.navbar-item:hover {
   margin: 20px auto;
   text-align: center;
   color: black;
-  font-size: 40px;
+  font-size: 35px;
   max-width: 600px;
   position: relative;
 }
@@ -187,6 +196,10 @@ a.navbar-item:hover {
   margin-right: 5rem;
 }
 
+.user-search-text {
+  margin-top: 11rem;
+  font-size: 40px;
+}
 /* test */
 .menu-card-container {
   display: flex;
