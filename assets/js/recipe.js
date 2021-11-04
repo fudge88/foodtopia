@@ -1,74 +1,74 @@
 //render image card
 const renderImageRecipeCard = (data) => {
   //construct image card
-  const imageRecipeCard = `<article class="tile is-child">
-    <figure class="image is-4by3">
-      <img
-        class="recipe-img"
-        src=${data.image}
-        alt=${data.title}
-      />
-      <div class="recipe-img-icon-container">
-        <button class="small-screen-button">
-          <i class="mt-4 bookmark-icon fas fa-bookmark fa-2x"></i>
-        </button>
-        <button class="small-screen-button ">
-          <i class="mt-4 bookmark-icon fas fa-info fa-2x info-icon"></i>
-        </button>
-      </div>
-    </figure>
-    <div class="nutrition-label">
-      <div class="column nutrient-col">
-        <h6>Energy</h6>
-        <p>${data.energy}kcal</p>
-      </div>
-      <div class="column nutrient-col">
-        <h6>Fat</h6>
-        <p>${data.fat}${data.fatUnit}</p>
-        <span>${data.fatPerDay}%</span>
-      </div>
-      <div class="column nutrient-col">
-        <h6>Saturates</h6>
-        <p>${data.saturates}${data.saturatesUnit}</p>
-        <span>${data.saturatesPerDay}%</span>
-      </div>
-      <div class="column nutrient-col">
-        <h6>Sugars</h6>
-        <p>${data.sugars}${data.sugarsUnit}</p>
-        <span>${data.sugarsPerDay}%</span>
-      </div>
-      <div class="column">
-        <h6>Salt</h6>
-        <p>${data.salt}${data.saltUnit}</p>
-        <span>${data.saltPerDay}%</span>
-      </div>
-    </div>
-    <div class="card-header">
-      <h1 class="card-header-title recipe-title">${data.title}</h1>
-    </div>
-    <footer class="card-footer recipe-info-container">           
-      <div class="card-footer-item  recipe-info-box">
-        <p>COOK</p>
-        <h2 class="prep-time-heading">${data.time} mins</h2>
-      </div>
-      <div class="card-footer-item recipe-info-box">
-        <p>SERVES</p>
-        <h2 class="prep-time-heading">${data.serves}</h2>
-      </div>
-      <div class="card-footer-item recipe-info-box">
-        <p>Cost</p>
-        <h2 class="prep-time-heading">${getCostRange(data)}</h2>
-      </div>
-      <div class="card-footer-item recipe-info-box">
-        <p>Popularity</p>
-        <h2 class="prep-time-heading">${getPopularityScore(data)}</h2>
-      </div>
-    </footer>
-  </article>
-  <article class="tile is-child desc-container">
-    <h2 class="title">Wine Pairing?</h2>
-    <p class="subtitle">${data.summary}</p>
-  </article>`;
+  const imageRecipeCard = `<article class="tile is-child"> 
+  <h1 class="has-text-centered title recipe-card-title">${data.title}</h1>
+  <figure class="image is-4by3">
+  <img
+    class="recipe-img"
+    src=${data.image}
+    alt=${data.title}
+  />
+  <div class=" recipe-icon-container">
+    <button id=${data.id}class="recipe-icon">
+      <i id=${data.id} class="mb-3 fas fa-heart fa-lg"></i>
+    </button>
+    <button class="recipe-icon recipe-info-icon">
+      <i class="mb-3 fas fa-info fa-lg"></i>
+    </button>
+  </div>
+  </figure>
+  <div class="nutrition-label">
+  <div class="column nutrient-col">
+    <h6>Energy</h6>
+    <p>${data.energy}</p>
+  </div>
+  <div class="column nutrient-col">
+    <h6>Fat</h6>
+    <p>${data.fat}${data.fatUnit}</p>
+    <span>${data.fatPerDay}</span>
+  </div>
+  <div class="column nutrient-col">
+    <h6>Saturates</h6>
+    <p>${data.saturates}${data.saturatesUnit}</p>
+    <span>${data.saturatesPerDay}</span>
+  </div>
+  <div class="column nutrient-col">
+    <h6>Sugars</h6>
+    <p>${data.sugars}${data.sugarsUnit}</p>
+    <span>${data.sugarsPerDay}</span>
+  </div>
+  <div class="column">
+    <h6>Salt</h6>
+    <p>${data.salt}${data.saltUnit}</p>
+    <span>${data.saltPerDay}</span>
+  </div>
+  </div> 
+
+
+
+
+  <footer class="card-footer recipe-info-container">
+  
+  <div class="card-footer-item  recipe-info-box">
+    <p>COOK</p>
+    <h2 class="prep-time-heading">${data.time}</h2>
+  </div>
+  <div class="card-footer-item recipe-info-box">
+    <p>SERVES</p>
+    <h2 class="prep-time-heading">${data.serves}</h2>
+  </div>
+  
+  <div class="card-footer-item recipe-info-box">
+    <p>DIFFICULTY</p>
+    <h2 class="prep-time-heading">${getCostRange(data)}</i></h2>
+  </div>
+  <div class="card-footer-item recipe-info-box">
+    <p>ORIGIN</p>
+    <h2 class="prep-time-heading">${getPopularityScore(data)}</i></h2>
+  </div>
+  </footer> 
+    </article>`;
 
   const addToFavourites = (event) => {
     console.log("hello");
@@ -85,7 +85,7 @@ const renderImageRecipeCard = (data) => {
 
     const target = event.target;
 
-    if ($(target).attr("id") == each.id) {
+    if ($(target).attr("id") == data.id) {
       const favouritesRecipe = {
         id: each.id,
         title: each.title,
@@ -111,11 +111,12 @@ const renderImageRecipeCard = (data) => {
   };
 
   //add to local storage
-  $(".bookmark-icon").on("click", addToFavourites);
+  $(".recipe-icon").on("click", addToFavourites);
 
   getCostRange(data);
+
   //append image card and nutritional info on icon hover
-  // $("#image-recipe-container").append(imageRecipeCard);
+  $("#image-recipe-container").append(imageRecipeCard);
   $(".info-icon").hover(
     function () {
       $(".nutrition-label").attr("class", "nutrition-label displayed");
@@ -231,7 +232,7 @@ const renderYouTubeVideos = (data) => {
     // $("#video-container").append(videoCard);
   };
 
-  data.forEach(callback);
+  data?.forEach(callback);
 };
 
 //get nutrient key name from nutrients array
@@ -314,7 +315,7 @@ const constructVideosObject = (data) => {
       // thumbnail: each.snippet.thumbnails.default.url,
     };
   };
-  return data.items.map(callback);
+  return data?.items?.map(callback);
 };
 
 const onLoad = async () => {
@@ -330,7 +331,7 @@ const onLoad = async () => {
 
     //get recipe info and render recipe image card
     const recipeInformationData = constructRecipeObject(recipeData);
-    // renderImageRecipeCard(recipeInformationData);
+    renderImageRecipeCard(recipeInformationData);
 
     //get cooking methods info and render cooking method card
     const cookingMethodsData = constructCookingMethodObject(recipeData);
