@@ -26,6 +26,14 @@ body {
   position: relative;
 }
 
+.background-img-menu {
+  height: 500px;
+  background-image: url(/assets/images/knife-fork.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
 .center-content {
   margin: 5rem 10rem;
   justify-content: space-around;
@@ -69,8 +77,12 @@ a.navbar-item:hover {
 }
 
 /* test */
-form {
+.index-form {
   margin-top: 8rem;
+  min-width: 20rem;
+}
+.menu-form {
+  margin-top: 4rem;
   min-width: 20rem;
 }
 
@@ -183,6 +195,11 @@ form {
   height: 16rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.menu-card-container:hover {
+  transform: scale(1.1);
+}
+
 .menu-card-body {
   position: relative;
   padding: 1rem;
