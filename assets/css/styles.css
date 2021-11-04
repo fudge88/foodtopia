@@ -26,6 +26,22 @@ body {
   position: relative;
 }
 
+.background-img-menu {
+  height: 500px;
+  background-image: url(/assets/images/knife-fork.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.background-img-fav {
+  height: 500px;
+  background-image: url(/assets/images/full-set.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
 .center-content {
   margin: 5rem 10rem;
   justify-content: space-around;
@@ -38,6 +54,15 @@ h5,
 h6 {
   font-family: "Bebas Neue", cursive;
   letter-spacing: 1.5px;
+}
+.sub-title {
+  font-size: 40px;
+}
+.sub-title-menu {
+  font-size: 30px;
+}
+.caption {
+  font-size: 20px;
 }
 
 /* navbar styling */
@@ -69,8 +94,12 @@ a.navbar-item:hover {
 }
 
 /* test */
-form {
-  margin-top: 8rem;
+.index-form {
+  margin-top: 6rem;
+  min-width: 20rem;
+}
+.menu-form {
+  margin-top: 4rem;
   min-width: 20rem;
 }
 
@@ -130,14 +159,18 @@ form {
   align-content: center;
 }
 
+.flex-column-content {
+  flex-direction: column;
+}
 .section-title {
   margin: 20px auto;
   text-align: center;
   color: black;
-  font-size: 40px;
+  font-size: 35px;
   max-width: 600px;
   position: relative;
 }
+
 .section-title:before {
   content: "";
   display: block;
@@ -174,12 +207,131 @@ form {
   margin-right: 5rem;
 }
 
+.user-search-text {
+  margin-top: 11rem;
+  font-size: 40px;
+}
+
+.user-fav-text {
+  margin-top: 5rem;
+  font-size: 40px;
+}
+.fav-subheading {
+  margin-top: 11rem;
+}
+/* test */
+.menu-card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 16rem;
+  margin: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button.is-success {
+  background-color: var(--green-sheen);
+  border-color: transparent;
+  color: #fff;
+}
+.button.is-success:hover {
+  background-color: var(--terra-cotta);
+}
+.menu-card-container:hover {
+  transform: scale(1.1);
+}
+.checkbox {
+  padding: 1rem;
+}
+.modal-card-title {
+  color: var(--terra-cotta);
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 1.5px;
+}
+
+.menu-card-body {
+  position: relative;
+  padding: 0 1rem;
+  height: 16rem;
+}
+
+.menu-card-title {
+  font-size: 40px;
+}
+.menu-icon-container {
+  display: flex;
+  flex-direction: row;
+}
+.menu-icon {
+  border: var(--black) solid 1px;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 14px;
+}
+.menu-icon-info {
+  color: var(--green-sheen);
+  border-color: var(--green-sheen);
+}
+.menu-icon-love {
+  border-color: var(--green-sheen);
+}
+.menu-icon-love:hover {
+  color: var(--green-sheen);
+  background-color: red;
+  border-color: red;
+}
+.fa-heart {
+  color: red;
+}
+.fa-heart:hover {
+  color: var(--green-sheen);
+  padding-top: 5px;
+  transform: scale(2);
+}
+
+.menu-br {
+  position: relative;
+  text-align: right;
+  font-size: 25px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.menu-br:before {
+  content: "";
+  display: block;
+  width: 110px;
+  height: 5px;
+  background: var(--terra-cotta);
+  left: 3px;
+  bottom: 50%;
+  position: absolute;
+}
+.menu-br:hover {
+  cursor: pointer;
+  color: var(--terra-cotta);
+  transform: scale(1.1);
+}
+.menu-card-img {
+  width: 10rem;
+  height: 10rem;
+}
+.menu-img img {
+  /* padding-top: 1rem; */
+  object-fit: none;
+  height: 16rem;
+}
+
+/* test end */
+
 /* cards */
 .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   flex-direction: row;
+  height: 17rem;
 }
 
 .card {
@@ -348,48 +500,6 @@ form {
   font-size: 2rem;
 }
 
-.footer-basic {
-  padding: 40px 0;
-  background-color: #ffffff;
-  color: #4b4c4d;
-}
-
-.footer-basic ul {
-  padding: 0;
-  list-style: none;
-  text-align: center;
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 0;
-}
-
-.footer-basic li {
-  padding: 0 10px;
-}
-
-.footer-basic ul a {
-  color: inherit;
-  text-decoration: none;
-  opacity: 0.8;
-}
-
-.footer-basic ul a:hover {
-  opacity: 1;
-}
-
-.footer-basic .social {
-  text-align: center;
-  padding-bottom: 25px;
-}
-
-.footer-basic .copyright {
-  margin-top: 15px;
-  text-align: center;
-  font-size: 13px;
-  color: #aaa;
-  margin-bottom: 0;
-}
-
 /* toast css */
 #toast {
   visibility: hidden;
@@ -487,6 +597,7 @@ form {
   .card {
     max-width: 16rem;
     margin-top: 2rem;
+    height: 0;
   }
   .add-to-favourites {
     display: none;
@@ -496,6 +607,29 @@ form {
   }
   .recipe-info-container {
     flex-direction: column;
+  }
+
+  .menu-card-container {
+    width: 16rem;
+    height: 25rem;
+  }
+  .menu-card-title {
+    margin-top: 1rem;
+  }
+  .menu-card-img {
+    order: -1;
+  }
+  .menu-card-img {
+    width: 16rem;
+  }
+  .menu-img img {
+    margin-top: 1.5rem;
+    object-fit: none;
+    width: 16rem;
+    height: 10rem;
+  }
+  .menu-br {
+    margin: 0;
   }
 }
 
