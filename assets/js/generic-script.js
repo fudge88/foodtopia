@@ -1,4 +1,4 @@
-const API_KEY = "81e0e3574c784dc48cfb9685ec91f934";
+const API_KEY = "9daeb87f968f4a4483172294842c75f6";
 
 //YouTube API key
 const API_KEY_YOU_TUBE = "AIzaSyD3IzncJHty07ay5Pg3oKx_8moMyicMXIw";
@@ -51,15 +51,18 @@ const closeModal = () => {
 const constructAndAppendModal = (searchOptions, searchInput) => {
   console.log(searchOptions, searchInput);
   const constructDietOption = (eachDiet) => {
-    return `<input type="checkbox" data-option="diet" id=${eachDiet}> ${eachDiet} </input>`;
+    return `<input type="checkbox" data-option="diet" id=${eachDiet}>
+    <label for="${eachDiet}">${eachDiet}</label>`;
   };
 
   const constructIntolerancesOption = (eachIntolerance) => {
-    return `<input type="checkbox" data-option="intolerances" id=${eachIntolerance}> ${eachIntolerance} </input>`;
+    return `<input type="checkbox" data-option="intolerances" id=${eachIntolerance}>
+    <label for="${eachIntolerance}">${eachIntolerance}</label>`;
   };
 
   const constructCuisinesOption = (eachCuisine) => {
-    return `<input type="checkbox" data-option="cuisines" id=${eachCuisine}> ${eachCuisine} </input>`;
+    return `<input type="checkbox" data-option="cuisines" id=${eachCuisine}>
+    <label for="${eachCuisine}">${eachCuisine}</label>`;
   };
 
   //map through the diet
@@ -89,15 +92,15 @@ const constructAndAppendModal = (searchOptions, searchInput) => {
       <div class="control">
       <input class="input" id="search-input" type="text" value="${searchInput}" placeholder="Search" />
       </div>
-      <h3 class="caption">Choose your diet...</h3>
-      <label class="checkbox">
-      ${dietOption} </label>
-      <h3 class="caption">Any Intolerances?...</h3>
-      <label class="checkbox">
-        ${intolerancesOption} </label>
-      <h3 class="caption">Choose your Cuisine...</h3>
-      <label class="checkbox">
-      ${cuisinesOption}</label>
+      <h3>Choose your diet...</h3>
+      <div class="diet-options">
+      ${dietOption}</div>
+      <h3>Any Intolerances?...</h3>
+      <div class="intolerance-options">
+        ${intolerancesOption} </div>
+      <h3>Choose your Cuisine...</h3>
+      <div class="cuisine-option">
+      ${cuisinesOption}</div>
       </section>
       <footer class="modal-card-foot">
         <button class="button is-success" id="advance-search">Search</button>
