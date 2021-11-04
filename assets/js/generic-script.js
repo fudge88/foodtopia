@@ -93,13 +93,13 @@ const constructAndAppendModal = (searchOptions, searchInput) => {
       <input class="input" id="search-input" type="text" value="${searchInput}" placeholder="Search" />
       </div>
       <h3>Choose your diet...</h3>
-      <div>
+      <div class="diet-options">
       ${dietOption}</div>
       <h3>Any Intolerances?...</h3>
-      <div>
+      <div class="intolerance-options">
         ${intolerancesOption} </div>
       <h3>Choose your Cuisine...</h3>
-      <div>
+      <div class="cuisine-option">
       ${cuisinesOption}</div>
       </section>
       <footer class="modal-card-foot">
