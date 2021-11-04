@@ -1,30 +1,20 @@
 const constructAndAppendFavouritesCards = (favouritesRecipes) => {
   //construct each favourite recipe card
   const renderFavouritesCards = (each) => {
-    return `<div class="card recipe-card">
-    <div class="card-image">
-      <figure class="image is-4by3">
-        <div class="recipe-img-icon-container">
-          <div id=${each.id} class="mr-3 bookmark-icon">
-          <i id=${each.id} class="remove-icon fas fa-minus-circle"></i>
-          </div>
-        </div>
-        <img
-          class="recipe-img"
-          src=${each.image}
-          alt="placeholder image"
-        />
-      </figure>
-
-      <div class="card-header">
-        <h1 class="card-header-title recipe-title">${each.title}</h1>
+    return `<div class="menu-card-container">
+    <div class="menu-card-body">
+      <h1 class="menu-card-title pt-2">${each.title}</h1>
+      <h3 class="menu-br lets-cook" id=${each.id}>Lets Cook!</h3>
+      <div class="menu-icon-container">
+        <div class="mr-2 menu-icon menu-icon-info">${each.time}m </div>
+        <div class="menu-icon menu-icon-info">${each.calories}</div>
+        <div class="ml-6 menu-icon menu-icon-love remove-from-favourites" id=${each.id}><i class="fas fa-trash fa-lg" id=${each.id}></i></div>
       </div>
-
-      <footer class="card-footer recipe-footer">
-        <button id=${each.id} class="view-info button green-outline is-outlined">
-          View Recipe
-        </button>
-      </footer>
+    </div>
+    <div class="menu-card-img">
+      <figure class="menu-img">
+        <img class="" src=${each.image} alt=${each.title}>
+      </figure>
     </div>
   </div>`;
   };
@@ -68,7 +58,7 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
   };
 
   //remove recipe from local Storage
-  $(".bookmark-icon").on("click", removeRecipe);
+  $(".remove-from-favourites").on("click", removeRecipe);
 
   const handleViewRecipeDetails = (event) => {
     const target = $(event.target);
