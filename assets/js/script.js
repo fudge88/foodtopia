@@ -28,9 +28,9 @@ const constructRandomRecipeObject = (data) => {
 const constructRandomRecipeCards = (data) => {
   //construct each random recipe card
   const callback = (each) => {
-    const randomRecipeCard = `<div class="high-rated-recipe">
+    const randomRecipeCard = `<div class="high-rated-recipe" >
       <figure class="image is-128x128">
-        <img class="is-rounded" src=${each.image}>
+        <img class="is-rounded view-random-info" id=${each.id}  src=${each.image}>
         <h3>${each.title}</h3>
       </figure>
     </div>`;
@@ -38,13 +38,33 @@ const constructRandomRecipeCards = (data) => {
     $("#random-recipes-container").append(randomRecipeCard);
   };
   data.forEach(callback);
+  //add event on random recipe card
+  $(".view-random-info").on("click", handleViewRandomRecipe);
+};
+
+//callback function on random recipe card event
+const handleViewRandomRecipe = (event) => {
+  const target = $(event.target);
+  if (target.is("img")) {
+    //add recipe id to local storage
+    const randomRecipeId = target.attr("id");
+    localStorage.setItem("recipeId", JSON.stringify(randomRecipeId));
+
+    //change page location to recipe page
+    window.location.assign("./recipes.html");
+  }
 };
 
 //on page load execute functions:
-const handleLoad = () => {
+const handleLoad = async () => {
+  //build URL
+  const randomRecipesApiUrl = `https://api.spoonacular.com/recipes/random?number=5&apiKey=${API_KEY}`;
+  //get random recipes data from the API
+  const getRandomRecipesData = await getApiData(randomRecipesApiUrl);
   // render random recipes cards
-  const randomRecipesData = constructRandomRecipeObject(mockRandomRecipesData);
+  const randomRecipesData = constructRandomRecipeObject(getRandomRecipesData);
   constructRandomRecipeCards(randomRecipesData);
+
   const onClick = (event) => {
     event.preventDefault();
     const searchInput = $("#search-input").val();
