@@ -89,13 +89,13 @@ const constructAndAppendModal = (searchOptions, searchInput) => {
       <div class="control">
       <input class="input" id="search-input" type="text" value="${searchInput}" placeholder="Search" />
       </div>
-      <h3>Choose your diet...</h3>
+      <h3 class="caption">Choose your diet...</h3>
       <label class="checkbox">
       ${dietOption} </label>
-      <h3>Any Intolerances?...</h3>
+      <h3 class="caption">Any Intolerances?...</h3>
       <label class="checkbox">
         ${intolerancesOption} </label>
-      <h3>Choose your Cuisine...</h3>
+      <h3 class="caption">Choose your Cuisine...</h3>
       <label class="checkbox">
       ${cuisinesOption}</label>
       </section>

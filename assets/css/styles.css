@@ -209,8 +209,24 @@ a.navbar-item:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.button.is-success {
+  background-color: var(--green-sheen);
+  border-color: transparent;
+  color: #fff;
+}
+.button.is-success:hover {
+  background-color: var(--terra-cotta);
+}
 .menu-card-container:hover {
   transform: scale(1.1);
+}
+.checkbox {
+  padding: 1rem;
+}
+.modal-card-title {
+  color: var(--terra-cotta);
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 1.5px;
 }
 
 .menu-card-body {
