@@ -70,28 +70,29 @@
       </nav>
     </header>
 
-    <div class="center-content">
+    <div class="recipe-wrap">
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-8">
           <div class="tile">
-            <div class="tile is-parent is-vertical" id="image-recipe-container">
-              <!-- <article class="tile is-child"> -->
-              <!-- <figure class="image is-4by3">
+            <div class="tile is-vertical" id="image-recipe-container">
+               <article class="tile is-child"> 
+                 <h1 class="has-text-centered title recipe-card-title">hi this is the title</h1>
+               <figure class="image is-4by3">
                   <img
                     class="recipe-img"
                     src="https://bulma.io/images/placeholders/1280x960.png"
                     alt="placeholder image"
                   />
-                  <div class="recipe-img-icon-container">
-                  <button class="small-screen-button">
-                    <i class="mt-4 bookmark-icon fas fa-bookmark fa-2x"></i>
-                  </button>
-                  <button class="small-screen-button info-icon">
-                    <i class="mt-4 bookmark-icon fas fa-info fa-2x"></i>
-                  </button>
-                  </div>
+                  <div class=" recipe-icon-container">
+                    <button class="recipe-icon">
+                      <i class="mb-3 fas fa-heart fa-lg"></i>
+                    </button>
+                    <button class="recipe-icon">
+                      <i class="mb-3 fas fa-info fa-lg"></i>
+                    </button>
+                    </div>
                 </figure>
-                <div class="nutrition-label">
+                <!--<div class="nutrition-label">
                   <div class="column nutrient-col">
                     <h6>Energy</h6>
                     <p>106Kcal</p>
@@ -118,9 +119,9 @@
                   </div>
                 </div> -->
 
-              <!-- <div class="card-header">
-                  <h1 class="card-header-title recipe-title">Recipe Name</h1>
-                </div>
+   
+
+          
                 <footer class="card-footer recipe-info-container">
                   
                   <div class="card-footer-item  recipe-info-box">
@@ -140,26 +141,38 @@
                     <p>ORIGIN</p>
                     <h2 class="prep-time-heading">Spain</i></h2>
                   </div>
-                </footer> -->
-              <!-- </article>
-              <article class="tile is-child desc-container">
+                </footer> 
+              </article>
+              <article class="tile is-child desc-container description-container">
                 <h2 class="title">Description</h2>
                 <p class="subtitle">Short description of dish/recipe</p>
-              </article> -->
+              </article> 
             </div>
           </div>
-          <div class="tile is-parent" id="method-container">
-            <!-- <article class="tile is-child method-container">
-              <h2 class="title">Method</h2>
+          <div class="tile" id="method-container">
+            <article class="tile is-child method-container">
+              <h2 class=" title">Method</h2>
               <p class="subtitle">Method of cooking/steps</p>
               <div class="content"></div>
-            </article> -->
+            </article> 
           </div>
         </div>
-        <div class="tile is-parent">
+        <div class="tile">
           <article class="tile is-child ingredients-container">
-            <h2 class="has-text-centered">Select Servings Quantity</h2>
+            <h2 class="has-text-centered caption">Select Servings Quantity</h2>
+
+
+            <!-- test -->
             <div class="servings-container" id="servings-container">
+              <div class="servings-btn-container">
+                <div class="my-1 servings-btn">serves 4</div>
+                <div class="my-1 servings-btn">serves 20</div>
+                <div class="my-1 servings-btn">serves 50</div>
+                <div class="my-1 servings-btn">serves 100</div>
+              </div>
+            </div>
+            <!-- end test -->
+             <!-- <div class="servings-container" id="servings-container">
               <div class="servings servings-tab is-gapless">
                 <div
                   class="card-footer-item servings-value"
@@ -199,71 +212,62 @@
                   <div>100</div>
                 </div>
               </div>
-            </div>
+            </div>  -->
 
             <div class="content mt-4">
-              <h2 class="has-text-centered title">Ingredients</h2>
+              <h2 class="has-text-centered title ingredient-decor">Ingredients</h2>
 
               <div class="content">
                 <ul id="ingredients-container">
-                  <!-- <li>milk</li>
+                  <li>milk</li>
                   <li>bread</li>
-                  <li>sugar</li> -->
+                  <li>sugar</li> 
                 </ul>
               </div>
             </div>
-            <!--youtube videos here-->
-            <section>
+            youtube videos here
+            <!-- <section>
               <div class="container">
                 <div class="column" id="video-container">
                   <h1>Related to your search</h1>
-                  <!-- <div class="mb-3"> -->
-                  <!-- <youtube :video-id="video1"></youtube> -->
-                  <!-- <iframe
+                   <div class="mb-3"> 
+                  <youtube :video-id="video1"></youtube>
+                   <iframe
                       width="100%"
                       height="auto"
                       src="https://youtube.com/embed/xxxxxxx"
                       allowfullscreen
-                    ></iframe> -->
-                  <!-- </div>
-                  <div class="mb-3"> -->
-                  <!-- <youtube :video-id="video2"></youtube> -->
-                  <!-- <iframe
-                      width="100%"
-                      height="auto"
-                      src="https://youtube.com/embed/xxxxxxx"
-                      allowfullscreen
-                    ></iframe>
-                  </div> -->
-                  <!-- </div>
-                  <div class="columns"> -->
-                  <!-- <div> -->
-                  <!-- <youtube :video-id="video3"></youtube> -->
-                  <!-- <iframe
+                    ></iframe> 
+                   </div>
+                  <div class="mb-3"> 
+                   <youtube :video-id="video2"></youtube> 
+                  <iframe
                       width="100%"
                       height="auto"
                       src="https://youtube.com/embed/xxxxxxx"
                       allowfullscreen
                     ></iframe>
-                  </div> -->
+                  </div> 
+                   </div>
+                  <div class="columns"> 
+                  <div> 
+                  <youtube :video-id="video3"></youtube> 
+                   <iframe
+                      width="100%"
+                      height="auto"
+                      src="https://youtube.com/embed/xxxxxxx"
+                      allowfullscreen
+                    ></iframe>
+                  </div> 
                 </div>
               </div>
-            </section>
+            </section> -->
           </article>
         </div>
       </div>
-    </div>
+    </div> 
 
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>
-          <a><strong>Foodtopia Group</strong></a>
-          <a href="#"><i class="fab fa-facebook-square"></i></a>
-          <a href="#"><i class="fab fa-instagram-square"></i></a>
-          <a href="#"><i class="fab fa-instagram-square"></i></a>.
-        </p>
-      </div>
-    </footer>
+
 
     <!-- Bulma Accordeon
       <script type="text/javascript" src="/node_modules/bulma-accordion/dist/js/bulma-accordion.min.js"></script> -->
