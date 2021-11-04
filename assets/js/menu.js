@@ -7,55 +7,26 @@ const renderRecipeCards = (recipeData) => {
 
   // construct recipe card
   const callback = (each) => {
-    const recipeCard = ` <div class="card recipe-card">
-      <div class="card-image">
-        <figure class="image is-4by3">
-          <div class="nutrition-label">
-            <div class="column nutrient-col">
-              <h6>Time</h6>
-              <p>${each.time}</p>
-            </div>
-            <div class="column nutrient-col">
-              <h6>Servings</h6>
-              <p>${each.servings}</p>
-              <span>low</span>
-            </div>
-            <div class="column nutrient-col">
-              <h6>Calories</h6>
-              <p>${each.calories}</p>
-              <span>low</span>
-            </div>
-          </div>
-          <div class="recipe-img-icon-container">
-            <div id=${each.id} class="mr-3 bookmark-icon">
-              <i id=${each.id} class="fas fa-bookmark"></i>
-            </div>
-            <div class="mr-3 info-icon">
-              <i class="fas fa-info fa-lg"></i>
-            </div>
-          </div>
-          <img
-            class="recipe-img"
-            src=${each.image}
-            alt=${each.title}
-          />
-        </figure>
-
-        <div class="card-header">
-          <h1 class="card-header-title recipe-title">${each.title}</h1>
-        </div>
-
-        <footer class="card-footer recipe-footer">
-          <button id=${each.id} class="button green-outline is-outlined view-info">
-            View Recipe
-          </button>
-        </footer>
+    const recipeCard = `<div class="menu-card-container">
+    <div class="menu-card-body">
+      <h1 class="menu-card-title pt-2">${each.title}</h1>
+      <h3 class="menu-br lets-cook" id=${each.id}>Lets Cook!</h3>
+      <div class="menu-icon-container">
+        <div class="mr-2 menu-icon menu-icon-info">${each.time}m </div>
+        <div class="menu-icon menu-icon-info">${each.calories}</div>
+        <div class="ml-6 menu-icon menu-icon-love add-to-favourites" id=${each.id}><i class="fas fa-heart fa-lg" id=${each.id}></i></div>
       </div>
-    </div>`;
+    </div>
+    <div class="menu-card-img">
+      <figure class="menu-img">
+        <img class="" src=${each.image} alt=${each.title}>
+      </figure>
+    </div>
+  </div>`;
 
-    // $("#card-container").append(recipeCard);
+    $("#card-container").append(recipeCard);
 
-    $(".view-info").on("click", handleViewRecipeDetails);
+    $(".lets-cook").on("click", handleViewRecipeDetails);
 
     const addToFavourites = (event) => {
       // Get the snackbar DIV
@@ -75,9 +46,10 @@ const renderRecipeCards = (recipeData) => {
         const favouritesRecipe = {
           id: each.id,
           title: each.title,
-          time: each.readyInMinutes,
+          time: each.time,
           servings: each.servings,
           image: each.image,
+          calories: each.calories,
         };
 
         const favourites = getFromLocalStorage("favourites", []);
@@ -97,7 +69,7 @@ const renderRecipeCards = (recipeData) => {
     };
 
     //add to local storage
-    $(".bookmark-icon").on("click", addToFavourites);
+    $(".add-to-favourites").on("click", addToFavourites);
   };
 
   // append recipe card to container
@@ -112,6 +84,7 @@ const constructRecipeObject = (data) => {
       time: each.readyInMinutes,
       servings: each.servings,
       image: each.image,
+      dishType: each.dishTypes,
       calories: each.nutrition.nutrients[0].amount,
     };
   };
@@ -131,7 +104,7 @@ const onSubmit = function (event) {
   // get data from API for search term
 
   const recipeCardsData = constructRecipeObject(complexSearchApiData);
-  // renderRecipeCards(recipeCardsData);
+  renderRecipeCards(recipeCardsData);
 };
 
 const handleSearch = (event) => {
@@ -147,7 +120,7 @@ const handleSearch = (event) => {
 
 const handleViewRecipeDetails = (event) => {
   const target = $(event.target);
-  if (target.is("button")) {
+  if (target.is("h3")) {
     const recipeId = target.attr("id");
     console.log(recipeId);
 
@@ -187,14 +160,14 @@ const onReady = async function () {
 
   if (mockData) {
     const recipeCardsData = constructRecipeObject(complexSearchApiData);
-    // renderRecipeCards(recipeCardsData);
+    renderRecipeCards(recipeCardsData);
   } else {
     const recipeCardsData = constructRecipeObject(data);
-    // renderRecipeCards(recipeCardsData);
+    renderRecipeCards(recipeCardsData);
   }
 };
 
-//$("#search-form").on("submit", onSubmit);
+$("#search-form").on("submit", onSubmit);
 $(document).ready(onReady);
 
 const callback = (event) => {

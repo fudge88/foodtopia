@@ -162,7 +162,9 @@ a.navbar-item:hover {
 .flex-column-content {
   flex-direction: column;
 }
-
+.footer {
+  margin-top: 2rem;
+}
 .section-title {
   margin: 20px auto;
   text-align: center;
@@ -255,9 +257,21 @@ a.navbar-item:hover {
   position: relative;
   padding: 0 1rem;
   height: 16rem;
+  /* width:100%; */
 }
 
-.servings-btn-container,
+.servings-btn-container {
+  display: flex;
+  flex-direction: row;
+}
+.menu-card-title {
+  font-size: 40px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 300px;
+  min-width: 300px;
+}
 .menu-icon-container {
   display: flex;
   flex-direction: row;
@@ -300,7 +314,6 @@ a.navbar-item:hover {
   color: red;
 }
 .fa-heart:hover {
-  color: var(--green-sheen);
   padding-top: 5px;
   transform: scale(2);
 }
@@ -339,11 +352,11 @@ a.navbar-item:hover {
 }
 .menu-card-img {
   width: 10rem;
-  height: 10rem;
+  height: 16rem;
 }
 .menu-img img {
   /* padding-top: 1rem; */
-  object-fit: none;
+  object-fit: contain;
   height: 16rem;
 }
 
@@ -373,7 +386,6 @@ a.navbar-item:hover {
   flex-wrap: wrap;
   justify-content: space-around;
   flex-direction: row;
-  height: 17rem;
 }
 
 .card {
@@ -523,6 +535,9 @@ a.navbar-item:hover {
 .container {
   margin: 2rem;
 }
+.content {
+  margin-bottom: 0 !important;
+}
 .desc-container {
   padding: 1rem;
 }
@@ -565,6 +580,11 @@ a.navbar-item:hover {
   However, delay the fade out process for 2.5 seconds */
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.about-me img {
+  width: 100%;
+  object-fit: contain;
 }
 
 /* Animations to fade the snackbar in and out */
@@ -636,11 +656,11 @@ a.navbar-item:hover {
     align-content: center;
   }
 
-  .card {
+  /* .card {
     max-width: 16rem;
     margin-top: 2rem;
     height: 0;
-  }
+  } */
   .add-to-favourites {
     display: none;
   }
@@ -658,8 +678,12 @@ a.navbar-item:hover {
 
   .menu-card-title {
     margin-top: 1rem;
-    font-size: 40px;
+    /* font-size: 40px; */
+    font-size: 25px;
+    overflow-wrap: break-word;
+    min-width: 100%;
   }
+
   .menu-card-img {
     order: -1;
   }
@@ -695,6 +719,13 @@ a.navbar-item:hover {
     flex-direction: column;
     justify-content: center;
   }
+  .menu-card-body {
+    width: 100%;
+  }
+  .main-container {
+    padding: 0 10px;
+  }
+
   .high-rated-recipe {
     justify-content: center;
   }
