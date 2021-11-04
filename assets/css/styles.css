@@ -708,6 +708,7 @@ a.navbar-item:hover {
   .description-container {
     border: var(--terra-cotta) solid 2px;
     border-radius: 10px;
+    margin-bottom: 2rem !important;
   }
   .method-container {
     border: var(--green-sheen) solid 1px;
