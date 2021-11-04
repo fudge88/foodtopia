@@ -181,7 +181,7 @@ form {
   flex-direction: row;
   flex-wrap: wrap;
   height: 16rem;
-  /* background-color: rgba(0, 0, 0, 0.322); */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .menu-card-body {
   position: relative;
@@ -195,7 +195,6 @@ form {
 .menu-icon-container {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-evenly; */
 }
 .menu-icon {
   border: var(--black) solid 1px;
@@ -266,6 +265,7 @@ form {
   flex-wrap: wrap;
   justify-content: space-around;
   flex-direction: row;
+  /* height: 17rem; */
 }
 
 .card {
