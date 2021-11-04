@@ -70,6 +70,49 @@ const renderImageRecipeCard = (data) => {
     <p class="subtitle">${data.summary}</p>
   </article>`;
 
+  const addToFavourites = (event) => {
+    console.log("hello");
+    // Get the snackbar DIV
+    var toast = $("#toast");
+
+    // Add the "show" class to DIV
+    toast.addClass("show");
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function () {
+      toast.attr("class", "");
+    }, 3000);
+
+    const target = event.target;
+
+    if ($(target).attr("id") == each.id) {
+      const favouritesRecipe = {
+        id: each.id,
+        title: each.title,
+        time: each.readyInMinutes,
+        servings: each.servings,
+        image: each.image,
+      };
+
+      const favourites = getFromLocalStorage("favourites", []);
+
+      const findRecipeId = (each) => {
+        return each.id == $(target).attr("id");
+      };
+
+      const isRecipeInFavourites = favourites.find(findRecipeId);
+
+      if (!isRecipeInFavourites) {
+        favourites.push(favouritesRecipe);
+
+        localStorage.setItem("favourites", JSON.stringify(favourites));
+      }
+    }
+  };
+
+  //add to local storage
+  $(".bookmark-icon").on("click", addToFavourites);
+
   getCostRange(data);
   //append image card and nutritional info on icon hover
   $("#image-recipe-container").append(imageRecipeCard);

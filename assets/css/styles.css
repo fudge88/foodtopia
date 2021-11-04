@@ -257,6 +257,11 @@ a.navbar-item:hover {
 
 .menu-card-title {
   font-size: 40px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 300px;
+  min-width: 300px;
 }
 .menu-icon-container {
   display: flex;
@@ -319,7 +324,7 @@ a.navbar-item:hover {
 }
 .menu-img img {
   /* padding-top: 1rem; */
-  object-fit: none;
+  object-fit: contain;
   height: 16rem;
 }
 
