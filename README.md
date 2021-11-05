@@ -109,9 +109,11 @@ You can view the GitHub pages deployed application [here](https://)
 
 ## Improvements
 
-- to add
-- to add
-- to add
+- Modal to confirm deletion
+- Ability to create a menu planner
+- Adding a secured login
+- Allowing the user to create and add their own recipes
+- Adding a star rating based on real reviews
 
 ## Screenshots
 
