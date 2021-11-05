@@ -56,11 +56,11 @@ const renderImageRecipeCard = (data) => {
     </div>
     
     <div class="card-footer-item recipe-info-box">
-      <p>DIFFICULTY</p>
+      <p>COST</p>
       <h2 class="prep-time-heading">${getCostRange(data)}</i></h2>
     </div>
     <div class="card-footer-item recipe-info-box">
-      <p>COST</p>
+      <p>POPULARITY</p>
       <h2 class="prep-time-heading">${getPopularityScore(data)}</i></h2>
     </div>
     </footer> 
