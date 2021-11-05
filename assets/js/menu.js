@@ -157,7 +157,10 @@ const constructApiUrl = function (baseUrl, searchOptions) {
 
 const onReady = async function () {
   const searchOptions = getFromLocalStorage("options", {});
-
+  //append search query to main heading
+  $("#search-heading-container").append(
+    `<span class="orange-text">${searchOptions.query}</span>`
+  );
   const baseUrl = "https://api.spoonacular.com/recipes/complexSearch";
   const apiUrl = constructApiUrl(baseUrl, searchOptions);
   const data = await getApiData(apiUrl);
