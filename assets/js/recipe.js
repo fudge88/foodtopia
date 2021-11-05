@@ -60,7 +60,7 @@ const renderImageRecipeCard = (data) => {
       <h2 class="prep-time-heading">${getCostRange(data)}</i></h2>
     </div>
     <div class="card-footer-item recipe-info-box">
-      <p>ORIGIN</p>
+      <p>COST</p>
       <h2 class="prep-time-heading">${getPopularityScore(data)}</i></h2>
     </div>
     </footer> 
@@ -176,7 +176,7 @@ const renderCookingMethodCard = (data) => {
 
 const renderServingQuantities = function (userServings) {
   $("#original-serving-div").append(
-    `<div><div class="my-1 servings-btn" data-value="20">${userServings.servings}<div/></div>`
+    `<div><div class="my-1 servings-btn">${userServings.servings}<div/></div>`
   );
   $("#original-serving-div").data("value", userServings.servings);
   $("#original-serving").data("value", userServings.servings);
