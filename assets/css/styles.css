@@ -498,14 +498,17 @@ a.navbar-item:hover {
 
 .nutrition-label {
   display: none;
-  top: 5%;
+  /* top: 5%; */
   flex-direction: row;
-  z-index: 6;
   position: absolute;
-  left: 12%;
+  /* left: 12%; */
   text-align: center;
   background-color: var(--white);
   border-radius: 10px;
+  z-index: 50;
+  left: 60%;
+  top: 87%;
+  transform: translate(-87%, -60%);
 }
 
 .displayed {
@@ -569,9 +572,13 @@ a.navbar-item:hover {
 }
 .desc-container {
   padding: 1rem;
+  border: var(--terra-cotta) solid 2px;
+  border-radius: 10px;
+  margin-bottom: 2rem !important;
 }
 
 .method-container {
+  font-size: 1.2rem;
   border: var(--green-sheen) solid 1px;
   padding: 1rem;
   border-radius: 10px;
