@@ -84,7 +84,7 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
 
 //construct and append the message
 const constructAndAppendMessage = () => {
-  const message = `<div class ="notification is-primary">
+  const message = `<div class ="notification no-fav-alert">
   OOPS LOOKS LIKE YOU HAVE NO RECIPES ADDED TO YOUR FAVOURITES
 </div>`;
 
