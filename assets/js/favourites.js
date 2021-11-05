@@ -66,9 +66,8 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
 
   const handleViewRecipeDetails = (event) => {
     const target = $(event.target);
-    if (target.is("button")) {
+    if (target.is("h3")) {
       const recipeId = target.attr("id");
-      console.log(recipeId);
 
       // add recipe id value to local storage
       localStorage.setItem("recipeId", JSON.stringify(recipeId));
@@ -79,7 +78,7 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
   };
 
   //view recipe info
-  $(".view-info").on("click", handleViewRecipeDetails);
+  $(".lets-cook").on("click", handleViewRecipeDetails);
 };
 
 //construct and append the message

@@ -65,6 +65,9 @@ h6 {
   font-family: "Bebas Neue", cursive;
   letter-spacing: 1.5px;
 }
+.orange-text {
+  color: var(--terra-cotta);
+}
 .sub-title {
   font-size: 40px;
 }
