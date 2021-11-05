@@ -1,4 +1,4 @@
-const mockData = false;
+const mockData = true;
 
 // render advance search
 //construct and render recipe cards
