@@ -231,7 +231,7 @@ const renderYouTubeVideos = (data) => {
       allowfullscreen
     ></iframe>
   </div>`;
-    // $("#video-container").append(videoCard);
+    $("#video-container").append(videoCard);
   };
 
   data?.forEach(callback);
