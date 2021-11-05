@@ -73,7 +73,7 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
       localStorage.setItem("recipeId", JSON.stringify(recipeId));
 
       //change location to recipe html
-      window.location.assign("./recipes.html");
+      window.location.assign("./recipe.html");
     }
   };
 
