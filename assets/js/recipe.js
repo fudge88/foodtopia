@@ -19,26 +19,26 @@ const renderImageRecipeCard = (data) => {
     </div>
     </figure>
     <div class="nutrition-label">
-    <div class="column nutrient-col">
+    <div class="nutri-column nutrient-col nutri-label-sm">
       <h6>Energy</h6>
       <p>${data.energy}</p>
     </div>
-    <div class="column nutrient-col">
+    <div class="nutri-column nutrient-col nutri-label-sm">
       <h6>Fat</h6>
       <p>${data.fat}${data.fatUnit}</p>
       <span>${data.fatPerDay}</span>
     </div>
-    <div class="column nutrient-col">
+    <div class="nutri-column nutrient-col nutri-label-sm">
       <h6>Saturates</h6>
       <p>${data.saturates}${data.saturatesUnit}</p>
       <span>${data.saturatesPerDay}</span>
     </div>
-    <div class="column nutrient-col">
+    <div class="nutri-column nutrient-col nutri-label-sm">
       <h6>Sugars</h6>
       <p>${data.sugars}${data.sugarsUnit}</p>
       <span>${data.sugarsPerDay}</span>
     </div>
-    <div class="column">
+    <div class="nutri-column nutri-lable-sm">
       <h6>Salt</h6>
       <p>${data.salt}${data.saltUnit}</p>
       <span>${data.saltPerDay}</span>
