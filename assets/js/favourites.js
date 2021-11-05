@@ -32,7 +32,7 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
 
     const favouritesRecipes = getFromLocalStorage("favourites", []);
 
-    if (target.is("i")) {
+    if (target.is("div") || target.is("i")) {
       const recipeId = target.attr("id");
 
       const getFilteredFavourites = (each) => {
