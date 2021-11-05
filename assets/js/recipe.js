@@ -176,10 +176,10 @@ const renderCookingMethodCard = (data) => {
 
 const renderServingQuantities = function (userServings) {
   $("#original-serving-div").append(
-    `<div><div class="my-1 servings-btn">${userServings.servings}<div/></div>`
+    `<div data-value="20">serves ${userServings.servings}</div>`
   );
   $("#original-serving-div").data("value", userServings.servings);
-  $("#original-serving").data("value", userServings.servings);
+  // $("#original-serving").data("value", userServings.servings);
 };
 
 // ingredients calculator
