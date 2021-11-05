@@ -58,7 +58,7 @@ const handleViewRandomRecipe = (event) => {
 //on page load execute functions:
 const handleLoad = async () => {
   //build URL
-  const randomRecipesApiUrl = `https://api.spoonacular.com/recipes/random?number=5&apiKey=${API_KEY}`;
+  const randomRecipesApiUrl = `https://api.spoonacular.com/recipes/random?number=1&apiKey=${API_KEY}`;
   //get random recipes data from the API
   const getRandomRecipesData = await getApiData(randomRecipesApiUrl);
   // // render random recipes cards
