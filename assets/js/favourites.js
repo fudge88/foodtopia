@@ -6,10 +6,14 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
       <h1 class="menu-card-title pt-2">${each.title}</h1>
       <h3 class="menu-br lets-cook" id=${each.id}>Lets Cook!</h3>
       <div class="menu-icon-container">
-        <div class="mr-2 menu-icon menu-icon-info">${each.time}m </div>
-        <div class="menu-icon menu-icon-info">${each.calories}</div>
-        <div class="ml-6 menu-icon menu-icon-love remove-from-favourites" id=${each.id}><i class="fas fa-trash fa-lg" id=${each.id}></i></div>
-      </div>
+        <div class="menu-icon-info-div">
+          <div class="mr-2 menu-icon menu-icon-info">${each.time}m </div>
+          <div class="menu-icon menu-icon-info">${each.calories}</div>
+        </div>
+        <div class="menu-icon-love-div">
+          <div class="menu-icon menu-icon-love remove-from-favourites" id=${each.id}><i class="fas fa-trash fa-lg" id=${each.id}></i></div>
+        </div>
+        </div>
     </div>
     <div class="menu-card-img">
       <figure class="menu-img">

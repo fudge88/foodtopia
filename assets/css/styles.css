@@ -302,6 +302,7 @@ a.navbar-item:hover {
 .recipe-wrap {
   margin: 2rem;
 }
+
 .menu-icon {
   border: var(--black) solid 1px;
   height: 3.5rem;
@@ -310,21 +311,37 @@ a.navbar-item:hover {
   text-align: center;
   padding-top: 14px;
 }
+
+.menu-icon-info-div {
+  display: flex;
+  flex-direction: row;
+}
+
 .menu-icon-info {
   color: var(--green-sheen);
   border-color: var(--green-sheen);
 }
+.menu-icon-love-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: end;
+  flex: 2;
+}
 .menu-icon-love {
   border-color: var(--green-sheen);
 }
+
 .menu-icon-love:hover {
   color: var(--green-sheen);
   background-color: red;
   border-color: red;
 }
+
 .fa-heart {
   color: red;
 }
+
 .fa-heart:hover {
   padding-top: 5px;
   transform: scale(2);
@@ -698,11 +715,15 @@ a.navbar-item:hover {
 
   .menu-img img {
     object-fit: none;
-    width: 24rem;
+    width: 100%;
     height: 10rem;
   }
   .menu-br {
     margin: 0;
+  }
+
+  .menu-icon-love {
+    margin-left: 8rem;
   }
 }
 
@@ -757,10 +778,6 @@ a.navbar-item:hover {
   .recipe-icon {
     margin-right: 5px;
     margin-bottom: 0;
-  }
-
-  .menu-card-container {
-    flex-direction: column;
   }
 
   .menu-card-body {
