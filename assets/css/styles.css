@@ -164,7 +164,13 @@ a.navbar-item:hover {
 }
 .footer {
   margin-top: 2rem;
+  padding: 1rem;
 }
+
+.footer p a {
+  color: var(--green-sheen);
+}
+
 .section-title {
   margin: 20px auto;
   text-align: center;
@@ -205,6 +211,13 @@ a.navbar-item:hover {
   display: flex;
   padding: 1rem;
 }
+
+.high-rated-recipe figure h3 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .centralising-content {
   text-align: center;
   margin-left: 5rem;
@@ -228,7 +241,6 @@ a.navbar-item:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 16rem;
   margin: 2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -723,7 +735,7 @@ a.navbar-item:hover {
     width: 100%;
   }
   .main-container {
-    padding: 0 10px;
+    padding: none;
   }
 
   .high-rated-recipe {
