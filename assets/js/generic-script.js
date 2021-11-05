@@ -1,4 +1,4 @@
-const API_KEY = "6d161079a0db40c3ac7dd3a7df840449";
+const API_KEY = "d56833afbb37441aa2974b1c0f80add3";
 
 //YouTube API key
 const API_KEY_YOU_TUBE = "AIzaSyCxheWdliwEmBooGitbAPqK_7RrXSyXZZA";
