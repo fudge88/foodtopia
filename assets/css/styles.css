@@ -41,7 +41,17 @@ body {
   background-size: cover;
   position: relative;
 }
-
+.background-img-about {
+  height: 500px;
+  background-image: url(/assets/images/spoon.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.about-card-positioning {
+  position: relative;
+  top: 40%;
+}
 .center-content {
   margin: 5rem 10rem;
   justify-content: space-around;
@@ -428,6 +438,9 @@ a.navbar-item:hover {
 
 .card-header-title {
   justify-content: center;
+  color: var(--terra-cotta);
+  margin-top: 1rem;
+  font-size: 1.5rem;
 }
 
 .card-header {
@@ -435,6 +448,12 @@ a.navbar-item:hover {
 }
 .card-footer {
   border: none;
+}
+.card-footer-item {
+  color: var(--green-sheen);
+}
+.card-footer-item:hover {
+  color: var(--terra-cotta);
 }
 .recipe-title {
   background-color: var(--terra-cotta);
@@ -510,9 +529,9 @@ a.navbar-item:hover {
   background-color: var(--white);
   border-radius: 10px;
   z-index: 50;
-  left: 60%;
-  top: 87%;
-  transform: translate(-87%, -60%);
+  left: 15%;
+  bottom: 40%;
+  /* transform: translate(-50%, -20%); */
 }
 
 .displayed {
@@ -604,6 +623,11 @@ a.navbar-item:hover {
   font-size: 2rem;
 }
 
+.no-fav-alert {
+  text-align: center;
+  background-color: var(--green-sheen);
+  color: var(--white);
+}
 /* toast css */
 #toast {
   visibility: hidden;
@@ -704,11 +728,19 @@ a.navbar-item:hover {
     align-content: center;
   }
 
-  /* .card {
-    max-width: 16rem;
-    margin-top: 2rem;
-    height: 0;
-  } */
+  /* ................................look at me  */
+  .nutrition-label {
+    display: none;
+  }
+  .recipe-info-icon {
+    display: none;
+  }
+  /* ......................................not sure how to fix  */
+
+  .nutri-labe-sm {
+    font-size: 8px;
+    padding: 2px;
+  }
 
   .menu-icon-container {
     margin-bottom: 10px;
@@ -759,6 +791,19 @@ a.navbar-item:hover {
     margin: 2rem 5rem;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .nutrition-label {
+    left: 13%;
+    bottom: 40%;
+  }
+
+  .nutri-labe-sm {
+    font-size: 15px;
+    padding: 3px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .high-rated-container {
     flex-direction: column;
@@ -779,7 +824,6 @@ a.navbar-item:hover {
   .section-title {
     font-size: 30px;
   }
-
   .description-container {
     border: var(--terra-cotta) solid 2px;
     border-radius: 10px;
@@ -806,5 +850,14 @@ a.navbar-item:hover {
 
   .menu-img img {
     margin: none;
+  }
+  .nutrition-label {
+    left: 20%;
+    bottom: 40%;
+  }
+
+  .nutri-labe-sm {
+    font-size: 10px;
+    padding: 2px;
   }
 }
