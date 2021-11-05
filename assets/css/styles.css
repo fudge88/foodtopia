@@ -583,8 +583,9 @@ a.navbar-item:hover {
 }
 
 .about-me img {
-  width: 100%;
+  width: 300px;
   object-fit: contain;
+  margin-top: 20px;
 }
 
 /* Animations to fade the snackbar in and out */
