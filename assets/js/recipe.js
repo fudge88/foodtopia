@@ -56,11 +56,11 @@ const renderImageRecipeCard = (data) => {
     </div>
     
     <div class="card-footer-item recipe-info-box">
-      <p>DIFFICULTY</p>
+      <p>COST</p>
       <h2 class="prep-time-heading">${getCostRange(data)}</i></h2>
     </div>
     <div class="card-footer-item recipe-info-box">
-      <p>COST</p>
+      <p>POPULARITY</p>
       <h2 class="prep-time-heading">${getPopularityScore(data)}</i></h2>
     </div>
     </footer> 
@@ -92,12 +92,12 @@ const renderImageRecipeCard = (data) => {
 
     if ($(target).attr("id") == data.id) {
       const favouritesRecipe = {
-        id: each.id,
-        title: each.title,
-        time: each.readyInMinutes,
-        servings: each.servings,
-        image: each.image,
-        calories: each.calories,
+        id: data.id,
+        title: data.title,
+        time: data.readyInMinutes,
+        servings: data.servings,
+        image: data.image,
+        calories: data.calories,
       };
 
       const favourites = getFromLocalStorage("favourites", []);
@@ -254,6 +254,7 @@ const constructRecipeObject = (data) => {
   const salt = getNutrient(nutrients, "Sodium");
 
   return {
+    id: data.id,
     image: data.image,
     title: data.title,
     time: data.readyInMinutes,
