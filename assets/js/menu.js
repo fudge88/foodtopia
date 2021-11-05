@@ -13,7 +13,7 @@ const renderRecipeCards = (recipeData) => {
       <h3 class="menu-br lets-cook" id=${each.id}>Lets Cook!</h3>
       <div class="menu-icon-container">
         <div class="menu-icon-info-div">
-          <div class="mr-2 menu-icon menu-icon-info">${each.time}m </div>
+          <div class="mr-2 menu-icon menu-icon-info">${each.time}min</div>
           <div class="menu-icon menu-icon-info">${each.calories}</div>
         </div>
         <div class="menu-icon-love-div">

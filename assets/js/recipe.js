@@ -2,7 +2,7 @@
 const renderImageRecipeCard = (data) => {
   //construct image card
   const imageRecipeCard = `<article class="tile is-child"> 
-    <h1 class="has-text-centered title recipe-card-title">${data.title}</h1>
+    <h1 class="has-text-centered recipe-card-title">${data.title}</h1>
     <figure class="image is-4by3">
     <img
       class="recipe-img"
@@ -176,10 +176,10 @@ const renderCookingMethodCard = (data) => {
 
 const renderServingQuantities = function (userServings) {
   $("#original-serving-div").append(
-    `<div><div class="my-1 servings-btn" data-value="20">${userServings.servings}<div/></div>`
+    `<div class="my-1 servings-btn" data-value="20">serves ${userServings.servings}</div>`
   );
   $("#original-serving-div").data("value", userServings.servings);
-  $("#original-serving").data("value", userServings.servings);
+  // $("#original-serving").data("value", userServings.servings);
 };
 
 // ingredients calculator

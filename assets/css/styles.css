@@ -346,6 +346,7 @@ a.navbar-item:hover {
   padding-top: 5px;
   transform: scale(2);
 }
+
 .recipe-icon-container {
   justify-content: end;
   display: flex;
@@ -538,6 +539,10 @@ a.navbar-item:hover {
   color: var(--terra-cotta);
   border-bottom: 0;
 }
+.servings-container {
+  border: var(--green-sheen) solid 1px;
+  border-radius: 10px;
+}
 .servings-tab a {
   text-align: center;
   padding: 0.5rem 1.5rem;
@@ -555,6 +560,9 @@ a.navbar-item:hover {
   flex-direction: column;
 }
 
+.recipe-card-title {
+  font-size: 3rem;
+}
 .recipe-info,
 .servings {
   display: flex;
@@ -760,6 +768,7 @@ a.navbar-item:hover {
   .section-title {
     font-size: 30px;
   }
+
   .description-container {
     border: var(--terra-cotta) solid 2px;
     border-radius: 10px;
