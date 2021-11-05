@@ -10,7 +10,7 @@ const renderImageRecipeCard = (data) => {
       alt=${data.title}
     />
     <div class=" recipe-icon-container">
-      <button id=${data.id} class="recipe-icon">
+      <button id=${data.id} class="recipe-icon recipe-save-icon">
         <i id=${data.id} class="mb-3 fas fa-heart fa-lg"></i>
       </button>
       <button class="recipe-icon recipe-info-icon">
@@ -60,7 +60,7 @@ const renderImageRecipeCard = (data) => {
       <h2 class="prep-time-heading">${getCostRange(data)}</i></h2>
     </div>
     <div class="card-footer-item recipe-info-box">
-      <p>ORIGIN</p>
+      <p>COST</p>
       <h2 class="prep-time-heading">${getPopularityScore(data)}</i></h2>
     </div>
     </footer> 
@@ -117,9 +117,9 @@ const renderImageRecipeCard = (data) => {
   };
 
   //add to local storage
-  $(".recipe-icon").on("click", addToFavourites);
+  $(".recipe-save-icon").on("click", addToFavourites);
 
-  $(".info-icon").hover(
+  $(".recipe-info-icon").hover(
     function () {
       $(".nutrition-label").attr("class", "nutrition-label displayed");
     },
@@ -176,7 +176,7 @@ const renderCookingMethodCard = (data) => {
 
 const renderServingQuantities = function (userServings) {
   $("#original-serving-div").append(
-    `<div class="my-1 servings-btn" data-value="20">serves ${userServings.servings}</div>`
+    `<div data-value="20">serves ${userServings.servings}</div>`
   );
   $("#original-serving-div").data("value", userServings.servings);
   // $("#original-serving").data("value", userServings.servings);
@@ -231,7 +231,7 @@ const renderYouTubeVideos = (data) => {
       allowfullscreen
     ></iframe>
   </div>`;
-    // $("#video-container").append(videoCard);
+    $("#video-container").append(videoCard);
   };
 
   data?.forEach(callback);
