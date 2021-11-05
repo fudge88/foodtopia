@@ -2,73 +2,73 @@
 const renderImageRecipeCard = (data) => {
   //construct image card
   const imageRecipeCard = `<article class="tile is-child"> 
-  <h1 class="has-text-centered title recipe-card-title">${data.title}</h1>
-  <figure class="image is-4by3">
-  <img
-    class="recipe-img"
-    src=${data.image}
-    alt=${data.title}
-  />
-  <div class=" recipe-icon-container">
-    <button id=${data.id}class="recipe-icon">
-      <i id=${data.id} class="mb-3 fas fa-heart fa-lg"></i>
-    </button>
-    <button class="recipe-icon recipe-info-icon">
-      <i class="mb-3 fas fa-info fa-lg"></i>
-    </button>
-  </div>
-  </figure>
-  <div class="nutrition-label">
-  <div class="column nutrient-col">
-    <h6>Energy</h6>
-    <p>${data.energy}</p>
-  </div>
-  <div class="column nutrient-col">
-    <h6>Fat</h6>
-    <p>${data.fat}${data.fatUnit}</p>
-    <span>${data.fatPerDay}</span>
-  </div>
-  <div class="column nutrient-col">
-    <h6>Saturates</h6>
-    <p>${data.saturates}${data.saturatesUnit}</p>
-    <span>${data.saturatesPerDay}</span>
-  </div>
-  <div class="column nutrient-col">
-    <h6>Sugars</h6>
-    <p>${data.sugars}${data.sugarsUnit}</p>
-    <span>${data.sugarsPerDay}</span>
-  </div>
-  <div class="column">
-    <h6>Salt</h6>
-    <p>${data.salt}${data.saltUnit}</p>
-    <span>${data.saltPerDay}</span>
-  </div>
-  </div> 
-
-
-
-
-  <footer class="card-footer recipe-info-container">
-  
-  <div class="card-footer-item  recipe-info-box">
-    <p>COOK</p>
-    <h2 class="prep-time-heading">${data.time}</h2>
-  </div>
-  <div class="card-footer-item recipe-info-box">
-    <p>SERVES</p>
-    <h2 class="prep-time-heading">${data.serves}</h2>
-  </div>
-  
-  <div class="card-footer-item recipe-info-box">
-    <p>DIFFICULTY</p>
-    <h2 class="prep-time-heading">${getCostRange(data)}</i></h2>
-  </div>
-  <div class="card-footer-item recipe-info-box">
-    <p>ORIGIN</p>
-    <h2 class="prep-time-heading">${getPopularityScore(data)}</i></h2>
-  </div>
-  </footer> 
-    </article>`;
+    <h1 class="has-text-centered title recipe-card-title">${data.title}</h1>
+    <figure class="image is-4by3">
+    <img
+      class="recipe-img"
+      src=${data.image}
+      alt=${data.title}
+    />
+    <div class=" recipe-icon-container">
+      <button id=${data.id} class="recipe-icon">
+        <i id=${data.id} class="mb-3 fas fa-heart fa-lg"></i>
+      </button>
+      <button class="recipe-icon recipe-info-icon">
+        <i class="mb-3 fas fa-info fa-lg"></i>
+      </button>
+    </div>
+    </figure>
+    <div class="nutrition-label">
+    <div class="column nutrient-col">
+      <h6>Energy</h6>
+      <p>${data.energy}</p>
+    </div>
+    <div class="column nutrient-col">
+      <h6>Fat</h6>
+      <p>${data.fat}${data.fatUnit}</p>
+      <span>${data.fatPerDay}</span>
+    </div>
+    <div class="column nutrient-col">
+      <h6>Saturates</h6>
+      <p>${data.saturates}${data.saturatesUnit}</p>
+      <span>${data.saturatesPerDay}</span>
+    </div>
+    <div class="column nutrient-col">
+      <h6>Sugars</h6>
+      <p>${data.sugars}${data.sugarsUnit}</p>
+      <span>${data.sugarsPerDay}</span>
+    </div>
+    <div class="column">
+      <h6>Salt</h6>
+      <p>${data.salt}${data.saltUnit}</p>
+      <span>${data.saltPerDay}</span>
+    </div>
+    </div> 
+    <footer class="card-footer recipe-info-container">
+    
+    <div class="card-footer-item  recipe-info-box">
+      <p>COOK</p>
+      <h2 class="prep-time-heading">${data.time}</h2>
+    </div>
+    <div class="card-footer-item recipe-info-box">
+      <p>SERVES</p>
+      <h2 class="prep-time-heading">${data.serves}</h2>
+    </div>
+    
+    <div class="card-footer-item recipe-info-box">
+      <p>DIFFICULTY</p>
+      <h2 class="prep-time-heading">${getCostRange(data)}</i></h2>
+    </div>
+    <div class="card-footer-item recipe-info-box">
+      <p>ORIGIN</p>
+      <h2 class="prep-time-heading">${getPopularityScore(data)}</i></h2>
+    </div>
+    </footer> 
+      </article>
+      <article class="desc-container description-container">
+        <h2 class="title">Wine pairing</h2>
+        <p class="subtitle">${data.summary}</p>
+      </article>`;
 
   const addToFavourites = (event) => {
     console.log("hello");
@@ -157,8 +157,8 @@ const constructApiUrl = (searchQuery) => {
 const renderCookingMethodCard = (data) => {
   //construct cooking methods card
   const cookingMethodsCard = $(`<article class="tile is-child method-container">
-    <h2 class="title">Method</h2>
-    <p class="subtitle">Method of cooking/steps</p>
+  <h2 class="title">Method</h2>
+  <p class="subtitle">Method of cooking/steps</p>
   </article>`);
 
   //construct each cooking method container
@@ -173,7 +173,9 @@ const renderCookingMethodCard = (data) => {
 };
 
 const renderServingQuantities = function (userServings) {
-  $("#original-serving-div").append(`<div>${userServings.servings}</div>`);
+  $("#original-serving-div").append(
+    `<div><div class="my-1 servings-btn" data-value="20">${userServings.servings}<div/></div>`
+  );
   $("#original-serving-div").data("value", userServings.servings);
   $("#original-serving").data("value", userServings.servings);
 };
@@ -207,13 +209,11 @@ const ingredientsCalculator = (servingData, ingredientsData, userServings) => {
 //render ingredients card
 const renderIngredientsCard = (data) => {
   const constructIngredientItem = (each) => {
-    // const ingredientItem = `<li>${each.ingredientName} ${each.quantity} ${each.quantityUnit}</li>`;
-
     const ingredientItem = `<div>
     <span>${each.quantity}</span>
     ${each.quantityUnit} ${each.ingredientName}
     </div>`;
-    // $("#ingredients-container").append(ingredientItem);
+    $("#ingredients-container").append(ingredientItem);
   };
   data.forEach(constructIngredientItem);
 };
@@ -335,11 +335,11 @@ const onLoad = async () => {
 
     //get cooking methods info and render cooking method card
     const cookingMethodsData = constructCookingMethodObject(recipeData);
-    // renderCookingMethodCard(cookingMethodsData);
+    renderCookingMethodCard(cookingMethodsData);
 
     //get ingredients info and render ingredients list
     const ingredientsData = constructIngredientsObject(recipeData);
-    // renderIngredientsCard(ingredientsData);
+    renderIngredientsCard(ingredientsData);
 
     const getUserServings = (event) => {
       const target = event.target;
