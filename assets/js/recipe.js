@@ -70,6 +70,11 @@ const renderImageRecipeCard = (data) => {
         <p class="subtitle">${data.summary}</p>
       </article>`;
 
+  getCostRange(data);
+
+  //append image card and nutritional info on icon hover
+  $("#image-recipe-container").append(imageRecipeCard);
+
   const addToFavourites = (event) => {
     console.log("hello");
     // Get the snackbar DIV
@@ -92,6 +97,7 @@ const renderImageRecipeCard = (data) => {
         time: each.readyInMinutes,
         servings: each.servings,
         image: each.image,
+        calories: each.calories,
       };
 
       const favourites = getFromLocalStorage("favourites", []);
@@ -113,10 +119,6 @@ const renderImageRecipeCard = (data) => {
   //add to local storage
   $(".recipe-icon").on("click", addToFavourites);
 
-  getCostRange(data);
-
-  //append image card and nutritional info on icon hover
-  $("#image-recipe-container").append(imageRecipeCard);
   $(".info-icon").hover(
     function () {
       $(".nutrition-label").attr("class", "nutrition-label displayed");
