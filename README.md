@@ -117,9 +117,29 @@ You can view the GitHub pages deployed application [here](https://)
 
 ### Wireframes
 
-![alt text](assets/images/.png)
+## Wireframes for Landing page
 
-![alt text](assets/images/.png)
+![landing page desktop view](assets/images/wireframes/wireframe2.0/landing-page-desktop-view.png)
+![landing page tablet view](assets/images/wireframes/wireframe2.0/landing-page-tablet-view.png)
+![landing page mobile view](assets/images/wireframes/wireframe2.0/landing-page-mobile-view.png)
+
+## Wireframes for Menu page
+
+![menu page desktop view](assets/images/wireframes/wireframe2.0/menu-page-desktop-view.png)
+![menu page tablet view](assets/images/wireframes/wireframe2.0/menu-page-tablet-view.png)
+![menu page mobile view](assets/images/wireframes/wireframe2.0/menu-page-mobile-view.png)
+
+## Wireframes for Recipe page
+
+![recipe page desktop view](assets/images/wireframes/wireframe2.0/recipe-page-desktop-view.png)
+![recipe page tablet view](assets/images/wireframes/wireframe2.0/recipe-page-tablet-view.png)
+![recipe page mobile view](assets/images/wireframes/wireframe2.0/recipe-page-mobile-view.png)
+
+## Wireframes for Favourites page
+
+![favourites page desktop view](assets/images/wireframes/wireframe2.0/fav-page-desktop-view.png)
+![favourites page tablet view](assets/images/wireframes/wireframe2.0/fav-page-tablet-view.png)
+![favourites page mobile view](assets/images/wireframes/wireframe2.0/fav-page-mobile-view.png)
 
 ### Final Website
 
