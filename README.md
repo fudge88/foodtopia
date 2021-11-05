@@ -114,6 +114,9 @@ You can view the GitHub pages deployed application [here](https://)
 - Adding a secured login
 - Allowing the user to create and add their own recipes
 - Adding a star rating based on real reviews
+- Reduce user input
+- Offer assistance for a smoother user experience
+- Offer a feedback option
 
 ## Screenshots
 
