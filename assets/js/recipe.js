@@ -175,7 +175,7 @@ const renderCookingMethodCard = (data) => {
 
 const renderServingQuantities = function (userServings) {
   $("#original-serving-div").append(
-    `<div data-value="20">serves ${userServings.servings}</div>`
+    `<div data-value=${userServings.servings} class="servings-value">serves ${userServings.servings}</div>`
   );
   $("#original-serving-div").data("value", userServings.servings);
   // $("#original-serving").data("value", userServings.servings);
@@ -343,6 +343,7 @@ const onLoad = async () => {
 
     const getUserServings = (event) => {
       const target = event.target;
+
       if ($(target).hasClass("servings-value")) {
         const servingTabValue = $(target).data("value");
 
