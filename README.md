@@ -1,4 +1,4 @@
-![Foodtopia Logo Image](./assets/images/logo.png)
+![Foodtopia Logo Image](./assets/images/logo.PNG)
 
 <h1>Foodtopia</h1>
 
