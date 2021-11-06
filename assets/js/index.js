@@ -40,7 +40,7 @@ const handleViewRandomRecipe = (event) => {
     localStorage.setItem("recipeId", JSON.stringify(randomRecipeId));
 
     //change page location to recipe page
-    window.location.assign("./recipes.html");
+    window.location.assign("./recipe.html");
   }
 };
 
