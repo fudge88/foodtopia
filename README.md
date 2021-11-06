@@ -2,11 +2,12 @@
 
 <h1>Foodtopia</h1>
 
+You can view the GitHub pages deployed application [here](https://fudge88.github.io/foodtopia/).
+
 <h2>Table of Contents</h2>
 
 - [Description](#description)
 - [User Story](#user-story)
-- [Deployed URL](#deployed-url)
 - [Technologies Used](#technologies-used)
 - [API Documentation](#api-documentation)
 - [Contributors](#contributors)
@@ -14,86 +15,92 @@
 - [Screenshots](#screenshots)
   - [Wireframes](#wireframes)
   - [Final Website](#final-website)
+  - [References](#References)
 
 ## Description
 
-A responsive dynamic app which will run in the browser. Foodtopia is easy to use application and user led database search engine for different types of recipes. The website requires direct input from the user, in order to display results relating to their specific search. The user can filter their search for different recipes by dietary options, types of cuisines and intolerances and allergies.
+Foodtopia is a recipe app, which assists users with advanced dietary needs. This app also provides an advanced mathematical calculator to present quantity of ingredients for catering services and to cater for larger parties.
+
+A responsive dynamic app which will run in the browser. Foodtopia is easy to use application and user led database search engine for different types of recipes. The website requires direct input from the user, in order to display results relating to their specific search. The user is able to filter their search using dietary options, types of cuisines and intolerances.
 
 ## User Story
 
-AS a user when I GO on the app,
+```
+AS a user I expect to FIND a main page with a navigation bar on the top containing the brand LOGO and links to navigate to other pages.
 
-I expect to FIND a main page with a navigation bar on the top containing the project LOGO and three links, Recipes, Diet and My Fav.
+I would ALSO expect an easy to use search bar, with an advanced filter button. Diet,
 
-ALSO a search bar with an Input Box, a Search Button and three filters. Diet, Intolerances and Cuisines.
+WHEN i click on the advanced search button i EXPECT to find checkboxes to help filter my recipes.
 
-I expect to FIND on the bottom of the page a footer.
+as I SCROLL to the bottom of the index page, i WOULD like to have random recipes displayed for 'inspiration'. IF i click on this recipe, i EXPECT to be taken to this recipe.
 
-When I CLICK on the Recipes link,
+When I SEARCH a recipe.
 
-I should be REDIRECT to the recipes page, Where I expect to SEE a carousel on the top showing recipes that may interest the user, a filter button and card-recipes containing:
+I should be REDIRECTED to the menus page, Where I expect to SEE recipe cards related to my search.
 
-- a background image of the dish,
-- the recipe title,
-- the time and the portions,
-- the nutritional info. ( )
+IF i missed the option to filter on the index, i WOULD like to have the option on the recipes incase i change my mind.
 
-When I CLICK on the card-recipe,
+I WOULD like my first glance at the recipes to give me:
 
-I EXPECT to be relocated to the specific recipe page,
+- a image of the dish
+- the recipe title
+- the time and the calories for
 
-Where I WANT to see:
+i WOULD also like the option to QUICK save the recipes without having to relocate to a different page, so i can ADD MULTIPLE recipes in one go.
+
+When I CLICK on the 'LETS COOK' on card recipe
+
+I EXPECT to be relocated to that specific recipe page
+
+I WOULD like to see:
 
 - the recipe name,
-- the image of the respective recipe,
-- a box with the instructions of how to cook the recipe,
-- one option button (add to Favorites),
-- a card showing the time, the portions and the ingredients,
-- box with the nutritional info. ( ),
-- a carousel at the bottom with recipes that may interest the user.
+- the image of the recipe
+- a box with the instructions for the recipe
+- a box with the methods of how to cook the recipe
+- a box with the wine pairing for the recipe
+- to ability to see the time, portions, costs and popularity
+- one option button (to add to Favorites)
+- one option button (to view nutritional value)
+- YouTube video links to see the recipe
+- calculator to multiply the ingredients depending on servings
 
-When I CLICK on “add to Favorites”,
+When I CLICK on the 'HEART' the recipe SHOULD be saved to 'my favourites'.
 
-I EXPECT my recipe be added to “My favorites”.
 
-When I CLICK on Diet,
+When I CLICK on My Favourites link
 
-I should SEE a scroll bar with the different dietary types ( )
+I EXPECT to be relocated to a page presenting all my SAVED recipe cards
 
-When I CLICK on My Fav,
-
-I EXPECT to be relocated to a page presenting all my favorites recipes cards,
-When I HOVER over the search bar,
-
-I EXPECT my previous searches been displayed.
-
-When I CLICK on a previous search,
-
-I should be TAKEN to that specific recipe.
-
-Also, I should be able to SEARCH recipes ideas based on the choices I “ticked” on the dropdown search bar. (e.g., Italian food, vegetarian, gluten free)
-
-When I INPUT something,
-
-## Deployed URL
-
-You can view the GitHub pages deployed application [here](https://fudge88.github.io/foodtopia/).
+```
 
 ## Technologies Used
 
+#### Languages
+
 - HTML5
-- Bulma CSS Framework
 - CSS
-- Font Awesome
 - JavaScript
 - JQuery
 
+#### Frameworks used
+
+- Bulma CSS Framework
+- Font Awesome
+- Google Fonts CDN
+
+#### APIs
+
+- Spoonacular API
+- Youtube API
+
 ## API Documentation
 
-[Spoonacular]() and [YouTube]() APIs
+[Spoonacular](https://spoonacular.com/food-api) and [YouTube](https://developers.google.com/youtube/v3/getting-started?hl=en) APIs
 
-- Spoonacular
-- YouTube
+- Spoonacular is one of the first food management system that combines dining out, eating store-bought food, and cooking at home to help you find and organize the restaurants, products, and recipes that fit your diet and can help you reach your nutrition goals.
+
+- YouTube Data API, you can add a variety of YouTube features to your application. Use the API to upload videos, manage playlists and subscriptions, update channel settings, and more.
 
 ## Contributors
 
@@ -105,24 +112,68 @@ You can view the GitHub pages deployed application [here](https://fudge88.github
 
 ## Improvements
 
-- to add
-- to add
-- to add
+- Modal to confirm deletion
+- Ability to create a menu planner
+- Offer a feedback option
+- Present more information on cards
+- Save videos to local storage
 
 ## Screenshots
 
 ### Wireframes
 
-![alt text](assets/images/.png)
+#### INDEX PAGE Large and small screen Wireframe
 
-![alt text](assets/images/.png)
+![Wireframe for index](./assets/images/wireframes/index-wf.png)
+![Wireframe for index](./assets/images/wireframes/index-wf-sm.png)
+
+#### MENU PAGE Large and small screen Wireframe
+
+![Wireframe for index](./assets/images/wireframes/menu-wf.png)
+![Wireframe for index](./assets/images/wireframes/menu-wf-sm.png)
+
+#### FAVOURITES PAGE Large and small screen Wireframe
+
+![Wireframe for index](./assets/images/wireframes/fav-wf.png)
+![Wireframe for index](./assets/images/wireframes/fav-wf-sm.png)
+
+#### Large and small screen Wireframe
+
+![Wireframe for index](./assets/images/wireframes/recipe-wf.png)
+![Wireframe for index](./assets/images/wireframes/recipe-wf-sm.png)
 
 ### Final Website
 
-![alt text](assets/images/.png)
+#### INDEX PAGE screenshot
 
-![alt text](assets/images/.png)
+![Screen-shot of webpage](./assets/images/wireframes/index-ss.png)
 
-![alt text](assets/images/.png)
+#### MENU PAGE screenshot
 
-![alt text](assets/images/.png)
+![Screen-shot of webpage](./assets/images/wireframes/menu-ss.png)
+
+#### FAVOURITES PAGE screenshot
+
+![Screen-shot of webpage](./assets/images/wireframes/favourites-ss.png)
+
+#### RECIPES screenshot
+
+![Screen-shot of webpage](./assets/images/wireframes/recipe-ss.png)
+
+## References
+
+[Background Image by Samuel Berner](https://unsplash.com/@saaam_chan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+[Flexbox positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container)
+
+[Webm to Gif converter](https://cloudconvert.com/webm-to-gif)
+
+[Screencastify - screen recording](https://www.screencastify.com/)
+
+[Mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+
+[StackOverflow](https://stackoverflow.com/questions/9329446/for-each-over-an-array-in-javascript)
+
+[Spoonacular](https://spoonacular.com/food-api)
+
+[YouTube](https://developers.google.com/youtube/v3/getting-started?hl=en)
