@@ -130,9 +130,8 @@ const handleViewRecipeDetails = (event) => {
 
     // add recipe id value to local storage
     localStorage.setItem("recipeId", JSON.stringify(recipeId));
-
-    //change location to recipe html
-    window.location.assign("./recipes.html");
+    //change location to recipe
+    window.location.assign("./recipe.html");
   }
 };
 
