@@ -1,21 +1,19 @@
 ![Foodtopia Logo Image](./assets/images/logo.png)
 
-# Foodtopia
+<h1>Foodtopia</h1>
 
-## Table of Contents
+<h2>Table of Contents</h2>
 
-- [Foodtopia](#foodtopia)
-  - [Table of Contents](#table-of-contents)
-  - [Description](#description)
-  - [User Story](#user-story)
-  - [Deployed URL](#deployed-url)
-  - [Technologies Used](#technologies-used)
-  - [API Documentation](#api-documentation)
-  - [Contributors](#contributors)
-  - [Improvements](#improvements)
-  - [Screenshots](#screenshots)
-    - [Wireframes](#wireframes)
-    - [Final Website](#final-website)
+- [Description](#description)
+- [User Story](#user-story)
+- [Deployed URL](#deployed-url)
+- [Technologies Used](#technologies-used)
+- [API Documentation](#api-documentation)
+- [Contributors](#contributors)
+- [Improvements](#improvements)
+- [Screenshots](#screenshots)
+  - [Wireframes](#wireframes)
+  - [Final Website](#final-website)
 
 ## Description
 
@@ -77,11 +75,9 @@ Also, I should be able to SEARCH recipes ideas based on the choices I â€œtickedâ
 
 When I INPUT something,
 
-I should be RELOCATED to the menu page with related recipes to the specific search.
-
 ## Deployed URL
 
-You can view the GitHub pages deployed application [here](https://)
+You can view the GitHub pages deployed application [here](https://fudge88.github.io/foodtopia/).
 
 ## Technologies Used
 
