@@ -249,7 +249,7 @@ a.navbar-item:hover {
 .fav-subheading {
   margin-top: 11rem;
 }
-/* test */
+
 .menu-card-container {
   display: flex;
   flex-direction: row;
@@ -282,7 +282,6 @@ a.navbar-item:hover {
   position: relative;
   padding: 0 1rem;
   flex: 2;
-  /* width:100%; */
 }
 
 .servings-btn-container {
@@ -397,13 +396,10 @@ a.navbar-item:hover {
   width: 10rem;
 }
 .menu-img img {
-  /* padding-top: 1rem; */
   object-fit: cover;
   margin-top: 10px;
   height: 12rem;
 }
-
-/* test end */
 
 /* recipes */
 .servings-btn {
@@ -521,17 +517,14 @@ a.navbar-item:hover {
 
 .nutrition-label {
   display: none;
-  /* top: 5%; */
   flex-direction: row;
   position: absolute;
-  /* left: 12%; */
   text-align: center;
   background-color: var(--white);
   border-radius: 10px;
   z-index: 50;
   left: 15%;
   bottom: 40%;
-  /* transform: translate(-50%, -20%); */
 }
 
 .displayed {
@@ -728,14 +721,12 @@ a.navbar-item:hover {
     align-content: center;
   }
 
-  /* ................................look at me  */
   .nutrition-label {
     display: none;
   }
   .recipe-info-icon {
     display: none;
   }
-  /* ......................................not sure how to fix  */
 
   .nutri-labe-sm {
     font-size: 8px;
@@ -753,7 +744,6 @@ a.navbar-item:hover {
   }
 
   .menu-card-title {
-    /* font-size: 40px; */
     font-size: 25px;
     overflow-wrap: break-word;
     min-width: 100%;
@@ -775,32 +765,6 @@ a.navbar-item:hover {
 
   .menu-icon-love {
     margin-left: 8rem;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  /* .small-screen-button {
-    display: none;
-  } */
-}
-@media screen and (min-width: 769px) {
-  .ingredients-container {
-    padding: 1rem 2rem;
-  }
-  .recipe-wrap {
-    margin: 2rem 5rem;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .nutrition-label {
-    left: 13%;
-    bottom: 40%;
-  }
-
-  .nutri-labe-sm {
-    font-size: 15px;
-    padding: 3px;
   }
 }
 
@@ -859,5 +823,26 @@ a.navbar-item:hover {
   .nutri-labe-sm {
     font-size: 10px;
     padding: 2px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .ingredients-container {
+    padding: 1rem 2rem;
+  }
+  .recipe-wrap {
+    margin: 2rem 5rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .nutrition-label {
+    left: 13%;
+    bottom: 40%;
+  }
+
+  .nutri-labe-sm {
+    font-size: 15px;
+    padding: 3px;
   }
 }
