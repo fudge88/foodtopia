@@ -20,7 +20,7 @@ body {
 
 .background-img {
   height: 500px;
-  background-image: url(/assets/images/fork.jpg);
+  background-image: url(./assets/images/fork.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -28,7 +28,7 @@ body {
 
 .background-img-menu {
   height: 500px;
-  background-image: url(/assets/images/knife-fork.png);
+  background-image: url(./assets/images/knife-fork.png);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -36,14 +36,14 @@ body {
 
 .background-img-fav {
   height: 500px;
-  background-image: url(/assets/images/full-set.png);
+  background-image: url(./assets/images/full-set.png);
   background-position: center;
   background-size: cover;
   position: relative;
 }
 .background-img-about {
   height: 500px;
-  background-image: url(/assets/images/spoon.png);
+  background-image: url(./assets/images/spoon.png);
   background-position: center;
   background-size: cover;
   position: relative;
