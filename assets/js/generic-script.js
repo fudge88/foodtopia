@@ -1,7 +1,7 @@
-const API_KEY = "144446f9a9c3450a9d34acadc2924d1e";
+const API_KEY = "afcf068a6e5d4679a7bf651d36da89ce";
 
 //YouTube API key
-const API_KEY_YOU_TUBE = "AIzaSyCxheWdliwEmBooGitbAPqK_7RrXSyXZZA";
+const API_KEY_YOU_TUBE = "AIzaSyBFiF_ViAG6gJRFVQyBXBidsSKR4bapkuM";
 
 //fetch API data
 const getApiData = async (url) => {
