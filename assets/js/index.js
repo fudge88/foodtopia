@@ -77,7 +77,7 @@ $("#filter-toggle").on("click", onClick);
 //on page load execute functions:
 const handleLoad = async () => {
   //build random recipes search url URL
-  const randomRecipesApiUrl = `https://api.spoonacular.com/recipes/random?number=1&apiKey=${API_KEY}`;
+  const randomRecipesApiUrl = `https://api.spoonacular.com/recipes/random?number=5&apiKey=${API_KEY}`;
 
   //get random recipes data from the API
   const getRandomRecipesData = await getApiData(randomRecipesApiUrl);
