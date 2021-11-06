@@ -36,6 +36,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// get the inputs from the search
+const getSearchInputs = () => {
+  const searchInput = $("#search-input").val();
+  const checkBoxInput = $("input[type=checkbox]:checked");
+
+  const options = {
+    query: searchInput,
+    diet: [],
+    intolerances: [],
+    cuisines: [],
+  };
+  const callback = function () {
+    if ($(this).data("option") === "diet") {
+      options.diet.push($(this).attr("id"));
+    }
+    if ($(this).data("option") === "intolerances") {
+      options.intolerances.push($(this).attr("id"));
+    }
+    if ($(this).data("option") === "cuisines") {
+      options.cuisines.push($(this).attr("id"));
+    }
+  };
+  checkBoxInput.each(callback);
+  return options;
+};
+
 // render advance search modal
 const renderModal = () => {
   $(".modal").attr("class", "modal is-active");
@@ -47,9 +73,7 @@ const closeModal = () => {
 };
 
 // construct search options
-
 const constructAndAppendModal = (searchOptions, searchInput) => {
-  console.log(searchOptions, searchInput);
   const constructDietOption = (eachDiet) => {
     return `<input type="checkbox" data-option="diet" id=${eachDiet}>
     <label for="${eachDiet}" class="mr-2">${eachDiet}</label>`;
@@ -78,6 +102,8 @@ const constructAndAppendModal = (searchOptions, searchInput) => {
     .map(constructCuisinesOption)
     .join(" ");
 
+  //get from local storage
+  const advancedOptions = getFromLocalStorage("options", {});
   // Modal conntainer
   const searchOptionsContainer = `<div class="modal">
   <div class="modal-background"></div>
@@ -90,7 +116,7 @@ const constructAndAppendModal = (searchOptions, searchInput) => {
       <section class="modal-card-body">
       <div class="field">
       <div class="control mb-2">
-      <input class="input" id="search-input" type="text" value="${searchInput}" placeholder="Search" />
+      <input class="input" type="text" id="search-input" value=${advancedOptions.query} placeholder="Search" />
       </div>
       <h3>Choose your diet...</h3>
       <div class="diet-options mb-2">
@@ -114,33 +140,6 @@ const constructAndAppendModal = (searchOptions, searchInput) => {
 
   $("#modal-container").append(searchOptionsContainer);
   renderModal();
-};
-
-// get the inputs from the search
-
-const getSearchInputs = () => {
-  const searchInput = $("#search-input").val();
-  const checkBoxInput = $("input[type=checkbox]:checked");
-
-  const options = {
-    query: searchInput,
-    diet: [],
-    intolerances: [],
-    cuisines: [],
-  };
-  const callback = function () {
-    if ($(this).data("option") === "diet") {
-      options.diet.push($(this).attr("id"));
-    }
-    if ($(this).data("option") === "intolerances") {
-      options.intolerances.push($(this).attr("id"));
-    }
-    if ($(this).data("option") === "cuisines") {
-      options.cuisines.push($(this).attr("id"));
-    }
-  };
-  checkBoxInput.each(callback);
-  return options;
 };
 
 // brand hover

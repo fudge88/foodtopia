@@ -76,7 +76,6 @@ const renderImageRecipeCard = (data) => {
   $("#image-recipe-container").append(imageRecipeCard);
 
   const addToFavourites = (event) => {
-    console.log("hello");
     // Get the snackbar DIV
     var toast = $("#toast");
 
@@ -186,13 +185,11 @@ const renderServingQuantities = function (userServings) {
 const ingredientsCalculator = (servingData, ingredientsData, userServings) => {
   const servings = servingData.serves;
   const ingredientsCalculatorItem = (each) => {
-    // console.log(each);
     // get value from each ingredient
     const value = each.quantity;
     // divide value by number of servings with the recipe
     const baseServing = value / servings;
     const selectedServings = Math.floor(baseServing * userServings);
-    // console.log(each.ingredientName, selectedServings);
 
     const ingredientItem = `<div>
       <span>${selectedServings}</span>
@@ -348,7 +345,6 @@ const onLoad = async () => {
       const target = event.target;
       if ($(target).hasClass("servings-value")) {
         const servingTabValue = $(target).data("value");
-        console.log(servingTabValue);
 
         ingredientsCalculator(
           recipeInformationData,

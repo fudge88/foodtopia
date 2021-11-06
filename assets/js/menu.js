@@ -103,8 +103,6 @@ const onSubmit = function (event) {
   // get search term
   const searchTerm = $("#search-term").val();
 
-  console.log(searchTerm);
-
   // get data from API for search term
 
   const recipeCardsData = constructRecipeObject(complexSearchApiData);
@@ -115,7 +113,7 @@ const handleSearch = (event) => {
   event.preventDefault();
 
   const searchInputs = getSearchInputs();
-  console.log(searchInputs);
+
   localStorage.setItem("options", JSON.stringify(searchInputs));
 
   //change page location
@@ -126,7 +124,6 @@ const handleViewRecipeDetails = (event) => {
   const target = $(event.target);
   if (target.is("h3")) {
     const recipeId = target.attr("id");
-    console.log(recipeId);
 
     // add recipe id value to local storage
     localStorage.setItem("recipeId", JSON.stringify(recipeId));
@@ -178,7 +175,6 @@ $(document).ready(onReady);
 
 const callback = (event) => {
   const target = event.target;
-  console.log(target);
 };
 
 const handleAdvanceSearch = (event) => {

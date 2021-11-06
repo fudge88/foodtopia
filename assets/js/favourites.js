@@ -40,12 +40,10 @@ const constructAndAppendFavouritesCards = (favouritesRecipes) => {
       const recipeId = target.attr("id");
 
       const getFilteredFavourites = (each) => {
-        console.log(recipeId, each.id);
         return each.id != recipeId;
       };
 
       const newFavourites = favouritesRecipes.filter(getFilteredFavourites);
-      console.log(newFavourites);
 
       localStorage.setItem("favourites", JSON.stringify(newFavourites));
 
