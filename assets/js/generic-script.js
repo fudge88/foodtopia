@@ -145,11 +145,11 @@ const getSearchInputs = () => {
 
 // brand hover
 const hoverIn = () => {
-  $("#logo").attr("src", "../assets/images/logo-hover.PNG");
+  $("#logo").attr("src", "./assets/images/logo-hover.PNG");
 };
 
 const hoverOut = () => {
-  $("#logo").attr("src", "../assets/images/logo.PNG");
+  $("#logo").attr("src", "./assets/images/logo.PNG");
 };
 
 const getFromLocalStorage = function (key, defaultValue) {
