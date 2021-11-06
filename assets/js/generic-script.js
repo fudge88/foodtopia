@@ -49,7 +49,6 @@ const closeModal = () => {
 // construct search options
 
 const constructAndAppendModal = (searchOptions, searchInput) => {
-  console.log(searchOptions, searchInput);
   const constructDietOption = (eachDiet) => {
     return `<input type="checkbox" data-option="diet" id=${eachDiet}>
     <label for="${eachDiet}" class="mr-2">${eachDiet}</label>`;
