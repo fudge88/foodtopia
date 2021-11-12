@@ -176,4 +176,9 @@ I EXPECT to be relocated to a page presenting all my SAVED recipe cards
 
 [Spoonacular](https://spoonacular.com/food-api)
 
-[YouTube](https://developers.google.com/youtube/v3/getting-started?hl=en)
+[YouTube](https://developers.google.com/youtube/v3/getting-started?hl=en)  
+
+## License
+
+This project is licensed under the terms of the MIT license.
+
